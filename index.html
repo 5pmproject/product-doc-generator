@@ -1087,14 +1087,23 @@
                 currentFieldId,
                 textarea: !!textarea,
                 currentValue: currentValue,
-                trimmedLength: currentValue.trim().length
+                trimmedLength: currentValue.trim().length,
+                nextBtn: !!nextBtn,
+                nextBtnDisabled: nextBtn ? nextBtn.disabled : 'N/A'
             });
+            
+            if (!nextBtn) {
+                console.error('❌ nextBtn 요소를 찾을 수 없습니다');
+                return;
+            }
             
             if (currentValue && currentValue.trim().length > 0) {
                 nextBtn.disabled = false;
+                nextBtn.classList.remove('btn-primary:disabled');
                 console.log('✅ 다음 버튼 활성화');
             } else {
                 nextBtn.disabled = true;
+                nextBtn.classList.add('btn-primary:disabled');
                 console.log('❌ 다음 버튼 비활성화');
             }
         }
@@ -3087,8 +3096,16 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             const fields = ['insight', 'validation', 'capability', 'principle', 'success', 'feature'];
             fields.forEach(fieldId => {
                 const textarea = document.getElementById(fieldId);
-                textarea.addEventListener('input', () => updateCharCount(fieldId));
-                textarea.addEventListener('blur', autoSave);
+                if (textarea) {
+                    console.log(`📝 ${fieldId} 필드에 이벤트 리스너 추가`);
+                    textarea.addEventListener('input', function() {
+                        console.log(`🔄 ${fieldId} 입력 이벤트 발생`);
+                        updateCharCount(fieldId);
+                    });
+                    textarea.addEventListener('blur', autoSave);
+                } else {
+                    console.error(`❌ ${fieldId} 필드를 찾을 수 없습니다`);
+                }
             });
 
             // 초기 진행률 업데이트
@@ -3100,6 +3117,7 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             window.resetProject = resetProject;
             window.downloadProjectData = downloadProjectData;
             window.generateDemoData = generateDemoData;
+            window.currentStep = currentStep; // 디버깅용 전역 노출
             
             console.log('🎯 제품 문서 생성 시스템 초기화 완료');
             console.log('💡 개발자 도구 명령어:');
