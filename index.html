@@ -1432,8 +1432,112 @@ ${input.core_features}
             // 2초 대기 (로딩 효과) - 더 빠른 응답
             await new Promise(resolve => setTimeout(resolve, 2000));
             
-            // 데모 응답 생성
-            return generateDemoResponse(docType, prompt);
+            // 간단한 데모 응답 생성 (성능 최적화)
+            return generateSimpleDemoResponse(docType, prompt);
+        }
+        
+        // 간단한 데모 응답 생성 (성능 최적화)
+        function generateSimpleDemoResponse(docType, prompt) {
+            const input = projectData.user_input;
+            const timestamp = new Date().toLocaleDateString('ko-KR');
+            
+            if (docType === 'BRD') {
+                return `# Business Requirements Document
+
+## 1. Executive Summary
+이 프로젝트는 "${input.insight || '사용자 정의 핵심 인사이트'}"를 해결하기 위한 혁신적인 비즈니스 솔루션입니다.
+
+## 2. Business Objectives
+${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성공 지표 달성'}
+
+## 3. Problem Statement
+**핵심 문제:** ${input.insight ? `"${input.insight}"` : '사용자가 식별한 핵심 문제'}
+
+## 4. Proposed Solution
+**솔루션 개요:** ${input.core_features ? `핵심 기능: ${input.core_features}` : '사용자 정의 핵심 기능을 기반으로 한 솔루션'}
+
+## 5. Success Criteria
+**정량적 KPI:** ${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성공 지표'}
+
+## 6. Stakeholders
+- 프로젝트 스폰서
+- 개발팀
+- 사용자/고객
+- 비즈니스 파트너
+
+## 7. Constraints & Risks
+**제약 사항:** ${input.principle ? `절대 원칙: ${input.principle}` : '사용자 정의 제약 사항'}
+
+## 8. Timeline & Milestones
+- Phase 1: 기획 및 설계 (1-2개월)
+- Phase 2: 개발 및 테스트 (2-3개월)
+- Phase 3: 출시 및 운영 (1개월)
+
+## 9. Budget & Resources
+**필요 리소스:** ${input.capability ? `팀 역량: ${input.capability}` : '사용자 팀의 역량을 기반으로 한 리소스 계획'}
+
+---
+*생성일: ${timestamp}*
+*프로젝트 ID: ${projectData.id}*`;
+            }
+            
+            if (docType === 'PRD') {
+                return `# Product Requirements Document
+
+## 1. Product Overview
+${input.insight ? `"${input.insight}"` : '사용자 정의 핵심 인사이트'}를 해결하기 위한 혁신적인 제품입니다.
+
+## 2. User Personas
+- 주요 사용자: ${input.insight ? `"${input.insight}"` : '핵심 문제'}를 겪는 사용자
+- 니즈: 효율적인 솔루션 제공
+
+## 3. Feature Requirements
+**핵심 기능:** ${input.core_features ? `- ${input.core_features}` : '- 사용자 정의 핵심 기능'}
+
+## 4. User Stories
+- 사용자는 ${input.insight ? `"${input.insight}"` : '핵심 문제'}를 해결할 수 있다
+- 사용자는 ${input.core_features ? `"${input.core_features}"` : '핵심 기능'}을 활용할 수 있다
+
+## 5. Success Metrics
+**핵심 성공 지표:** ${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성공 지표'}
+
+---
+*생성일: ${timestamp}*
+*프로젝트 ID: ${projectData.id}*`;
+            }
+            
+            if (docType === 'TRD') {
+                return `# Technical Requirements Document
+
+## 1. Technical Overview
+${input.insight ? `"${input.insight}"` : '사용자 정의 핵심 인사이트'}를 해결하기 위한 기술적 솔루션입니다.
+
+## 2. System Architecture
+- 마이크로서비스 아키텍처
+- 클라우드 기반 확장 가능한 설계
+
+## 3. Technology Stack
+- Frontend: React.js, TypeScript
+- Backend: Node.js, Express
+- Database: PostgreSQL, Redis
+- Infrastructure: AWS, Docker
+
+## 4. Security Requirements
+- JWT 기반 인증
+- HTTPS 통신
+- 데이터 암호화
+
+## 5. Performance Requirements
+- 응답 시간: 2초 이내
+- 동시 사용자: 1,000명 지원
+- 가용성: 99.9%
+
+---
+*생성일: ${timestamp}*
+*프로젝트 ID: ${projectData.id}*`;
+            }
+            
+            return `# ${docType} Document\n\n기본 문서 내용이 여기에 표시됩니다.\n\n*생성일: ${timestamp}*`;
         }
 
         // AI 분석 시뮬레이션 헬퍼 함수들
