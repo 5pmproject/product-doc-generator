@@ -1429,8 +1429,8 @@ ${input.core_features}
         async function runDemoMode(prompt, docType) {
             console.log(`🤖 ${docType} AI 프롬프트 생성됨:`, prompt.substring(0, 200) + '...');
             
-            // 3초 대기 (로딩 효과)
-            await new Promise(resolve => setTimeout(resolve, 3000));
+            // 2초 대기 (로딩 효과) - 더 빠른 응답
+            await new Promise(resolve => setTimeout(resolve, 2000));
             
             // 데모 응답 생성
             return generateDemoResponse(docType, prompt);
