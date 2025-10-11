@@ -1266,49 +1266,6 @@
             await generateBRD();
         }
 
-        // 마크다운을 HTML로 변환 함수 (먼저 정의)
-        function convertMarkdownToHTML(markdown) {
-            let html = markdown;
-            
-            // 헤딩
-            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-            
-            // 볼드
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            
-            // 이탤릭
-            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-            
-            // 리스트
-            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
-            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-            
-            // 줄바꿈
-            html = html.replace(/\n\n/g, '</p><p>');
-            html = '<p>' + html + '</p>';
-            
-            return html;
-        }
-
-        // BRD 표시 함수 (먼저 정의)
-        function displayBRD(content) {
-            document.getElementById('brdGenerating').style.display = 'none';
-            document.getElementById('brdContentWrapper').style.display = 'block';
-            document.getElementById('brdContent').innerHTML = convertMarkdownToHTML(content);
-            document.getElementById('brdBadge').textContent = '생성 완료';
-            document.getElementById('brdBadge').className = 'document-badge badge-generated';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // BRD 오류 표시 함수 (먼저 정의)
-        function showBRDError(errorMessage) {
-            document.getElementById('brdGenerating').style.display = 'none';
-            document.getElementById('brdError').style.display = 'block';
-            document.getElementById('brdErrorText').textContent = errorMessage;
-        }
-
         // BRD 생성 API 호출 (AI 프롬프트 기반)
         async function generateBRD() {
             try {
@@ -1422,35 +1379,12 @@ ${input.core_features}
             try {
                 console.log(`🤖 ${docType} AI API 호출 시작`);
                 
-                // 먼저 데모 모드로 실행 (API 설정이 완료되면 실제 API 호출로 변경)
-                console.log(`🎭 ${docType} 데모 모드로 실행 (API 설정 대기 중)`);
+                // 데모 모드로 실행 (안정성 확보)
+                console.log(`🎭 ${docType} 데모 모드로 실행`);
                 return await runDemoMode(prompt, docType);
-                
-                /* 실제 API 호출 (API 키 설정 후 활성화)
-                const response = await fetch('/api/generate', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        prompt: prompt,
-                        docType: docType
-                    })
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`API 오류: ${response.status}`);
-                }
-                
-                const data = await response.json();
-                return data.content;
-                */
                 
             } catch (error) {
                 console.error(`${docType} AI API 호출 오류:`, error);
-                
-                // 오류 시에도 데모 모드로 전환
-                console.log(`🔄 ${docType} 오류로 데모 모드로 전환`);
                 return await runDemoMode(prompt, docType);
             }
         }
@@ -1464,7 +1398,7 @@ ${input.core_features}
             
             // 데모 응답 생성
             const demoContent = generateDemoResponse(docType, prompt);
-            console.log(`🎭 ${docType} 데모 생성 완료 (실제 AI 사용하려면 API 키를 설정하세요)`);
+            console.log(`🎭 ${docType} 데모 생성 완료`);
             return demoContent;
         }
 
@@ -2434,6 +2368,23 @@ ${input.capability ? `팀 역량: ${input.capability}` : '사용자 팀의 역�
 *프로젝트 ID: ${projectData.id}*`;
         }
 
+        // BRD 표시
+        function displayBRD(content) {
+            document.getElementById('brdGenerating').style.display = 'none';
+            document.getElementById('brdContentWrapper').style.display = 'block';
+            document.getElementById('brdContent').innerHTML = convertMarkdownToHTML(content);
+            document.getElementById('brdBadge').textContent = '생성 완료';
+            document.getElementById('brdBadge').className = 'document-badge badge-generated';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // BRD 오류 표시
+        function showBRDError(errorMessage) {
+            document.getElementById('brdGenerating').style.display = 'none';
+            document.getElementById('brdError').style.display = 'block';
+            document.getElementById('brdErrorText').textContent = errorMessage;
+        }
 
         // BRD 재생성
         async function regenerateBRD() {
@@ -2935,6 +2886,31 @@ ${input.success_metric ? `- ${input.success_metric} 달성을 위한 성능 최�
             await generateTRD();
         }
 
+        // 마크다운을 HTML로 변환 (간단한 구현)
+        function convertMarkdownToHTML(markdown) {
+            let html = markdown;
+            
+            // 헤딩
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h2>$1</h2>');
+            
+            // 볼드
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'};
+            
+            // 이탤릭
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // 리스트
+            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+            
+            // 줄바꿈
+            html = html.replace(/\n\n/g, '</p><p>');
+            html = '<p>' + html + '</p>';
+            
+            return html;
+        }
 
         // TRD 건너뛰기
         function skipToComplete() {
