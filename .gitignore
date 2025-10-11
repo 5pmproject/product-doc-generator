@@ -136,3 +136,6 @@ project_backup_*
 # API keys and secrets
 config.json
 secrets.json
+
+# Vercel
+.vercel

@@ -27,6 +27,27 @@ AI 기반 제품 문서 자동 생성 시스템으로, 6개 질문에 답변하�
 - **일괄 다운로드**: 모든 문서 + JSON 데이터 백업
 - **버전 관리**: 문서별 버전 추적
 
+## 🔧 환경 설정
+
+### Vercel 배포 시 환경 변수 설정
+1. Vercel 대시보드에서 프로젝트 선택
+2. Settings → Environment Variables
+3. 다음 환경 변수 추가:
+   - `CLAUDE_API_KEY`: Anthropic Claude API 키
+
+### 로컬 개발 환경
+```bash
+# 프로젝트 클론
+git clone https://github.com/your-username/product-doc-generator.git
+cd product-doc-generator
+
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+```
+
 ## 🚀 사용 방법
 
 ### 1. 질문 답변
