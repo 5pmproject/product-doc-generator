@@ -2495,12 +2495,55 @@ ${input.capability ? `팀 역량: ${input.capability}` : '사용자 팀의 역�
             await generateBRD();
         }
 
-        // BRD 재시도
-        async function retryBRDGeneration() {
-            document.getElementById('brdError').style.display = 'none';
-            document.getElementById('brdGenerating').style.display = 'block';
+        // BRD 재시도 (개선된 버전)
+        function retryBRDGeneration() {
+            console.log('BRD 생성 재시도...');
             
-            await generateBRD();
+            // 에러 메시지 숨기기
+            const errorContainer = document.querySelector('.error-container') || 
+                document.querySelector('[style*="background: #fee2e2"]');
+            if (errorContainer) {
+                errorContainer.style.display = 'none';
+            }
+            
+            // BRD 생성 재시도
+            startBRDGeneration();
+        }
+
+        // 개선된 에러 표시 함수
+        function showError(message, showRetry = true) {
+            console.error('Error:', message);
+            
+            const errorContainer = document.querySelector('.error-container') || 
+                document.querySelector('[style*="background: #fee2e2"]');
+            
+            if (errorContainer) {
+                errorContainer.innerHTML = `
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <span style="margin-right: 10px;">⚠️</span>
+                        <span style="color: #dc2626; font-weight: 500;">생성 오류</span>
+                    </div>
+                    <div style="color: #991b1b; margin-bottom: 15px; font-size: 14px;">${message}</div>
+                    ${showRetry ? '<button onclick="retryBRDGeneration()" style="background: #d97706; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px;">다시 시도</button>' : ''}
+                `;
+                errorContainer.style.display = 'block';
+            }
+            
+            // 진행률 초기화
+            resetProgress();
+        }
+
+        // 진행률 초기화 함수
+        function resetProgress() {
+            const progressBar = document.querySelector('.progress-bar');
+            const progressText = document.querySelector('.progress-text');
+            
+            if (progressBar) {
+                progressBar.style.width = '0%';
+            }
+            if (progressText) {
+                progressText.textContent = '준비 중...';
+            }
         }
 
         // BRD 승인 및 PRD 생성
