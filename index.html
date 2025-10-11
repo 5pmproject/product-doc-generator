@@ -523,11 +523,18 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>제품 문서 생성 시스템</h1>
-            <p class="subtitle">5분만 투자하면 전문적인 BRD, PRD, TRD를 자동 생성합니다</p>
-        </header>
+        <div class="container">
+            <header>
+                <h1>제품 문서 생성 시스템</h1>
+                <p class="subtitle">5분만 투자하면 전문적인 BRD, PRD, TRD를 자동 생성합니다</p>
+                <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.8); border-radius: 8px;">
+                    <label for="apiKeyInput" style="display: block; margin-bottom: 8px; font-weight: 600; color: #6b5d52;">Claude API 키:</label>
+                    <input type="password" id="apiKeyInput" placeholder="sk-ant-api03-..." style="width: 100%; padding: 8px; border: 1px solid #e8e1d9; border-radius: 4px; margin-bottom: 8px;">
+                    <button onclick="setAPIKeyFromInput()" style="background: #c9b5a0; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">API 키 저장</button>
+                    <button onclick="clearAPIKey()" style="background: #d4a08a; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 8px;">키 삭제</button>
+                    <div id="apiKeyStatus" style="margin-top: 8px; font-size: 0.9rem; color: #8b7d6b;"></div>
+                </div>
+            </header>
 
         <div class="progress-container">
             <div class="workflow-status" id="workflowStatus">
@@ -1381,42 +1388,39 @@ ${input.core_features}
 - 마크다운 형식으로 작성하세요`;
         }
 
-        // AI API 호출 함수 (실제 API 연동 + 데모 모드)
+        // AI API 호출 함수 (실제 API 우선, 실패 시 데모 모드)
         async function callAIAPI(prompt, docType) {
             try {
-                // API 키 확인
-                const apiKey = localStorage.getItem('claude_api_key') || prompt('Claude API 키를 입력하세요 (Enter로 데모 모드 사용):');
+                // API 키 확인 (환경변수 또는 로컬스토리지)
+                const apiKey = process.env.ANTHROPIC_API_KEY || 
+                              localStorage.getItem('claude_api_key') || 
+                              'sk-ant-api03-...'; // 기본 API 키 (실제 키로 교체 필요)
                 
-                if (apiKey && apiKey.trim() !== '') {
-                    // API 키가 있으면 실제 API 호출
-                    console.log(`🤖 ${docType} 실제 AI API 호출 시작`);
-                    
-                    const response = await fetch("https://api.anthropic.com/v1/messages", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "x-api-key": apiKey,
-                            "anthropic-version": "2023-06-01"
-                        },
-                        body: JSON.stringify({
-                            model: "claude-3-5-sonnet-20241022",
-                            max_tokens: 4000,
-                            messages: [{ role: "user", content: prompt }]
-                        })
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error(`API 오류: ${response.status} - ${response.statusText}`);
-                    }
-                    
-                    const data = await response.json();
-                    console.log(`✅ ${docType} AI API 호출 성공`);
-                    return data.content[0].text;
-                } else {
-                    // API 키가 없으면 데모 모드
-                    console.log(`🎭 ${docType} 데모 모드 실행`);
-                    return await runDemoMode(prompt, docType);
+                console.log(`🤖 ${docType} 실제 AI API 호출 시작`);
+                
+                const response = await fetch("https://api.anthropic.com/v1/messages", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "x-api-key": apiKey,
+                        "anthropic-version": "2023-06-01"
+                    },
+                    body: JSON.stringify({
+                        model: "claude-3-5-sonnet-20241022",
+                        max_tokens: 4000,
+                        messages: [{ role: "user", content: prompt }]
+                    })
+                });
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error(`API 오류: ${response.status} - ${errorText}`);
+                    throw new Error(`API 오류: ${response.status} - ${response.statusText}`);
                 }
+                
+                const data = await response.json();
+                console.log(`✅ ${docType} AI API 호출 성공`);
+                return data.content[0].text;
                 
             } catch (error) {
                 console.error(`${docType} AI API 호출 오류:`, error);
@@ -3305,10 +3309,32 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             window.setAPIKey = function(key) {
                 localStorage.setItem('claude_api_key', key);
                 console.log('🔑 API 키가 설정되었습니다');
+                updateAPIKeyStatus();
             };
             window.clearAPIKey = function() {
                 localStorage.removeItem('claude_api_key');
                 console.log('🗑️ API 키가 삭제되었습니다');
+                updateAPIKeyStatus();
+            };
+            window.setAPIKeyFromInput = function() {
+                const apiKey = document.getElementById('apiKeyInput').value;
+                if (apiKey && apiKey.trim() !== '') {
+                    setAPIKey(apiKey);
+                    document.getElementById('apiKeyInput').value = '';
+                } else {
+                    alert('API 키를 입력해주세요.');
+                }
+            };
+            window.updateAPIKeyStatus = function() {
+                const status = document.getElementById('apiKeyStatus');
+                const apiKey = localStorage.getItem('claude_api_key');
+                if (apiKey) {
+                    status.textContent = '✅ API 키가 설정되었습니다 (실제 AI 사용)';
+                    status.style.color = '#6b9b6b';
+                } else {
+                    status.textContent = '⚠️ API 키가 없습니다 (데모 모드 사용)';
+                    status.style.color = '#d4a08a';
+                }
             };
             window.testAPI = async function() {
                 console.log('🧪 API 테스트 시작');
@@ -3403,6 +3429,9 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
                 }
             };
             
+            // API 키 상태 업데이트
+            updateAPIKeyStatus();
+            
             console.log('🎯 제품 문서 생성 시스템 초기화 완료');
             console.log('💡 개발자 도구 명령어:');
             console.log('  - projectData: 현재 프로젝트 데이터 확인');
@@ -3410,6 +3439,9 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             console.log('  - downloadProjectData(): JSON 파일로 내보내기');
             console.log('  - resetProject(): 데이터 초기화');
             console.log('  - generateDemoData(): 데모 데이터 생성 (PDF 테스트용)');
+            console.log('  - setAPIKey(key): API 키 설정');
+            console.log('  - clearAPIKey(): API 키 삭제');
+            console.log('  - testAPI(): API 연결 테스트');
         });
 
         // PDF 내보내기 함수들
