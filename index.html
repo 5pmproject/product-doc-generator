@@ -988,7 +988,6 @@
             save() {
                 try {
                     localStorage.setItem('projectData', JSON.stringify(this));
-                    localStorage.setItem('projectData_backup_' + Date.now(), JSON.stringify(this));
                     console.log('✅ 프로젝트 데이터 저장 완료:', this.id);
                     return true;
                 } catch (e) {
@@ -3413,7 +3412,7 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
                     // 2단계: 기존 API 키 삭제 (중복 방지)
                     localStorage.removeItem('claude_api_key');
                     
-                    // 3단계: API 키 저장
+                    // 3단계: API 키만 저장 (백업 생성 안함)
                     localStorage.setItem('claude_api_key', key);
                     console.log('✅ API 키 저장 완료');
                     updateAPIKeyStatus();
@@ -3434,7 +3433,7 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
                             }
                         }
                         
-                        // API 키 다시 저장 시도
+                        // API 키만 저장 (백업 생성 안함)
                         localStorage.setItem('claude_api_key', key);
                         console.log('✅ API 키 저장 성공 (데이터 정리 후)');
                         updateAPIKeyStatus();
