@@ -3335,34 +3335,57 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
                 console.log('현재 필드 ID:', getCurrentFieldId());
                 updateNextButton();
             };
+            // API 키 관리 함수들 (전역 스코프로 이동)
             window.setAPIKey = function(key) {
                 localStorage.setItem('claude_api_key', key);
                 console.log('🔑 API 키가 설정되었습니다');
                 updateAPIKeyStatus();
             };
+            
             window.clearAPIKey = function() {
                 localStorage.removeItem('claude_api_key');
                 console.log('🗑️ API 키가 삭제되었습니다');
                 updateAPIKeyStatus();
             };
+            
             window.setAPIKeyFromInput = function() {
-                const apiKey = document.getElementById('apiKeyInput').value;
+                console.log('🔑 API 키 저장 버튼 클릭됨');
+                const apiKeyInput = document.getElementById('apiKeyInput');
+                if (!apiKeyInput) {
+                    console.error('❌ API 키 입력 필드를 찾을 수 없습니다');
+                    alert('API 키 입력 필드를 찾을 수 없습니다. 페이지를 새로고침해주세요.');
+                    return;
+                }
+                
+                const apiKey = apiKeyInput.value;
+                console.log('🔍 입력된 API 키:', apiKey ? apiKey.substring(0, 10) + '...' : '없음');
+                
                 if (apiKey && apiKey.trim() !== '') {
                     setAPIKey(apiKey);
-                    document.getElementById('apiKeyInput').value = '';
+                    apiKeyInput.value = '';
+                    console.log('✅ API 키 저장 완료');
                 } else {
+                    console.log('⚠️ API 키가 입력되지 않음');
                     alert('API 키를 입력해주세요.');
                 }
             };
+            
             window.updateAPIKeyStatus = function() {
                 const status = document.getElementById('apiKeyStatus');
+                if (!status) {
+                    console.error('❌ API 키 상태 표시 요소를 찾을 수 없습니다');
+                    return;
+                }
+                
                 const apiKey = localStorage.getItem('claude_api_key');
                 if (apiKey) {
                     status.textContent = '✅ API 키가 설정되었습니다 (실제 AI 사용)';
                     status.style.color = '#6b9b6b';
+                    console.log('✅ API 키 상태: 설정됨');
                 } else {
                     status.textContent = '🎭 데모 모드 (API 키 없이도 사용 가능)';
                     status.style.color = '#8b7d6b';
+                    console.log('🎭 API 키 상태: 데모 모드');
                 }
             };
             window.testAPI = async function() {
@@ -3460,6 +3483,15 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             
             // API 키 상태 업데이트
             updateAPIKeyStatus();
+            
+            // 페이지 로드 시 API 키 상태 확인
+            console.log('🔍 페이지 로드 시 API 키 상태 확인');
+            const savedApiKey = localStorage.getItem('claude_api_key');
+            if (savedApiKey) {
+                console.log('✅ 저장된 API 키 발견:', savedApiKey.substring(0, 10) + '...');
+            } else {
+                console.log('🎭 API 키 없음 - 데모 모드로 동작');
+            }
             
             console.log('🎯 제품 문서 생성 시스템 초기화 완료');
             console.log('💡 개발자 도구 명령어:');
