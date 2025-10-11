@@ -1,49 +1,8 @@
 {
   "name": "product-doc-generator",
   "version": "1.0.0",
-  "description": "AI 기반 제품 문서 자동 생성 시스템 (Claude Sonnet 4.5) - BRD, PRD, TRD를 5분만에 완성",
-  "main": "index.html",
-  "scripts": {
-    "start": "python -m http.server 8000",
-    "serve": "npx serve .",
-    "dev": "npx live-server --port=8000 --open=/",
-    "build": "echo 'No build process needed for static HTML'",
-    "test": "echo 'No tests specified'"
-  },
-  "keywords": [
-    "brd",
-    "prd", 
-    "trd",
-    "product-documentation",
-    "ai",
-    "claude",
-    "business-requirements",
-    "product-requirements",
-    "technical-requirements",
-    "document-generator",
-    "automation"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/product-doc-generator.git"
-  },
-  "bugs": {
-    "url": "https://github.com/your-username/product-doc-generator/issues"
-  },
-  "homepage": "https://github.com/your-username/product-doc-generator#readme",
-  "devDependencies": {
-    "live-server": "^1.2.2",
-    "serve": "^14.2.1"
-  },
+  "description": "AI Document Generator",
   "engines": {
-    "node": "18.x",
-    "npm": ">=8.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "node": "18.x"
+  }
 }
