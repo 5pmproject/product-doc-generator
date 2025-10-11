@@ -804,6 +804,16 @@
             });
         }
 
+        // API 모드 관리 함수들
+        function getAPIMode() {
+            return localStorage.getItem('isDemoMode') === 'true' ? 'demo' : 'real';
+        }
+
+        function setAPIMode(mode) {
+            localStorage.setItem('isDemoMode', mode === 'demo');
+            console.log(`🔄 API 모드 변경: ${mode === 'demo' ? '데모' : '실제'} 모드`);
+        }
+
         // 프로젝트 데이터 구조
         class ProjectData {
             constructor() {
@@ -1312,18 +1322,22 @@
         // BRD 생성 API 호출 (AI 프롬프트 기반)
         async function generateBRD() {
             try {
+                console.log('🚀 BRD 생성 시작...');
+                
                 // AI 프롬프트 생성
                 const prompt = createBRDPrompt();
+                console.log('📝 BRD 프롬프트 생성 완료');
                 
-                // 실제 AI API 호출 (현재는 데모 모드)
+                // AI API 호출 (모드에 따라 분기)
                 const brdContent = await callAIAPI(prompt, 'BRD');
 
                 // BRD 저장 및 표시
                 projectData.completeDocumentGeneration('brd', brdContent);
                 displayBRD(brdContent);
+                console.log('✅ BRD 생성 및 표시 완료');
 
             } catch (error) {
-                console.error('BRD 생성 오류:', error);
+                console.error('❌ BRD 생성 오류:', error);
                 showBRDError(error.message);
             }
         }
@@ -1417,18 +1431,77 @@ ${input.core_features}
 - 마크다운 형식으로 작성하세요`;
         }
 
-        // AI API 호출 함수 (데모 모드 우선)
+        // AI API 호출 함수 (메인 라우터)
         async function callAIAPI(prompt, docType) {
-            try {
-                console.log(`🤖 ${docType} AI API 호출 시작`);
-                
-                // 데모 모드로 실행 (안정성 확보)
-                console.log(`🎭 ${docType} 데모 모드로 실행`);
+            const mode = getAPIMode();
+            
+            if (mode === 'demo') {
+                console.log(`🧪 ${docType} 데모 모드 실행`);
                 return await runDemoMode(prompt, docType);
-                
-            } catch (error) {
-                console.error(`${docType} AI API 호출 오류:`, error);
-                return await runDemoMode(prompt, docType);
+            }
+            
+            console.log(`🚀 ${docType} 실제 API 호출`);
+            return await callRealAPI(prompt, docType);
+        }
+
+        // 실제 API 호출 함수 (타임아웃 + 재시도)
+        async function callRealAPI(prompt, docType, retries = 2) {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 30000); // 30초 타임아웃
+
+            for (let attempt = 0; attempt <= retries; attempt++) {
+                try {
+                    console.log(`📡 ${docType} API 호출 시도 ${attempt + 1}/${retries + 1}`);
+                    
+                    const response = await fetch('/api/generate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ prompt, docType }),
+                        signal: controller.signal
+                    });
+
+                    clearTimeout(timeoutId);
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        
+                        // 재시도 가능한 에러 (5xx, 429)
+                        if (response.status >= 500 || response.status === 429) {
+                            if (attempt < retries) {
+                                console.log(`🔄 재시도 ${attempt + 1}/${retries}...`);
+                                await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
+                                continue;
+                            }
+                        }
+                        
+                        throw new Error(errorData.error || '문서 생성 실패');
+                    }
+
+                    const data = await response.json();
+                    console.log(`✅ ${docType} 실제 AI 생성 완료 (${data.content.length}자)`);
+                    return data.content;
+
+                } catch (error) {
+                    clearTimeout(timeoutId);
+                    
+                    // 타임아웃 에러
+                    if (error.name === 'AbortError') {
+                        throw new Error('요청 시간이 초과되었습니다. 다시 시도해주세요.');
+                    }
+                    
+                    // 네트워크 에러
+                    if (error.message.includes('fetch')) {
+                        throw new Error('네트워크 연결을 확인해주세요.');
+                    }
+                    
+                    // 마지막 시도였다면 에러 throw
+                    if (attempt === retries) {
+                        throw error;
+                    }
+                    
+                    console.log(`🔄 재시도 ${attempt + 1}/${retries}...`);
+                    await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
+                }
             }
         }
         
@@ -3173,6 +3246,12 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             window.downloadProjectData = downloadProjectData;
             window.generateDemoData = generateDemoData;
             window.currentStep = currentStep; // 디버깅용 전역 노출
+            
+            // API 모드 관리 함수 노출
+            window.getAPIMode = getAPIMode;
+            window.setAPIMode = setAPIMode;
+            window.callAIAPI = callAIAPI;
+            window.callRealAPI = callRealAPI;
             window.forceEnableNext = function() {
                 const btn = document.getElementById('nextBtn');
                 if (btn) {
