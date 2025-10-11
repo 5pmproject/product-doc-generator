@@ -808,25 +808,59 @@
     </div>
 
     <script>
-        // WebSocket 연결 차단 (live-reload 오류 방지)
-        if (typeof WebSocket !== 'undefined') {
-            const originalWebSocket = window.WebSocket;
-            window.WebSocket = function(url, protocols) {
-                console.log('🚫 WebSocket 연결 차단:', url);
-                // live-reload WebSocket 연결 차단
-                if (url.includes('ws') || url.includes('reload')) {
-                    console.log('🚫 live-reload WebSocket 연결이 차단되었습니다');
+        // WebSocket 연결 완전 차단 (live-reload 오류 방지)
+        (function() {
+            // WebSocket을 완전히 비활성화
+            if (typeof WebSocket !== 'undefined') {
+                const originalWebSocket = window.WebSocket;
+                window.WebSocket = function(url, protocols) {
+                    console.log('🚫 WebSocket 연결 시도 차단:', url);
+                    // 모든 WebSocket 연결 차단
                     return {
-                        close: () => {},
-                        send: () => {},
-                        addEventListener: () => {},
-                        removeEventListener: () => {},
-                        readyState: 3 // CLOSED
+                        close: () => {
+                            console.log('🚫 WebSocket close() 호출됨');
+                        },
+                        send: () => {
+                            console.log('🚫 WebSocket send() 호출됨');
+                        },
+                        addEventListener: () => {
+                            console.log('🚫 WebSocket addEventListener() 호출됨');
+                        },
+                        removeEventListener: () => {
+                            console.log('🚫 WebSocket removeEventListener() 호출됨');
+                        },
+                        readyState: 3, // CLOSED
+                        CONNECTING: 0,
+                        OPEN: 1,
+                        CLOSING: 2,
+                        CLOSED: 3
+                    };
+                };
+                
+                // WebSocket 프로토타입도 차단
+                if (window.WebSocket.prototype) {
+                    window.WebSocket.prototype.close = () => console.log('🚫 WebSocket prototype close() 차단');
+                    window.WebSocket.prototype.send = () => console.log('🚫 WebSocket prototype send() 차단');
+                }
+            }
+            
+            // reload.js 관련 스크립트 차단
+            const originalCreateElement = document.createElement;
+            document.createElement = function(tagName) {
+                const element = originalCreateElement.call(this, tagName);
+                if (tagName.toLowerCase() === 'script') {
+                    const originalSetAttribute = element.setAttribute;
+                    element.setAttribute = function(name, value) {
+                        if (name === 'src' && (value.includes('reload') || value.includes('live-server'))) {
+                            console.log('🚫 reload.js 스크립트 로드 차단:', value);
+                            return;
+                        }
+                        return originalSetAttribute.call(this, name, value);
                     };
                 }
-                return new originalWebSocket(url, protocols);
+                return element;
             };
-        }
+        })();
         
         // UUID 생성 함수
         function generateUUID() {
