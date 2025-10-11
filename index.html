@@ -808,6 +808,26 @@
     </div>
 
     <script>
+        // WebSocket 연결 차단 (live-reload 오류 방지)
+        if (typeof WebSocket !== 'undefined') {
+            const originalWebSocket = window.WebSocket;
+            window.WebSocket = function(url, protocols) {
+                console.log('🚫 WebSocket 연결 차단:', url);
+                // live-reload WebSocket 연결 차단
+                if (url.includes('ws') || url.includes('reload')) {
+                    console.log('🚫 live-reload WebSocket 연결이 차단되었습니다');
+                    return {
+                        close: () => {},
+                        send: () => {},
+                        addEventListener: () => {},
+                        removeEventListener: () => {},
+                        readyState: 3 // CLOSED
+                    };
+                }
+                return new originalWebSocket(url, protocols);
+            };
+        }
+        
         // UUID 생성 함수
         function generateUUID() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
