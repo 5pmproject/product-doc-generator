@@ -15,7 +15,7 @@ AI 기반 제품 문서 자동 생성 시스템으로, 6개 질문에 답변하�
 - **반응형 디자인**: 모바일/데스크톱 완벽 지원
 
 ### Phase 2: AI 문서 생성
-- **Claude AI 통합**: Anthropic Claude Sonnet 4 기반
+- **Claude AI 통합**: Anthropic Claude Sonnet 4.5 기반
 - **3단계 문서 생성**: BRD → PRD → TRD 순차 생성
 - **실시간 상태 표시**: 생성 진행 상황 추적
 - **승인/재생성**: 각 문서별 검토 및 수정 가능
@@ -61,7 +61,7 @@ AI 기반 제품 문서 자동 생성 시스템으로, 6개 질문에 답변하�
 ## 🛠️ 기술 스택
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **AI API**: Claude Sonnet 4 (Anthropic)
+- **AI API**: Claude Sonnet 4.5 (Anthropic)
 - **Storage**: LocalStorage + JSON
 - **Design**: Playfair Display + Lato 폰트
 - **Export**: Markdown 파일 다운로드
