@@ -1266,6 +1266,49 @@
             await generateBRD();
         }
 
+        // 마크다운을 HTML로 변환 함수 (먼저 정의)
+        function convertMarkdownToHTML(markdown) {
+            let html = markdown;
+            
+            // 헤딩
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // 볼드
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            // 이탤릭
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // 리스트
+            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+            
+            // 줄바꿈
+            html = html.replace(/\n\n/g, '</p><p>');
+            html = '<p>' + html + '</p>';
+            
+            return html;
+        }
+
+        // BRD 표시 함수 (먼저 정의)
+        function displayBRD(content) {
+            document.getElementById('brdGenerating').style.display = 'none';
+            document.getElementById('brdContentWrapper').style.display = 'block';
+            document.getElementById('brdContent').innerHTML = convertMarkdownToHTML(content);
+            document.getElementById('brdBadge').textContent = '생성 완료';
+            document.getElementById('brdBadge').className = 'document-badge badge-generated';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // BRD 오류 표시 함수 (먼저 정의)
+        function showBRDError(errorMessage) {
+            document.getElementById('brdGenerating').style.display = 'none';
+            document.getElementById('brdError').style.display = 'block';
+            document.getElementById('brdErrorText').textContent = errorMessage;
+        }
+
         // BRD 생성 API 호출 (AI 프롬프트 기반)
         async function generateBRD() {
             try {
@@ -2368,23 +2411,6 @@ ${input.capability ? `팀 역량: ${input.capability}` : '사용자 팀의 역�
 *프로젝트 ID: ${projectData.id}*`;
         }
 
-        // BRD 표시
-        function displayBRD(content) {
-            document.getElementById('brdGenerating').style.display = 'none';
-            document.getElementById('brdContentWrapper').style.display = 'block';
-            document.getElementById('brdContent').innerHTML = convertMarkdownToHTML(content);
-            document.getElementById('brdBadge').textContent = '생성 완료';
-            document.getElementById('brdBadge').className = 'document-badge badge-generated';
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // BRD 오류 표시
-        function showBRDError(errorMessage) {
-            document.getElementById('brdGenerating').style.display = 'none';
-            document.getElementById('brdError').style.display = 'block';
-            document.getElementById('brdErrorText').textContent = errorMessage;
-        }
 
         // BRD 재생성
         async function regenerateBRD() {
