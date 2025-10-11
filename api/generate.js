@@ -1,80 +1,72 @@
-// Vercel Serverless Function for Claude API
+// api/generate.js
 module.exports = async function handler(req, res) {
-    // CORS 헤더 설정
+    res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    
-    // OPTIONS 요청 처리 (CORS preflight)
+
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
-    
-    // POST 요청만 허용
+
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
-    
+
     try {
         const { prompt, docType } = req.body;
-        
-        // 입력 검증
-        if (!prompt || !docType) {
-            return res.status(400).json({ error: 'Missing required fields: prompt, docType' });
+
+        if (!prompt || typeof prompt !== 'string') {
+            return res.status(400).json({ error: 'Prompt is required' });
         }
-        
-        // Claude API 키 확인
-        const apiKey = process.env.CLAUDE_API_KEY;
-        if (!apiKey) {
-            console.error('❌ CLAUDE_API_KEY 환경변수가 설정되지 않았습니다');
-            return res.status(500).json({ 
-                error: 'API key not configured. Please set CLAUDE_API_KEY in Vercel environment variables.' 
-            });
+
+        if (prompt.length > 10000) {
+            return res.status(400).json({ error: 'Prompt too long' });
         }
-        
-        console.log(`🤖 ${docType} API 호출 시작`);
-        
-        // Claude API 호출
+
+        if (!process.env.CLAUDE_API_KEY) {
+            console.error('CLAUDE_API_KEY not set');
+            return res.status(500).json({ error: 'API key not configured' });
+        }
+
+        console.log('Generating document:', docType);
+
         const response = await fetch('https://api.anthropic.com/v1/messages', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': apiKey,
-                'anthropic-version': '2023-06-01'
+                'x-api-key': process.env.CLAUDE_API_KEY,
+                'anthropic-version': '2023-06-01',
+                'content-type': 'application/json'
             },
             body: JSON.stringify({
-                model: 'claude-3-5-sonnet-20241022',
-                max_tokens: 4000,
+                model: 'claude-sonnet-4-20250514',
+                max_tokens: 4096,
                 messages: [{ role: 'user', content: prompt }]
             })
         });
-        
+
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error(`❌ Claude API 오류: ${response.status} - ${errorText}`);
+            const error = await response.json().catch(() => ({}));
+            console.error('Claude API Error:', response.status, error);
             return res.status(response.status).json({ 
-                error: `Claude API error: ${response.status}`,
-                details: errorText 
+                error: 'Claude API error: ' + response.status 
             });
         }
-        
+
         const data = await response.json();
-        const content = data.content[0].text;
-        
-        console.log(`✅ ${docType} 생성 완료 (${content.length}자)`);
-        
+        console.log('Document generated successfully');
+
         return res.status(200).json({
             success: true,
-            content: content,
-            docType: docType,
-            length: content.length
+            content: data.content[0].text,
+            docType: docType
         });
-        
+
     } catch (error) {
-        console.error('❌ API 처리 오류:', error);
+        console.error('Server Error:', error);
         return res.status(500).json({ 
             error: 'Internal server error',
-            message: error.message 
+            details: error.message 
         });
     }
-}
+};
