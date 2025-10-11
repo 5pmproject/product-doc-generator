@@ -1335,7 +1335,33 @@
             await generateBRD();
         }
 
-        // BRD 표시 함수 (먼저 정의)
+        // 마크다운을 HTML로 변환 함수 (먼저 정의)
+        function convertMarkdownToHTML(markdown) {
+            let html = markdown;
+            
+            // 헤딩
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // 볼드
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            // 이탤릭
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // 리스트
+            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+            
+            // 줄바꿈
+            html = html.replace(/\n\n/g, '</p><p>');
+            html = '<p>' + html + '</p>';
+            
+            return html;
+        }
+
+        // BRD 표시 함수
         function displayBRD(content) {
             document.getElementById('brdGenerating').style.display = 'none';
             document.getElementById('brdContentWrapper').style.display = 'block';
@@ -3112,31 +3138,6 @@ ${input.success_metric ? `- ${input.success_metric} 달성을 위한 성능 최�
             await generateTRD();
         }
 
-        // 마크다운을 HTML로 변환 (간단한 구현)
-        function convertMarkdownToHTML(markdown) {
-            let html = markdown;
-            
-            // 헤딩
-            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-            html = html.replace(/^# (.*$)/gim, '<h2>$1</h2>');
-            
-            // 볼드
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'};
-            
-            // 이탤릭
-            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-            
-            // 리스트
-            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
-            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-            
-            // 줄바꿈
-            html = html.replace(/\n\n/g, '</p><p>');
-            html = '<p>' + html + '</p>';
-            
-            return html;
-        }
 
         // TRD 건너뛰기
         function skipToComplete() {
