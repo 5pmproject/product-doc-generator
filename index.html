@@ -1042,6 +1042,13 @@
             const maxLength = textarea.maxLength;
             const currentLength = textarea.value.length;
             
+            console.log('🔍 updateCharCount 디버깅:', {
+                fieldId,
+                currentLength,
+                maxLength,
+                currentStep
+            });
+            
             counter.textContent = `${currentLength} / ${maxLength}자`;
             
             if (currentLength > maxLength * 0.9) {
@@ -1075,10 +1082,20 @@
             const textarea = document.getElementById(currentFieldId);
             const currentValue = textarea ? textarea.value : '';
             
+            console.log('🔍 updateNextButton 디버깅:', {
+                currentStep,
+                currentFieldId,
+                textarea: !!textarea,
+                currentValue: currentValue,
+                trimmedLength: currentValue.trim().length
+            });
+            
             if (currentValue && currentValue.trim().length > 0) {
                 nextBtn.disabled = false;
+                console.log('✅ 다음 버튼 활성화');
             } else {
                 nextBtn.disabled = true;
+                console.log('❌ 다음 버튼 비활성화');
             }
         }
 
