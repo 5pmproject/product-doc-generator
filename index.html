@@ -3392,37 +3392,57 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             // API 키 관리 함수들 (전역 스코프로 이동)
             window.setAPIKey = function(key) {
                 try {
-                    // 기존 프로젝트 데이터 백업 (필요한 경우)
-                    const existingProject = localStorage.getItem('projectData');
-                    if (existingProject) {
-                        // 백업 생성
-                        localStorage.setItem('projectData_backup_' + Date.now(), existingProject);
-                    }
+                    console.log('🔑 API 키 저장 시작...');
                     
-                    // localStorage 정리 (오래된 백업 삭제)
+                    // 1단계: 모든 백업 데이터 삭제 (공간 확보)
+                    console.log('🧹 모든 백업 데이터 삭제 중...');
                     const keysToRemove = [];
                     for (let i = 0; i < localStorage.length; i++) {
-                        const key = localStorage.key(i);
-                        if (key && key.startsWith('projectData_backup_')) {
-                            keysToRemove.push(key);
+                        const storageKey = localStorage.key(i);
+                        if (storageKey && storageKey.startsWith('projectData_backup_')) {
+                            keysToRemove.push(storageKey);
                         }
                     }
                     
-                    // 오래된 백업 삭제 (최신 3개만 유지)
-                    if (keysToRemove.length > 3) {
-                        keysToRemove.sort().slice(0, -3).forEach(key => {
-                            localStorage.removeItem(key);
-                        });
-                    }
+                    // 모든 백업 삭제
+                    keysToRemove.forEach(backupKey => {
+                        localStorage.removeItem(backupKey);
+                        console.log('🗑️ 백업 삭제:', backupKey);
+                    });
                     
-                    // API 키 저장
+                    // 2단계: 기존 API 키 삭제 (중복 방지)
+                    localStorage.removeItem('claude_api_key');
+                    
+                    // 3단계: API 키 저장
                     localStorage.setItem('claude_api_key', key);
-                    console.log('🔑 API 키가 설정되었습니다');
+                    console.log('✅ API 키 저장 완료');
                     updateAPIKeyStatus();
                     
                 } catch (error) {
                     console.error('❌ API 키 저장 실패:', error);
-                    alert('API 키 저장에 실패했습니다. 브라우저 저장 공간이 부족할 수 있습니다. 브라우저 데이터를 정리해주세요.');
+                    
+                    // 최후의 수단: 모든 프로젝트 데이터 삭제
+                    try {
+                        console.log('🚨 최후의 수단: 모든 프로젝트 데이터 삭제');
+                        localStorage.removeItem('projectData');
+                        
+                        // 모든 백업 삭제
+                        for (let i = localStorage.length - 1; i >= 0; i--) {
+                            const storageKey = localStorage.key(i);
+                            if (storageKey && storageKey.startsWith('projectData_backup_')) {
+                                localStorage.removeItem(storageKey);
+                            }
+                        }
+                        
+                        // API 키 다시 저장 시도
+                        localStorage.setItem('claude_api_key', key);
+                        console.log('✅ API 키 저장 성공 (데이터 정리 후)');
+                        updateAPIKeyStatus();
+                        
+                    } catch (finalError) {
+                        console.error('❌ 최종 저장 실패:', finalError);
+                        alert('브라우저 저장 공간이 부족합니다. 브라우저를 완전히 새로고침하거나 다른 브라우저를 사용해주세요.');
+                    }
                 }
             };
             
@@ -3432,25 +3452,42 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
                 updateAPIKeyStatus();
             };
             
-            // localStorage 정리 함수
+            // localStorage 강력한 정리 함수
             window.clearLocalStorage = function() {
                 try {
+                    console.log('🧹 localStorage 강력한 정리 시작...');
+                    
                     const keysToRemove = [];
                     for (let i = 0; i < localStorage.length; i++) {
                         const key = localStorage.key(i);
-                        if (key && key.startsWith('projectData_backup_')) {
+                        if (key && (key.startsWith('projectData_backup_') || key.startsWith('projectData'))) {
                             keysToRemove.push(key);
                         }
                     }
                     
+                    // 모든 프로젝트 관련 데이터 삭제
                     keysToRemove.forEach(key => {
                         localStorage.removeItem(key);
+                        console.log('🗑️ 삭제됨:', key);
                     });
                     
                     console.log('🧹 localStorage 정리 완료:', keysToRemove.length, '개 항목 삭제');
-                    alert('브라우저 저장 공간이 정리되었습니다.');
+                    alert('브라우저 저장 공간이 정리되었습니다. 이제 API 키를 다시 시도해보세요.');
                 } catch (error) {
                     console.error('❌ localStorage 정리 실패:', error);
+                }
+            };
+            
+            // localStorage 완전 초기화 함수
+            window.resetAllData = function() {
+                try {
+                    console.log('🚨 localStorage 완전 초기화 시작...');
+                    localStorage.clear();
+                    console.log('✅ localStorage 완전 초기화 완료');
+                    alert('모든 데이터가 삭제되었습니다. 페이지가 새로고침됩니다.');
+                    location.reload();
+                } catch (error) {
+                    console.error('❌ localStorage 초기화 실패:', error);
                 }
             };
             
