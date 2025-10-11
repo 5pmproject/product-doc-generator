@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제품 문서 생성 시스템</title>
+    <title>?쒗뭹 臾몄꽌 ?앹꽦 ?쒖뒪??/title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -304,7 +304,7 @@
             line-height: 1.6;
         }
 
-        /* BRD 생성 화면 */
+        /* BRD ?앹꽦 ?붾㈃ */
         .document-screen {
             display: none;
             padding: 40px;
@@ -525,44 +525,44 @@
 <body>
     <div class="container">
         <header>
-            <h1>제품 문서 생성 시스템</h1>
-            <p class="subtitle">5분만 투자하면 전문적인 BRD, PRD, TRD를 자동 생성합니다</p>
+            <h1>?쒗뭹 臾몄꽌 ?앹꽦 ?쒖뒪??/h1>
+            <p class="subtitle">5遺꾨쭔 ?ъ옄?섎㈃ ?꾨Ц?곸씤 BRD, PRD, TRD瑜??먮룞 ?앹꽦?⑸땲??/p>
         </header>
 
         <div class="progress-container">
             <div class="workflow-status" id="workflowStatus">
-                <div class="workflow-step" data-step="input">입력</div>
-                <div class="workflow-arrow">→</div>
+                <div class="workflow-step" data-step="input">?낅젰</div>
+                <div class="workflow-arrow">??/div>
                 <div class="workflow-step" data-step="brd">BRD</div>
-                <div class="workflow-arrow">→</div>
+                <div class="workflow-arrow">??/div>
                 <div class="workflow-step" data-step="prd">PRD</div>
-                <div class="workflow-arrow">→</div>
+                <div class="workflow-arrow">??/div>
                 <div class="workflow-step" data-step="trd">TRD</div>
             </div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
             <div class="progress-text">
-                <span id="progressText">질문 1 / 6</span>
-                <span id="progressPercent">0% 완료</span>
+                <span id="progressText">吏덈Ц 1 / 6</span>
+                <span id="progressPercent">0% ?꾨즺</span>
             </div>
         </div>
 
         <!-- Question 1 -->
         <div class="form-card active" data-step="1">
             <div class="question-number">01</div>
-            <h2 class="question-title">핵심 인사이트</h2>
-            <p class="question-desc">당신이 발견한 가장 중요한 통찰은 무엇인가요? 이 제품이 해결하려는 핵심 문제를 설명해주세요.</p>
+            <h2 class="question-title">?듭떖 ?몄궗?댄듃</h2>
+            <p class="question-desc">?뱀떊??諛쒓껄??媛??以묒슂???듭같? 臾댁뾿?멸??? ???쒗뭹???닿껐?섎젮???듭떖 臾몄젣瑜??ㅻ챸?댁＜?몄슂.</p>
             
             <div class="input-group">
-                <textarea id="insight" maxlength="200" placeholder="예: 현재 시장에서 사용자들은..."></textarea>
+                <textarea id="insight" maxlength="200" placeholder="?? ?꾩옱 ?쒖옣?먯꽌 ?ъ슜?먮뱾?..."></textarea>
                 <div class="char-counter">
-                    <span class="char-count" id="insightCount">0 / 200자</span>
+                    <span class="char-count" id="insightCount">0 / 200??/span>
                     <span id="insightStatus"></span>
                 </div>
                 <div class="example-text">
-                    <div class="example-label">💡 예시</div>
-                    소비자의 80%가 제품 리뷰를 읽지만, 70%가 리뷰의 신뢰성을 의심합니다. 검증된 구매자의 실제 경험을 효과적으로 전달하는 방법이 필요합니다.
+                    <div class="example-label">?뮕 ?덉떆</div>
+                    ?뚮퉬?먯쓽 80%媛 ?쒗뭹 由щ럭瑜??쎌?留? 70%媛 由щ럭???좊ː?깆쓣 ?섏떖?⑸땲?? 寃利앸맂 援щℓ?먯쓽 ?ㅼ젣 寃쏀뿕???④낵?곸쑝濡??꾨떖?섎뒗 諛⑸쾿???꾩슂?⑸땲??
                 </div>
             </div>
         </div>
@@ -570,18 +570,18 @@
         <!-- Question 2 -->
         <div class="form-card" data-step="2">
             <div class="question-number">02</div>
-            <h2 class="question-title">검증 근거</h2>
-            <p class="question-desc">이 인사이트를 뒷받침하는 데이터나 근거가 있나요? 시장 조사, 사용자 인터뷰, 데이터 분석 결과 등을 공유해주세요.</p>
+            <h2 class="question-title">寃利?洹쇨굅</h2>
+            <p class="question-desc">???몄궗?댄듃瑜??룸컺移⑦븯???곗씠?곕굹 洹쇨굅媛 ?덈굹?? ?쒖옣 議곗궗, ?ъ슜???명꽣酉? ?곗씠??遺꾩꽍 寃곌낵 ?깆쓣 怨듭쑀?댁＜?몄슂.</p>
             
             <div class="input-group">
-                <textarea id="validation" maxlength="150" placeholder="예: 500명 사용자 인터뷰 결과..."></textarea>
+                <textarea id="validation" maxlength="150" placeholder="?? 500紐??ъ슜???명꽣酉?寃곌낵..."></textarea>
                 <div class="char-counter">
-                    <span class="char-count" id="validationCount">0 / 150자</span>
+                    <span class="char-count" id="validationCount">0 / 150??/span>
                     <span id="validationStatus"></span>
                 </div>
                 <div class="example-text">
-                    <div class="example-label">💡 예시</div>
-                    3개월간 500명 대상 설문 결과, 가짜 리뷰 때문에 구매를 포기한 경험이 평균 3.2회. A/B 테스트 결과 검증된 리뷰는 전환율 45% 향상.
+                    <div class="example-label">?뮕 ?덉떆</div>
+                    3媛쒖썡媛?500紐?????ㅻЦ 寃곌낵, 媛吏?由щ럭 ?뚮Ц??援щℓ瑜??ш린??寃쏀뿕???됯퇏 3.2?? A/B ?뚯뒪??寃곌낵 寃利앸맂 由щ럭???꾪솚??45% ?μ긽.
                 </div>
             </div>
         </div>
@@ -589,18 +589,18 @@
         <!-- Question 3 -->
         <div class="form-card" data-step="3">
             <div class="question-number">03</div>
-            <h2 class="question-title">팀 역량</h2>
-            <p class="question-desc">이 프로젝트를 성공시킬 수 있는 팀의 강점은 무엇인가요? 보유한 기술, 경험, 자원을 설명해주세요.</p>
+            <h2 class="question-title">? ??웾</h2>
+            <p class="question-desc">???꾨줈?앺듃瑜??깃났?쒗궗 ???덈뒗 ???媛뺤젏? 臾댁뾿?멸??? 蹂댁쑀??湲곗닠, 寃쏀뿕, ?먯썝???ㅻ챸?댁＜?몄슂.</p>
             
             <div class="input-group">
-                <textarea id="capability" maxlength="150" placeholder="예: 우리 팀은..."></textarea>
+                <textarea id="capability" maxlength="150" placeholder="?? ?곕━ ??..."></textarea>
                 <div class="char-counter">
-                    <span class="char-count" id="capabilityCount">0 / 150자</span>
+                    <span class="char-count" id="capabilityCount">0 / 150??/span>
                     <span id="capabilityStatus"></span>
                 </div>
                 <div class="example-text">
-                    <div class="example-label">💡 예시</div>
-                    AI/ML 전문가 3명, 전자상거래 플랫폼 개발 경험 5년, 자연어 처리 모델 구축 경험. 이전 프로젝트에서 10만 사용자 규모 서비스 운영.
+                    <div class="example-label">?뮕 ?덉떆</div>
+                    AI/ML ?꾨Ц媛 3紐? ?꾩옄?곴굅???뚮옯??媛쒕컻 寃쏀뿕 5?? ?먯뿰??泥섎━ 紐⑤뜽 援ъ텞 寃쏀뿕. ?댁쟾 ?꾨줈?앺듃?먯꽌 10留??ъ슜??洹쒕え ?쒕퉬???댁쁺.
                 </div>
             </div>
         </div>
@@ -608,18 +608,18 @@
         <!-- Question 4 -->
         <div class="form-card" data-step="4">
             <div class="question-number">04</div>
-            <h2 class="question-title">절대 원칙</h2>
-            <p class="question-desc">이 제품 개발에서 절대 타협할 수 없는 원칙이나 가치는 무엇인가요?</p>
+            <h2 class="question-title">?덈? ?먯튃</h2>
+            <p class="question-desc">???쒗뭹 媛쒕컻?먯꽌 ?덈? ??묓븷 ???녿뒗 ?먯튃?대굹 媛移섎뒗 臾댁뾿?멸???</p>
             
             <div class="input-group">
-                <textarea id="principle" maxlength="100" placeholder="예: 사용자 프라이버시는..."></textarea>
+                <textarea id="principle" maxlength="100" placeholder="?? ?ъ슜???꾨씪?대쾭?쒕뒗..."></textarea>
                 <div class="char-counter">
-                    <span class="char-count" id="principleCount">0 / 100자</span>
+                    <span class="char-count" id="principleCount">0 / 100??/span>
                     <span id="principleStatus"></span>
                 </div>
                 <div class="example-text">
-                    <div class="example-label">💡 예시</div>
-                    투명성과 정직함. 모든 리뷰는 실제 구매자만 작성 가능하며, 조작이나 가짜 리뷰는 절대 허용하지 않습니다.
+                    <div class="example-label">?뮕 ?덉떆</div>
+                    ?щ챸?깃낵 ?뺤쭅?? 紐⑤뱺 由щ럭???ㅼ젣 援щℓ?먮쭔 ?묒꽦 媛?ν븯硫? 議곗옉?대굹 媛吏?由щ럭???덈? ?덉슜?섏? ?딆뒿?덈떎.
                 </div>
             </div>
         </div>
@@ -627,18 +627,18 @@
         <!-- Question 5 -->
         <div class="form-card" data-step="5">
             <div class="question-number">05</div>
-            <h2 class="question-title">성공 정의</h2>
-            <p class="question-desc">이 제품이 성공했다고 판단할 수 있는 기준은 무엇인가요? 구체적인 지표나 목표를 제시해주세요.</p>
+            <h2 class="question-title">?깃났 ?뺤쓽</h2>
+            <p class="question-desc">???쒗뭹???깃났?덈떎怨??먮떒?????덈뒗 湲곗?? 臾댁뾿?멸??? 援ъ껜?곸씤 吏?쒕굹 紐⑺몴瑜??쒖떆?댁＜?몄슂.</p>
             
             <div class="input-group">
-                <textarea id="success" maxlength="100" placeholder="예: 6개월 내..."></textarea>
+                <textarea id="success" maxlength="100" placeholder="?? 6媛쒖썡 ??.."></textarea>
                 <div class="char-counter">
-                    <span class="char-count" id="successCount">0 / 100자</span>
+                    <span class="char-count" id="successCount">0 / 100??/span>
                     <span id="successStatus"></span>
                 </div>
                 <div class="example-text">
-                    <div class="example-label">💡 예시</div>
-                    6개월 내 월간 활성 사용자 5만명, 리뷰 신뢰도 평가 4.5/5 이상, 구매 전환율 기존 대비 30% 향상.
+                    <div class="example-label">?뮕 ?덉떆</div>
+                    6媛쒖썡 ???붽컙 ?쒖꽦 ?ъ슜??5留뚮챸, 由щ럭 ?좊ː???됯? 4.5/5 ?댁긽, 援щℓ ?꾪솚??湲곗〈 ?鍮?30% ?μ긽.
                 </div>
             </div>
         </div>
@@ -646,156 +646,156 @@
         <!-- Question 6 -->
         <div class="form-card" data-step="6">
             <div class="question-number">06</div>
-            <h2 class="question-title">핵심 기능 아이디어</h2>
-            <p class="question-desc">이 문제를 해결하기 위한 핵심 기능이나 솔루션 아이디어를 간단히 설명해주세요.</p>
+            <h2 class="question-title">?듭떖 湲곕뒫 ?꾩씠?붿뼱</h2>
+            <p class="question-desc">??臾몄젣瑜??닿껐?섍린 ?꾪븳 ?듭떖 湲곕뒫?대굹 ?붾（???꾩씠?붿뼱瑜?媛꾨떒???ㅻ챸?댁＜?몄슂.</p>
             
             <div class="input-group">
-                <textarea id="feature" maxlength="150" placeholder="예: AI 기반..."></textarea>
+                <textarea id="feature" maxlength="150" placeholder="?? AI 湲곕컲..."></textarea>
                 <div class="char-counter">
-                    <span class="char-count" id="featureCount">0 / 150자</span>
+                    <span class="char-count" id="featureCount">0 / 150??/span>
                     <span id="featureStatus"></span>
                 </div>
                 <div class="example-text">
-                    <div class="example-label">💡 예시</div>
-                    AI 기반 리뷰 검증 시스템: 구매 이력 확인, 텍스트 분석으로 가짜 리뷰 탐지, 검증 배지 부여. 사용자는 신뢰도 점수를 실시간 확인 가능.
+                    <div class="example-label">?뮕 ?덉떆</div>
+                    AI 湲곕컲 由щ럭 寃利??쒖뒪?? 援щℓ ?대젰 ?뺤씤, ?띿뒪??遺꾩꽍?쇰줈 媛吏?由щ럭 ?먯?, 寃利?諛곗? 遺?? ?ъ슜?먮뒗 ?좊ː???먯닔瑜??ㅼ떆媛??뺤씤 媛??
                 </div>
             </div>
         </div>
 
         <!-- Completion Screen -->
         <div class="form-card completion-screen" id="completionScreen">
-            <div class="completion-icon">✨</div>
-            <h2 class="completion-title">입력 완료!</h2>
+            <div class="completion-icon">??/div>
+            <h2 class="completion-title">?낅젰 ?꾨즺!</h2>
             <p class="completion-desc">
-                모든 정보가 성공적으로 저장되었습니다.<br>
-                이제 전문적인 BRD 문서를 생성할 준비가 되었습니다.
+                紐⑤뱺 ?뺣낫媛 ?깃났?곸쑝濡???λ릺?덉뒿?덈떎.<br>
+                ?댁젣 ?꾨Ц?곸씤 BRD 臾몄꽌瑜??앹꽦??以鍮꾧? ?섏뿀?듬땲??
             </p>
-            <button class="btn-primary" onclick="startBRDGeneration()">BRD 생성하기</button>
+            <button class="btn-primary" onclick="startBRDGeneration()">BRD ?앹꽦?섍린</button>
         </div>
 
-        <!-- BRD 생성 화면 -->
+        <!-- BRD ?앹꽦 ?붾㈃ -->
         <div class="form-card document-screen" id="brdScreen">
             <div class="document-header">
                 <h2 class="document-title">Business Requirements Document</h2>
-                <span class="document-badge badge-generating" id="brdBadge">생성 중</span>
+                <span class="document-badge badge-generating" id="brdBadge">?앹꽦 以?/span>
             </div>
 
-            <!-- 생성 중 애니메이션 -->
+            <!-- ?앹꽦 以??좊땲硫붿씠??-->
             <div class="generating-animation" id="brdGenerating">
                 <div class="spinner"></div>
-                <div class="generating-text">BRD를 생성하고 있습니다...</div>
-                <div class="generating-subtext">Claude AI가 프로젝트 데이터를 분석 중입니다</div>
+                <div class="generating-text">BRD瑜??앹꽦?섍퀬 ?덉뒿?덈떎...</div>
+                <div class="generating-subtext">Claude AI媛 ?꾨줈?앺듃 ?곗씠?곕? 遺꾩꽍 以묒엯?덈떎</div>
             </div>
 
-            <!-- 에러 메시지 -->
+            <!-- ?먮윭 硫붿떆吏 -->
             <div class="error-message" id="brdError" style="display: none;">
-                <h3>⚠️ 생성 오류</h3>
+                <h3>?좑툘 ?앹꽦 ?ㅻ쪟</h3>
                 <p id="brdErrorText"></p>
-                <button class="btn-primary" onclick="retryBRDGeneration()">다시 시도</button>
+                <button class="btn-primary" onclick="retryBRDGeneration()">?ㅼ떆 ?쒕룄</button>
             </div>
 
-            <!-- 생성된 문서 내용 -->
+            <!-- ?앹꽦??臾몄꽌 ?댁슜 -->
             <div id="brdContentWrapper" style="display: none;">
                 <div class="document-content" id="brdContent"></div>
                 
                 <div class="document-actions">
-                    <button class="btn-success" onclick="approveBRD()">✓ 승인하고 PRD 생성</button>
-                    <button class="btn-outline" onclick="regenerateBRD()">↻ 다시 생성</button>
-                    <button class="btn-outline" onclick="copyBRD()">📋 복사</button>
-                    <button class="btn-outline" onclick="exportBRDtoPDF()">📄 PDF 내보내기</button>
+                    <button class="btn-success" onclick="approveBRD()">???뱀씤?섍퀬 PRD ?앹꽦</button>
+                    <button class="btn-outline" onclick="regenerateBRD()">???ㅼ떆 ?앹꽦</button>
+                    <button class="btn-outline" onclick="copyBRD()">?뱥 蹂듭궗</button>
+                    <button class="btn-outline" onclick="exportBRDtoPDF()">?뱞 PDF ?대낫?닿린</button>
                 </div>
             </div>
         </div>
 
-        <!-- PRD 생성 화면 -->
+        <!-- PRD ?앹꽦 ?붾㈃ -->
         <div class="form-card document-screen" id="prdScreen">
             <div class="document-header">
                 <h2 class="document-title">Product Requirements Document</h2>
-                <span class="document-badge badge-generating" id="prdBadge">생성 중</span>
+                <span class="document-badge badge-generating" id="prdBadge">?앹꽦 以?/span>
             </div>
 
             <div class="generating-animation" id="prdGenerating">
                 <div class="spinner"></div>
-                <div class="generating-text">PRD를 생성하고 있습니다...</div>
-                <div class="generating-subtext">BRD를 기반으로 상세 요구사항을 작성 중입니다</div>
+                <div class="generating-text">PRD瑜??앹꽦?섍퀬 ?덉뒿?덈떎...</div>
+                <div class="generating-subtext">BRD瑜?湲곕컲?쇰줈 ?곸꽭 ?붽뎄?ы빆???묒꽦 以묒엯?덈떎</div>
             </div>
 
             <div class="error-message" id="prdError" style="display: none;">
-                <h3>⚠️ 생성 오류</h3>
+                <h3>?좑툘 ?앹꽦 ?ㅻ쪟</h3>
                 <p id="prdErrorText"></p>
-                <button class="btn-primary" onclick="retryPRDGeneration()">다시 시도</button>
+                <button class="btn-primary" onclick="retryPRDGeneration()">?ㅼ떆 ?쒕룄</button>
             </div>
 
             <div id="prdContentWrapper" style="display: none;">
                 <div class="document-content" id="prdContent"></div>
                 
                 <div class="document-actions">
-                    <button class="btn-success" onclick="approvePRD()">✓ 승인하고 TRD 생성</button>
-                    <button class="btn-outline" onclick="regeneratePRD()">↻ 다시 생성</button>
-                    <button class="btn-outline" onclick="copyPRD()">📋 복사</button>
-                    <button class="btn-outline" onclick="exportPRDtoPDF()">📄 PDF 내보내기</button>
-                    <button class="btn-outline" onclick="skipToComplete()">건너뛰기</button>
+                    <button class="btn-success" onclick="approvePRD()">???뱀씤?섍퀬 TRD ?앹꽦</button>
+                    <button class="btn-outline" onclick="regeneratePRD()">???ㅼ떆 ?앹꽦</button>
+                    <button class="btn-outline" onclick="copyPRD()">?뱥 蹂듭궗</button>
+                    <button class="btn-outline" onclick="exportPRDtoPDF()">?뱞 PDF ?대낫?닿린</button>
+                    <button class="btn-outline" onclick="skipToComplete()">嫄대꼫?곌린</button>
                 </div>
             </div>
         </div>
 
-        <!-- TRD 생성 화면 -->
+        <!-- TRD ?앹꽦 ?붾㈃ -->
         <div class="form-card document-screen" id="trdScreen">
             <div class="document-header">
                 <h2 class="document-title">Technical Requirements Document</h2>
-                <span class="document-badge badge-generating" id="trdBadge">생성 중</span>
+                <span class="document-badge badge-generating" id="trdBadge">?앹꽦 以?/span>
             </div>
 
             <div class="generating-animation" id="trdGenerating">
                 <div class="spinner"></div>
-                <div class="generating-text">TRD를 생성하고 있습니다...</div>
-                <div class="generating-subtext">기술 스펙과 아키텍처를 설계 중입니다</div>
+                <div class="generating-text">TRD瑜??앹꽦?섍퀬 ?덉뒿?덈떎...</div>
+                <div class="generating-subtext">湲곗닠 ?ㅽ럺怨??꾪궎?띿쿂瑜??ㅺ퀎 以묒엯?덈떎</div>
             </div>
 
             <div class="error-message" id="trdError" style="display: none;">
-                <h3>⚠️ 생성 오류</h3>
+                <h3>?좑툘 ?앹꽦 ?ㅻ쪟</h3>
                 <p id="trdErrorText"></p>
-                <button class="btn-primary" onclick="retryTRDGeneration()">다시 시도</button>
+                <button class="btn-primary" onclick="retryTRDGeneration()">?ㅼ떆 ?쒕룄</button>
             </div>
 
             <div id="trdContentWrapper" style="display: none;">
                 <div class="document-content" id="trdContent"></div>
                 
                 <div class="document-actions">
-                    <button class="btn-success" onclick="completeProject()">✓ 프로젝트 완료</button>
-                    <button class="btn-outline" onclick="regenerateTRD()">↻ 다시 생성</button>
-                    <button class="btn-outline" onclick="copyTRD()">📋 복사</button>
-                    <button class="btn-outline" onclick="exportTRDtoPDF()">📄 PDF 내보내기</button>
+                    <button class="btn-success" onclick="completeProject()">???꾨줈?앺듃 ?꾨즺</button>
+                    <button class="btn-outline" onclick="regenerateTRD()">???ㅼ떆 ?앹꽦</button>
+                    <button class="btn-outline" onclick="copyTRD()">?뱥 蹂듭궗</button>
+                    <button class="btn-outline" onclick="exportTRDtoPDF()">?뱞 PDF ?대낫?닿린</button>
                 </div>
             </div>
         </div>
 
-        <!-- 최종 완료 화면 -->
+        <!-- 理쒖쥌 ?꾨즺 ?붾㈃ -->
         <div class="form-card completion-screen" id="finalCompletionScreen">
-            <div class="completion-icon">🎉</div>
-            <h2 class="completion-title">모든 문서 생성 완료!</h2>
+            <div class="completion-icon">?럦</div>
+            <h2 class="completion-title">紐⑤뱺 臾몄꽌 ?앹꽦 ?꾨즺!</h2>
             <p class="completion-desc">
-                BRD, PRD, TRD가 성공적으로 생성되었습니다.<br>
-                모든 문서를 다운로드하거나 새 프로젝트를 시작할 수 있습니다.
+                BRD, PRD, TRD媛 ?깃났?곸쑝濡??앹꽦?섏뿀?듬땲??<br>
+                紐⑤뱺 臾몄꽌瑜??ㅼ슫濡쒕뱶?섍굅?????꾨줈?앺듃瑜??쒖옉?????덉뒿?덈떎.
             </p>
             <div class="document-actions" style="justify-content: center;">
-                <button class="btn-primary" onclick="downloadAllDocuments()">📦 모든 문서 다운로드</button>
-                <button class="btn-outline" onclick="startNewProject()">🔄 새 프로젝트 시작</button>
+                <button class="btn-primary" onclick="downloadAllDocuments()">?벀 紐⑤뱺 臾몄꽌 ?ㅼ슫濡쒕뱶</button>
+                <button class="btn-outline" onclick="startNewProject()">?봽 ???꾨줈?앺듃 ?쒖옉</button>
             </div>
         </div>
 
         <div class="button-group" id="navigationButtons">
-            <button class="btn-secondary" id="prevBtn" onclick="prevStep()" style="display: none;">이전</button>
-            <button class="btn-primary" id="nextBtn" onclick="nextStep()" disabled>다음</button>
+            <button class="btn-secondary" id="prevBtn" onclick="prevStep()" style="display: none;">?댁쟾</button>
+            <button class="btn-primary" id="nextBtn" onclick="nextStep()" disabled>?ㅼ쓬</button>
         </div>
 
         <div class="auto-save-indicator" id="autoSaveIndicator">
-            💾 자동 저장됨
+            ?뮶 ?먮룞 ??λ맖
         </div>
     </div>
 
     <script>
-        // UUID 생성 함수
+        // UUID ?앹꽦 ?⑥닔
         function generateUUID() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
                 const r = Math.random() * 16 | 0;
@@ -804,7 +804,7 @@
             });
         }
 
-        // 프로젝트 데이터 구조
+        // ?꾨줈?앺듃 ?곗씠??援ъ“
         class ProjectData {
             constructor() {
                 this.id = generateUUID();
@@ -852,7 +852,7 @@
                 this.history = [];
             }
 
-            // 데이터 업데이트
+            // ?곗씠???낅뜲?댄듃
             updateUserInput(field, value) {
                 this.user_input[field] = value;
                 this.updated_at = new Date().toISOString();
@@ -860,8 +860,7 @@
                 this.save();
             }
 
-            // 상태 변경
-            updateStatus(newStatus) {
+            // ?곹깭 蹂寃?            updateStatus(newStatus) {
                 const oldStatus = this.status;
                 this.status = newStatus;
                 this.updated_at = new Date().toISOString();
@@ -869,7 +868,7 @@
                 this.save();
             }
 
-            // 문서 생성 시작
+            // 臾몄꽌 ?앹꽦 ?쒖옉
             startDocumentGeneration(docType) {
                 this.documents[docType].status = 'generating';
                 this.updated_at = new Date().toISOString();
@@ -877,7 +876,7 @@
                 this.save();
             }
 
-            // 문서 생성 완료
+            // 臾몄꽌 ?앹꽦 ?꾨즺
             completeDocumentGeneration(docType, content) {
                 this.documents[docType].content = content;
                 this.documents[docType].status = 'generated';
@@ -888,7 +887,7 @@
                 this.save();
             }
 
-            // 문서 승인
+            // 臾몄꽌 ?뱀씤
             approveDocument(docType) {
                 this.documents[docType].status = 'approved';
                 this.updated_at = new Date().toISOString();
@@ -896,7 +895,7 @@
                 this.save();
             }
 
-            // 구조화된 데이터 추가
+            // 援ъ“?붾맂 ?곗씠??異붽?
             addStructuredData(category, data) {
                 this.structured_data[category].push({
                     id: generateUUID(),
@@ -908,7 +907,7 @@
                 this.save();
             }
 
-            // 히스토리 추가
+            // ?덉뒪?좊━ 異붽?
             addHistory(action, details) {
                 this.history.push({
                     timestamp: new Date().toISOString(),
@@ -917,20 +916,19 @@
                 });
             }
 
-            // 로컬 스토리지에 저장
-            save() {
+            // 濡쒖뺄 ?ㅽ넗由ъ??????            save() {
                 try {
                     localStorage.setItem('projectData', JSON.stringify(this));
                     localStorage.setItem('projectData_backup_' + Date.now(), JSON.stringify(this));
-                    console.log('✅ 프로젝트 데이터 저장 완료:', this.id);
+                    console.log('???꾨줈?앺듃 ?곗씠??????꾨즺:', this.id);
                     return true;
                 } catch (e) {
-                    console.error('❌ 저장 실패:', e);
+                    console.error('??????ㅽ뙣:', e);
                     return false;
                 }
             }
 
-            // 로컬 스토리지에서 불러오기
+            // 濡쒖뺄 ?ㅽ넗由ъ??먯꽌 遺덈윭?ㅺ린
             static load() {
                 try {
                     const saved = localStorage.getItem('projectData');
@@ -938,16 +936,16 @@
                         const data = JSON.parse(saved);
                         const project = new ProjectData();
                         Object.assign(project, data);
-                        console.log('✅ 프로젝트 데이터 로드 완료:', project.id);
+                        console.log('???꾨줈?앺듃 ?곗씠??濡쒕뱶 ?꾨즺:', project.id);
                         return project;
                     }
                 } catch (e) {
-                    console.error('❌ 로드 실패:', e);
+                    console.error('??濡쒕뱶 ?ㅽ뙣:', e);
                 }
                 return new ProjectData();
             }
 
-            // 진행률 계산
+            // 吏꾪뻾瑜?怨꾩궛
             getProgress() {
                 const fields = Object.values(this.user_input);
                 const completed = fields.filter(v => v && v.trim().length > 0).length;
@@ -958,17 +956,17 @@
                 };
             }
 
-            // 입력 완료 여부 확인
+            // ?낅젰 ?꾨즺 ?щ? ?뺤씤
             isInputComplete() {
                 return Object.values(this.user_input).every(v => v && v.trim().length > 0);
             }
 
-            // 데이터 내보내기 (JSON)
+            // ?곗씠???대낫?닿린 (JSON)
             exportJSON() {
                 return JSON.stringify(this, null, 2);
             }
 
-            // 데이터 요약
+            // ?곗씠???붿빟
             getSummary() {
                 const progress = this.getProgress();
                 return {
@@ -986,14 +984,13 @@
             }
         }
 
-        // 전역 프로젝트 인스턴스
+        // ?꾩뿭 ?꾨줈?앺듃 ?몄뒪?댁뒪
         let projectData = ProjectData.load();
 
-        // 상태 관리
-        let currentStep = 1;
+        // ?곹깭 愿由?        let currentStep = 1;
         const totalSteps = 6;
         
-        // 필드 매핑 (화면 ID -> 데이터 구조)
+        // ?꾨뱶 留ㅽ븨 (?붾㈃ ID -> ?곗씠??援ъ“)
         const fieldMapping = {
             insight: 'insight',
             validation: 'evidence',
@@ -1003,9 +1000,9 @@
             feature: 'core_features'
         };
 
-        // 로컬 스토리지에서 데이터 불러오기
+        // 濡쒖뺄 ?ㅽ넗由ъ??먯꽌 ?곗씠??遺덈윭?ㅺ린
         function loadSavedData() {
-            // 프로젝트 데이터에서 사용자 입력 불러오기
+            // ?꾨줈?앺듃 ?곗씠?곗뿉???ъ슜???낅젰 遺덈윭?ㅺ린
             Object.keys(fieldMapping).forEach(fieldId => {
                 const dataKey = fieldMapping[fieldId];
                 const element = document.getElementById(fieldId);
@@ -1015,11 +1012,10 @@
                 }
             });
 
-            console.log('📊 프로젝트 요약:', projectData.getSummary());
+            console.log('?뱤 ?꾨줈?앺듃 ?붿빟:', projectData.getSummary());
         }
 
-        // 자동 저장
-        function autoSave() {
+        // ?먮룞 ???        function autoSave() {
             const saved = projectData.save();
             if (saved) {
                 showAutoSaveIndicator();
@@ -1034,23 +1030,23 @@
             }, 2000);
         }
 
-        // 글자수 카운터 업데이트
+        // 湲?먯닔 移댁슫???낅뜲?댄듃
         function updateCharCount(fieldId) {
-            console.log('🚀 updateCharCount 시작:', fieldId);
+            console.log('?? updateCharCount ?쒖옉:', fieldId);
             
             const textarea = document.getElementById(fieldId);
             const counter = document.getElementById(fieldId + 'Count');
             const status = document.getElementById(fieldId + 'Status');
             
             if (!textarea) {
-                console.error('❌ textarea를 찾을 수 없습니다:', fieldId);
+                console.error('??textarea瑜?李얠쓣 ???놁뒿?덈떎:', fieldId);
                 return;
             }
             
             const maxLength = textarea.maxLength;
             const currentLength = textarea.value.length;
             
-            console.log('🔍 updateCharCount 디버깅:', {
+            console.log('?뵇 updateCharCount ?붾쾭源?', {
                 fieldId,
                 currentLength,
                 maxLength,
@@ -1059,7 +1055,7 @@
             });
             
             if (counter) {
-                counter.textContent = `${currentLength} / ${maxLength}자`;
+                counter.textContent = `${currentLength} / ${maxLength}??;
                 
                 if (currentLength > maxLength * 0.9) {
                     counter.classList.add('warning');
@@ -1068,10 +1064,9 @@
                 }
             }
 
-            // 유효성 검사
-            if (status) {
+            // ?좏슚??寃??            if (status) {
                 if (currentLength > 0) {
-                    status.textContent = '✓';
+                    status.textContent = '??;
                     status.style.color = '#a89075';
                     textarea.classList.remove('error');
                 } else {
@@ -1080,27 +1075,26 @@
                 }
             }
 
-            // 프로젝트 데이터에 저장
-            const dataKey = fieldMapping[fieldId];
+            // ?꾨줈?앺듃 ?곗씠?곗뿉 ???            const dataKey = fieldMapping[fieldId];
             if (dataKey) {
                 projectData.updateUserInput(dataKey, textarea.value);
             }
 
-            // 다음 버튼 활성화/비활성화
-            console.log('🔄 updateNextButton 호출');
+            // ?ㅼ쓬 踰꾪듉 ?쒖꽦??鍮꾪솢?깊솕
+            console.log('?봽 updateNextButton ?몄텧');
             updateNextButton();
         }
 
-        // 다음 버튼 상태 업데이트
+        // ?ㅼ쓬 踰꾪듉 ?곹깭 ?낅뜲?댄듃
         function updateNextButton() {
-            console.log('🚀 updateNextButton 시작');
+            console.log('?? updateNextButton ?쒖옉');
             
             const nextBtn = document.getElementById('nextBtn');
             const currentFieldId = getCurrentFieldId();
             const textarea = document.getElementById(currentFieldId);
             const currentValue = textarea ? textarea.value : '';
             
-            console.log('🔍 updateNextButton 디버깅:', {
+            console.log('?뵇 updateNextButton ?붾쾭源?', {
                 currentStep,
                 currentFieldId,
                 textarea: !!textarea,
@@ -1112,17 +1106,17 @@
             });
             
             if (!nextBtn) {
-                console.error('❌ nextBtn 요소를 찾을 수 없습니다');
+                console.error('??nextBtn ?붿냼瑜?李얠쓣 ???놁뒿?덈떎');
                 return;
             }
             
             if (!textarea) {
-                console.error('❌ textarea 요소를 찾을 수 없습니다:', currentFieldId);
+                console.error('??textarea ?붿냼瑜?李얠쓣 ???놁뒿?덈떎:', currentFieldId);
                 return;
             }
             
             const hasContent = currentValue && currentValue.trim().length > 0;
-            console.log('📝 내용 확인:', {
+            console.log('?뱷 ?댁슜 ?뺤씤:', {
                 hasContent,
                 value: currentValue,
                 trimmed: currentValue.trim(),
@@ -1132,19 +1126,18 @@
             if (hasContent) {
                 nextBtn.disabled = false;
                 nextBtn.classList.remove('btn-primary:disabled');
-                console.log('✅ 다음 버튼 활성화 - disabled:', nextBtn.disabled);
+                console.log('???ㅼ쓬 踰꾪듉 ?쒖꽦??- disabled:', nextBtn.disabled);
             } else {
                 nextBtn.disabled = true;
                 nextBtn.classList.add('btn-primary:disabled');
-                console.log('❌ 다음 버튼 비활성화 - disabled:', nextBtn.disabled);
+                console.log('???ㅼ쓬 踰꾪듉 鍮꾪솢?깊솕 - disabled:', nextBtn.disabled);
             }
         }
 
-        // 현재 필드 ID 가져오기
-        function getCurrentFieldId() {
+        // ?꾩옱 ?꾨뱶 ID 媛?몄삤湲?        function getCurrentFieldId() {
             const fields = ['insight', 'validation', 'capability', 'principle', 'success', 'feature'];
             const fieldId = fields[currentStep - 1];
-            console.log('🔍 getCurrentFieldId:', {
+            console.log('?뵇 getCurrentFieldId:', {
                 currentStep,
                 fields,
                 fieldId,
@@ -1153,45 +1146,43 @@
             return fieldId;
         }
 
-        // 진행률 업데이트
+        // 吏꾪뻾瑜??낅뜲?댄듃
         function updateProgress() {
             const progress = projectData.getProgress();
             const displayProgress = ((currentStep - 1) / totalSteps) * 100;
             
             document.getElementById('progressFill').style.width = displayProgress + '%';
-            document.getElementById('progressText').textContent = `질문 ${currentStep} / ${totalSteps}`;
-            document.getElementById('progressPercent').textContent = `${progress.percentage}% 완료`;
+            document.getElementById('progressText').textContent = `吏덈Ц ${currentStep} / ${totalSteps}`;
+            document.getElementById('progressPercent').textContent = `${progress.percentage}% ?꾨즺`;
         }
 
-        // 다음 단계
+        // ?ㅼ쓬 ?④퀎
         function nextStep() {
             if (currentStep < totalSteps) {
-                // 현재 카드 숨기기
-                document.querySelector(`.form-card[data-step="${currentStep}"]`).classList.remove('active');
+                // ?꾩옱 移대뱶 ?④린湲?                document.querySelector(`.form-card[data-step="${currentStep}"]`).classList.remove('active');
                 
                 currentStep++;
                 
-                // 다음 카드 보이기
-                document.querySelector(`.form-card[data-step="${currentStep}"]`).classList.add('active');
+                // ?ㅼ쓬 移대뱶 蹂댁씠湲?                document.querySelector(`.form-card[data-step="${currentStep}"]`).classList.add('active');
                 
                 updateProgress();
                 updateNextButton();
                 
-                // 버튼 표시 조정
+                // 踰꾪듉 ?쒖떆 議곗젙
                 document.getElementById('prevBtn').style.display = 'block';
                 
                 if (currentStep === totalSteps) {
-                    document.getElementById('nextBtn').textContent = '완료';
+                    document.getElementById('nextBtn').textContent = '?꾨즺';
                 }
                 
-                // 스크롤 맨 위로
+                // ?ㅽ겕濡?留??꾨줈
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 showCompletion();
             }
         }
 
-        // 이전 단계
+        // ?댁쟾 ?④퀎
         function prevStep() {
             if (currentStep > 1) {
                 document.querySelector(`.form-card[data-step="${currentStep}"]`).classList.remove('active');
@@ -1207,37 +1198,37 @@
                     document.getElementById('prevBtn').style.display = 'none';
                 }
                 
-                document.getElementById('nextBtn').textContent = '다음';
+                document.getElementById('nextBtn').textContent = '?ㅼ쓬';
                 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
-        // 완료 화면 표시
+        // ?꾨즺 ?붾㈃ ?쒖떆
         function showCompletion() {
             document.querySelector(`.form-card[data-step="${currentStep}"]`).classList.remove('active');
             document.getElementById('completionScreen').classList.add('active');
             document.getElementById('navigationButtons').style.display = 'none';
             
-            // 상태 업데이트
+            // ?곹깭 ?낅뜲?댄듃
             projectData.updateStatus('input_completed');
             
-            // 진행률 100%
+            // 吏꾪뻾瑜?100%
             document.getElementById('progressFill').style.width = '100%';
-            document.getElementById('progressText').textContent = '완료!';
-            document.getElementById('progressPercent').textContent = '100% 완료';
+            document.getElementById('progressText').textContent = '?꾨즺!';
+            document.getElementById('progressPercent').textContent = '100% ?꾨즺';
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            console.log('🎉 입력 완료! 프로젝트 데이터:', projectData.getSummary());
+            console.log('?럦 ?낅젰 ?꾨즺! ?꾨줈?앺듃 ?곗씠??', projectData.getSummary());
         }
 
-        // 문서 생성 (다음 단계로 연결될 함수)
+        // 臾몄꽌 ?앹꽦 (?ㅼ쓬 ?④퀎濡??곌껐???⑥닔)
         function generateDocuments() {
             startBRDGeneration();
         }
 
-        // 워크플로우 상태 업데이트
+        // ?뚰겕?뚮줈???곹깭 ?낅뜲?댄듃
         function updateWorkflowStatus(currentStage) {
             const stages = ['input', 'brd', 'prd', 'trd'];
             const stageElements = document.querySelectorAll('.workflow-step');
@@ -1257,134 +1248,124 @@
             });
         }
 
-        // BRD 생성 시작
+        // BRD ?앹꽦 ?쒖옉
         async function startBRDGeneration() {
-            // 화면 전환
+            // ?붾㈃ ?꾪솚
             document.getElementById('completionScreen').classList.remove('active');
             document.getElementById('brdScreen').classList.add('active');
             document.getElementById('navigationButtons').style.display = 'none';
             
-            // 상태 업데이트
+            // ?곹깭 ?낅뜲?댄듃
             projectData.updateStatus('brd_generating');
             projectData.startDocumentGeneration('brd');
             updateWorkflowStatus('brd');
             
-            // 생성 시작
+            // ?앹꽦 ?쒖옉
             await generateBRD();
         }
 
-        // BRD 생성 API 호출 (AI 프롬프트 기반)
+        // BRD ?앹꽦 API ?몄텧 (AI ?꾨＼?꾪듃 湲곕컲)
         async function generateBRD() {
             try {
-                // AI 프롬프트 생성
+                // AI ?꾨＼?꾪듃 ?앹꽦
                 const prompt = createBRDPrompt();
                 
-                // 실제 AI API 호출 (현재는 데모 모드)
+                // ?ㅼ젣 AI API ?몄텧 (?꾩옱???곕え 紐⑤뱶)
                 const brdContent = await callAIAPI(prompt, 'BRD');
 
-                // BRD 저장 및 표시
+                // BRD ???諛??쒖떆
                 projectData.completeDocumentGeneration('brd', brdContent);
                 displayBRD(brdContent);
 
             } catch (error) {
-                console.error('BRD 생성 오류:', error);
+                console.error('BRD ?앹꽦 ?ㅻ쪟:', error);
                 showBRDError(error.message);
             }
         }
 
-        // BRD 프롬프트 생성
+        // BRD ?꾨＼?꾪듃 ?앹꽦
         function createBRDPrompt() {
             const input = projectData.user_input;
-            return `당신은 제품 전략 및 비즈니스 분석 전문가입니다. 다음 정보를 바탕으로 전문적인 Business Requirements Document(BRD)를 작성해주세요.
+            return `?뱀떊? ?쒗뭹 ?꾨왂 諛?鍮꾩쫰?덉뒪 遺꾩꽍 ?꾨Ц媛?낅땲?? ?ㅼ쓬 ?뺣낫瑜?諛뷀깢?쇰줈 ?꾨Ц?곸씤 Business Requirements Document(BRD)瑜??묒꽦?댁＜?몄슂.
 
-**사용자 입력 데이터:**
+**?ъ슜???낅젰 ?곗씠??**
 
-**핵심 인사이트:**
+**?듭떖 ?몄궗?댄듃:**
 ${input.insight}
 
-**검증 근거:**
+**寃利?洹쇨굅:**
 ${input.evidence}
 
-**팀 역량:**
+**? ??웾:**
 ${input.capability}
 
-**절대 원칙:**
+**?덈? ?먯튃:**
 ${input.principle}
 
-**성공 정의:**
+**?깃났 ?뺤쓽:**
 ${input.success_metric}
 
-**핵심 기능 아이디어:**
+**?듭떖 湲곕뒫 ?꾩씠?붿뼱:**
 ${input.core_features}
 
 ---
 
-**BRD 작성 가이드라인:**
+**BRD ?묒꽦 媛?대뱶?쇱씤:**
 
-다음 구조로 전문적이고 상세한 BRD를 작성해주세요:
+?ㅼ쓬 援ъ“濡??꾨Ц?곸씠怨??곸꽭??BRD瑜??묒꽦?댁＜?몄슂:
 
 ## 1. Executive Summary
-- 프로젝트 개요 (2-3 문단)
-- 핵심 비즈니스 가치
-- 예상 ROI 및 영향
+- ?꾨줈?앺듃 媛쒖슂 (2-3 臾몃떒)
+- ?듭떖 鍮꾩쫰?덉뒪 媛移?- ?덉긽 ROI 諛??곹뼢
 
 ## 2. Business Objectives
-- 구체적인 비즈니스 목표 (3-5개)
-- 각 목표의 측정 가능한 지표
-- 목표 달성 타임라인
-
+- 援ъ껜?곸씤 鍮꾩쫰?덉뒪 紐⑺몴 (3-5媛?
+- 媛?紐⑺몴??痢≪젙 媛?ν븳 吏??- 紐⑺몴 ?ъ꽦 ??꾨씪??
 ## 3. Market Analysis
-- 시장 기회 분석
-- 타겟 고객 페르소나
-- 경쟁사 분석
+- ?쒖옣 湲고쉶 遺꾩꽍
+- ?寃?怨좉컼 ?섎Ⅴ?뚮굹
+- 寃쎌웳??遺꾩꽍
 
 ## 4. Problem Statement
-- 해결하려는 핵심 문제
-- 문제의 비즈니스 영향
-- 현재 상황 (As-Is)
+- ?닿껐?섎젮???듭떖 臾몄젣
+- 臾몄젣??鍮꾩쫰?덉뒪 ?곹뼢
+- ?꾩옱 ?곹솴 (As-Is)
 
 ## 5. Proposed Solution
-- 솔루션 개요
-- 핵심 기능 및 가치 제안
-- 기대되는 결과 (To-Be)
+- ?붾（??媛쒖슂
+- ?듭떖 湲곕뒫 諛?媛移??쒖븞
+- 湲곕??섎뒗 寃곌낵 (To-Be)
 
 ## 6. Success Criteria
-- 정량적 KPI (3-5개)
-- 정성적 성공 지표
-- 측정 방법
+- ?뺣웾??KPI (3-5媛?
+- ?뺤꽦???깃났 吏??- 痢≪젙 諛⑸쾿
 
 ## 7. Stakeholders
-- 주요 이해관계자
-- 각 이해관계자의 역할
-- 의사결정 프로세스
+- 二쇱슂 ?댄빐愿怨꾩옄
+- 媛??댄빐愿怨꾩옄????븷
+- ?섏궗寃곗젙 ?꾨줈?몄뒪
 
 ## 8. Constraints & Risks
-- 제약 사항 (시간, 예산, 기술, 리소스)
-- 주요 리스크 및 완화 방안
-- 의존성
-
+- ?쒖빟 ?ы빆 (?쒓컙, ?덉궛, 湲곗닠, 由ъ냼??
+- 二쇱슂 由ъ뒪??諛??꾪솕 諛⑹븞
+- ?섏〈??
 ## 9. Timeline & Milestones
-- 주요 마일스톤
-- 단계별 일정
-- 출시 계획
+- 二쇱슂 留덉씪?ㅽ넠
+- ?④퀎蹂??쇱젙
+- 異쒖떆 怨꾪쉷
 
 ## 10. Budget & Resources
-- 예산 추정
-- 필요 리소스
-- 투자 대비 기대 효과
+- ?덉궛 異붿젙
+- ?꾩슂 由ъ냼??- ?ъ옄 ?鍮?湲곕? ?④낵
 
-**중요:**
-- 각 섹션은 구체적이고 실행 가능해야 합니다
-- 비즈니스 가치와 ROI를 명확히 제시하세요
-- 데이터 기반의 의사결정을 강조하세요
-- 전문적이고 설득력 있는 문체를 사용하세요
-- 마크다운 형식으로 작성하세요`;
+**以묒슂:**
+- 媛??뱀뀡? 援ъ껜?곸씠怨??ㅽ뻾 媛?ν빐???⑸땲??- 鍮꾩쫰?덉뒪 媛移섏? ROI瑜?紐낇솗???쒖떆?섏꽭??- ?곗씠??湲곕컲???섏궗寃곗젙??媛뺤“?섏꽭??- ?꾨Ц?곸씠怨??ㅻ뱷???덈뒗 臾몄껜瑜??ъ슜?섏꽭??- 留덊겕?ㅼ슫 ?뺤떇?쇰줈 ?묒꽦?섏꽭??;
         }
 
-        // AI API 호출 함수 (현재는 데모 모드)
+        // AI API ?몄텧 ?⑥닔 (?꾩옱???곕え 紐⑤뱶)
         async function callAIAPI(prompt, docType) {
             try {
-                // 실제 AI API 호출 (Claude API 예시)
+                // ?ㅼ젣 AI API ?몄텧 (Claude API ?덉떆)
                 /*
                 const response = await fetch("https://api.anthropic.com/v1/messages", {
                     method: "POST",
@@ -1400,181 +1381,172 @@ ${input.core_features}
                 });
                 
                 if (!response.ok) {
-                    throw new Error(`API 오류: ${response.status}`);
+                    throw new Error(`API ?ㅻ쪟: ${response.status}`);
                 }
                 
                 const data = await response.json();
                 return data.content[0].text;
                 */
                 
-                // 데모 모드: 프롬프트 기반 시뮬레이션
-                console.log(`🤖 ${docType} AI 프롬프트 생성됨:`, prompt.substring(0, 200) + '...');
+                // ?곕え 紐⑤뱶: ?꾨＼?꾪듃 湲곕컲 ?쒕??덉씠??                console.log(`?쨼 ${docType} AI ?꾨＼?꾪듃 ?앹꽦??`, prompt.substring(0, 200) + '...');
                 
-                // 3초 대기 (로딩 효과)
+                // 3珥??湲?(濡쒕뵫 ?④낵)
                 await new Promise(resolve => setTimeout(resolve, 3000));
                 
-                // 데모 응답 생성
+                // ?곕え ?묐떟 ?앹꽦
                 return generateDemoResponse(docType, prompt);
                 
             } catch (error) {
-                console.error(`${docType} AI API 호출 오류:`, error);
+                console.error(`${docType} AI API ?몄텧 ?ㅻ쪟:`, error);
                 throw error;
             }
         }
 
-        // AI 분석 시뮬레이션 헬퍼 함수들
-        function generateUserPersonas(input) {
+        // AI 遺꾩꽍 ?쒕??덉씠???ы띁 ?⑥닔??        function generateUserPersonas(input) {
             const personas = [
                 {
-                    name: '주니어 매니저',
-                    age: '25-35세',
-                    role: '중간 관리자',
-                    pain: '데이터 분석 시간 부족',
-                    goal: '효율적인 의사결정'
+                    name: '二쇰땲??留ㅻ땲?',
+                    age: '25-35??,
+                    role: '以묎컙 愿由ъ옄',
+                    pain: '?곗씠??遺꾩꽍 ?쒓컙 遺議?,
+                    goal: '?⑥쑉?곸씤 ?섏궗寃곗젙'
                 },
                 {
-                    name: '시니어 임원',
-                    age: '40-50세',
-                    role: '경영진',
-                    pain: '전략적 인사이트 부족',
-                    goal: '비즈니스 성과 향상'
+                    name: '?쒕땲???꾩썝',
+                    age: '40-50??,
+                    role: '寃쎌쁺吏?,
+                    pain: '?꾨왂???몄궗?댄듃 遺議?,
+                    goal: '鍮꾩쫰?덉뒪 ?깃낵 ?μ긽'
                 },
                 {
-                    name: '개발자',
-                    age: '25-40세',
-                    role: '기술진',
-                    pain: '복잡한 도구 사용',
-                    goal: '간편한 데이터 처리'
+                    name: '媛쒕컻??,
+                    age: '25-40??,
+                    role: '湲곗닠吏?,
+                    pain: '蹂듭옟???꾧뎄 ?ъ슜',
+                    goal: '媛꾪렪???곗씠??泥섎━'
                 }
             ];
             
             const selectedPersonas = personas.slice(0, Math.floor(Math.random() * 2) + 2);
             
-            return `**주요 페르소나:**
+            return `**二쇱슂 ?섎Ⅴ?뚮굹:**
 ${selectedPersonas.map((persona, index) => `
 **${persona.name} (${persona.age})**
-- **역할**: ${persona.role}
-- **페인 포인트**: ${persona.pain}
-- **목표**: ${persona.goal}
-- **사용 시나리오**: ${input.insight ? `"${input.insight}"` : '핵심 문제'} 해결을 위해 ${input.core_features ? `"${input.core_features}"` : '핵심 기능'} 활용
-- **기대 효과**: 작업 효율성 ${Math.floor(Math.random() * 30) + 20}% 향상
+- **??븷**: ${persona.role}
+- **?섏씤 ?ъ씤??*: ${persona.pain}
+- **紐⑺몴**: ${persona.goal}
+- **?ъ슜 ?쒕굹由ъ삤**: ${input.insight ? `"${input.insight}"` : '?듭떖 臾몄젣'} ?닿껐???꾪빐 ${input.core_features ? `"${input.core_features}"` : '?듭떖 湲곕뒫'} ?쒖슜
+- **湲곕? ?④낵**: ?묒뾽 ?⑥쑉??${Math.floor(Math.random() * 30) + 20}% ?μ긽
 `).join('')}
 
-**공통 니즈:**
-- 직관적인 사용자 인터페이스
-- 빠른 데이터 처리 및 분석
-- 모바일 접근성
-- 실시간 협업 기능`;
+**怨듯넻 ?덉쫰:**
+- 吏곴??곸씤 ?ъ슜???명꽣?섏씠??- 鍮좊Ⅸ ?곗씠??泥섎━ 諛?遺꾩꽍
+- 紐⑤컮???묎렐??- ?ㅼ떆媛??묒뾽 湲곕뒫`;
         }
 
         function generateFeatureAnalysis(input) {
             const features = [
-                { name: '핵심 기능', priority: 'P0', effort: 'High', impact: 'High' },
-                { name: '사용자 인증', priority: 'P0', effort: 'Medium', impact: 'High' },
-                { name: '데이터 시각화', priority: 'P1', effort: 'High', impact: 'Medium' },
-                { name: '알림 시스템', priority: 'P1', effort: 'Medium', impact: 'Medium' },
-                { name: '보고서 생성', priority: 'P2', effort: 'Low', impact: 'Low' }
+                { name: '?듭떖 湲곕뒫', priority: 'P0', effort: 'High', impact: 'High' },
+                { name: '?ъ슜???몄쬆', priority: 'P0', effort: 'Medium', impact: 'High' },
+                { name: '?곗씠???쒓컖??, priority: 'P1', effort: 'High', impact: 'Medium' },
+                { name: '?뚮┝ ?쒖뒪??, priority: 'P1', effort: 'Medium', impact: 'Medium' },
+                { name: '蹂닿퀬???앹꽦', priority: 'P2', effort: 'Low', impact: 'Low' }
             ];
             
-            return `**기능 요구사항 분석:**
+            return `**湲곕뒫 ?붽뎄?ы빆 遺꾩꽍:**
 ${features.map(feature => `
 **${feature.name}**
-- **우선순위**: ${feature.priority}
-- **개발 공수**: ${feature.effort}
-- **비즈니스 임팩트**: ${feature.impact}
-- **사용자 스토리**: ${input.insight ? `"${input.insight}"` : '핵심 문제'} 해결을 위해 ${feature.name} 기능이 필요
-- **인수 기준**: 기능별 구체적 검증 조건
-- **의존성**: ${feature.priority === 'P0' ? '없음' : '핵심 기능 완료 후'}
+- **?곗꽑?쒖쐞**: ${feature.priority}
+- **媛쒕컻 怨듭닔**: ${feature.effort}
+- **鍮꾩쫰?덉뒪 ?꾪뙥??*: ${feature.impact}
+- **?ъ슜???ㅽ넗由?*: ${input.insight ? `"${input.insight}"` : '?듭떖 臾몄젣'} ?닿껐???꾪빐 ${feature.name} 湲곕뒫???꾩슂
+- **?몄닔 湲곗?**: 湲곕뒫蹂?援ъ껜??寃利?議곌굔
+- **?섏〈??*: ${feature.priority === 'P0' ? '?놁쓬' : '?듭떖 湲곕뒫 ?꾨즺 ??}
 `).join('')}
 
-**기능 우선순위 매트릭스:**
-- **P0 (Must Have)**: 핵심 기능, 사용자 인증
-- **P1 (Should Have)**: 데이터 시각화, 알림 시스템  
-- **P2 (Could Have)**: 보고서 생성, 고급 분석
+**湲곕뒫 ?곗꽑?쒖쐞 留ㅽ듃由?뒪:**
+- **P0 (Must Have)**: ?듭떖 湲곕뒫, ?ъ슜???몄쬆
+- **P1 (Should Have)**: ?곗씠???쒓컖?? ?뚮┝ ?쒖뒪?? 
+- **P2 (Could Have)**: 蹂닿퀬???앹꽦, 怨좉툒 遺꾩꽍
 
-**기술적 복잡도:**
-- **High**: AI/ML 기반 분석 기능
-- **Medium**: 실시간 데이터 처리
-- **Low**: 기본 CRUD 기능`;
+**湲곗닠??蹂듭옟??**
+- **High**: AI/ML 湲곕컲 遺꾩꽍 湲곕뒫
+- **Medium**: ?ㅼ떆媛??곗씠??泥섎━
+- **Low**: 湲곕낯 CRUD 湲곕뒫`;
         }
 
         function generateUserStories(input) {
             const epics = [
                 {
-                    name: '사용자 인증',
+                    name: '?ъ슜???몄쬆',
                     stories: [
-                        '소셜 로그인으로 간편 가입',
-                        '이메일 인증으로 계정 보안',
-                        '권한별 접근 제어'
+                        '?뚯뀥 濡쒓렇?몄쑝濡?媛꾪렪 媛??,
+                        '?대찓???몄쬆?쇰줈 怨꾩젙 蹂댁븞',
+                        '沅뚰븳蹂??묎렐 ?쒖뼱'
                     ]
                 },
                 {
-                    name: '데이터 분석',
+                    name: '?곗씠??遺꾩꽍',
                     stories: [
-                        '실시간 데이터 시각화',
-                        '커스텀 대시보드 생성',
-                        '자동 인사이트 추천'
+                        '?ㅼ떆媛??곗씠???쒓컖??,
+                        '而ㅼ뒪? ??쒕낫???앹꽦',
+                        '?먮룞 ?몄궗?댄듃 異붿쿇'
                     ]
                 },
                 {
-                    name: '협업 기능',
+                    name: '?묒뾽 湲곕뒫',
                     stories: [
-                        '팀원과 데이터 공유',
-                        '실시간 댓글 및 피드백',
-                        '버전 관리 및 히스토리'
+                        '??먭낵 ?곗씠??怨듭쑀',
+                        '?ㅼ떆媛??볤? 諛??쇰뱶諛?,
+                        '踰꾩쟾 愿由?諛??덉뒪?좊━'
                     ]
                 }
             ];
             
-            return `**Epic별 사용자 스토리:**
+            return `**Epic蹂??ъ슜???ㅽ넗由?**
 ${epics.map(epic => `
 **${epic.name} Epic:**
 ${epic.stories.map((story, index) => `
 - **Story ${index + 1}**: ${story}
-  - 스토리 포인트: ${Math.floor(Math.random() * 5) + 3}
-  - Definition of Done: 기능 구현, 테스트 완료, 문서화
-`).join('')}
+  - ?ㅽ넗由??ъ씤?? ${Math.floor(Math.random() * 5) + 3}
+  - Definition of Done: 湲곕뒫 援ы쁽, ?뚯뒪???꾨즺, 臾몄꽌??`).join('')}
 `).join('')}
 
-**전체 스토리 포인트**: ${Math.floor(Math.random() * 50) + 100} 포인트
-**예상 개발 기간**: ${Math.floor(Math.random() * 6) + 3}개월
-**팀 구성**: 개발자 3명, 디자이너 1명, PM 1명`;
+**?꾩껜 ?ㅽ넗由??ъ씤??*: ${Math.floor(Math.random() * 50) + 100} ?ъ씤??**?덉긽 媛쒕컻 湲곌컙**: ${Math.floor(Math.random() * 6) + 3}媛쒖썡
+**? 援ъ꽦**: 媛쒕컻??3紐? ?붿옄?대꼫 1紐? PM 1紐?;
         }
 
         function generateSystemArchitecture(input) {
             const architecture = [
-                '마이크로서비스 아키텍처',
-                '이벤트 기반 아키텍처',
-                'CQRS 패턴',
-                '도메인 주도 설계'
+                '留덉씠?щ줈?쒕퉬???꾪궎?띿쿂',
+                '?대깽??湲곕컲 ?꾪궎?띿쿂',
+                'CQRS ?⑦꽩',
+                '?꾨찓??二쇰룄 ?ㅺ퀎'
             ];
             
             const selectedArch = architecture[Math.floor(Math.random() * architecture.length)];
             
-            return `**전체 시스템 아키텍처:**
-- **아키텍처 패턴**: ${selectedArch}
-- **통신 방식**: REST API + Message Queue
-- **데이터 흐름**: Event Sourcing + CQRS
-- **서비스 분리**: 도메인별 마이크로서비스
+            return `**?꾩껜 ?쒖뒪???꾪궎?띿쿂:**
+- **?꾪궎?띿쿂 ?⑦꽩**: ${selectedArch}
+- **?듭떊 諛⑹떇**: REST API + Message Queue
+- **?곗씠???먮쫫**: Event Sourcing + CQRS
+- **?쒕퉬??遺꾨━**: ?꾨찓?몃퀎 留덉씠?щ줈?쒕퉬??
+**二쇱슂 而댄룷?뚰듃:**
+- **API Gateway**: Kong 湲곕컲 ?쇱슦??諛??몄쬆
+- **?몄쬆 ?쒕퉬??*: OAuth 2.0 + JWT ?좏겙 愿由?- **鍮꾩쫰?덉뒪 ?쒕퉬??*: ${input.core_features ? `"${input.core_features}"` : '?듭떖 湲곕뒫'} 泥섎━
+- **遺꾩꽍 ?쒕퉬??*: ?ㅼ떆媛??곗씠??泥섎━ 諛?ML 紐⑤뜽
+- **?뚮┝ ?쒕퉬??*: ?대찓?? SMS, ?몄떆 ?뚮┝
 
-**주요 컴포넌트:**
-- **API Gateway**: Kong 기반 라우팅 및 인증
-- **인증 서비스**: OAuth 2.0 + JWT 토큰 관리
-- **비즈니스 서비스**: ${input.core_features ? `"${input.core_features}"` : '핵심 기능'} 처리
-- **분석 서비스**: 실시간 데이터 처리 및 ML 모델
-- **알림 서비스**: 이메일, SMS, 푸시 알림
+**?곗씠???뚮줈??**
+1. **?섏쭛**: ?ъ슜???붿껌 ??API Gateway ???몄쬆 ?쒕퉬??2. **泥섎━**: 鍮꾩쫰?덉뒪 ?쒕퉬?????곗씠?곕쿋?댁뒪 ??罹먯떆
+3. **遺꾩꽍**: 遺꾩꽍 ?쒕퉬????ML 紐⑤뜽 ???몄궗?댄듃 ?앹꽦
+4. **?뚮┝**: 寃곌낵 ???뚮┝ ?쒕퉬?????ъ슜???꾨떖
 
-**데이터 플로우:**
-1. **수집**: 사용자 요청 → API Gateway → 인증 서비스
-2. **처리**: 비즈니스 서비스 → 데이터베이스 → 캐시
-3. **분석**: 분석 서비스 → ML 모델 → 인사이트 생성
-4. **알림**: 결과 → 알림 서비스 → 사용자 전달
-
-**인프라 구성:**
-- **로드 밸런서**: Nginx + HAProxy
-- **컨테이너**: Docker + Kubernetes
-- **모니터링**: Prometheus + Grafana + ELK Stack
-- **로그**: Fluentd + Elasticsearch + Kibana`;
+**?명봽??援ъ꽦:**
+- **濡쒕뱶 諛몃윴??*: Nginx + HAProxy
+- **而⑦뀒?대꼫**: Docker + Kubernetes
+- **紐⑤땲?곕쭅**: Prometheus + Grafana + ELK Stack
+- **濡쒓렇**: Fluentd + Elasticsearch + Kibana`;
         }
 
         function generateTechnologyStack(input) {
@@ -1601,318 +1573,288 @@ ${epic.stories.map((story, index) => `
             
             const selectedStack = techStacks[Math.floor(Math.random() * techStacks.length)];
             
-            return `**기술 스택 선택 기준:**
-${input.capability ? `- 팀 역량: ${input.capability}` : '- 팀 역량 기반 기술 선택'}
-- **성능**: 고성능 및 확장성 고려
-- **유지보수성**: 장기적 유지보수 용이성
-- **생태계**: 활발한 커뮤니티 및 문서화
-- **학습 곡선**: 팀 학습 비용 최소화
-
-**선택된 기술 스택:**
+            return `**湲곗닠 ?ㅽ깮 ?좏깮 湲곗?:**
+${input.capability ? `- ? ??웾: ${input.capability}` : '- ? ??웾 湲곕컲 湲곗닠 ?좏깮'}
+- **?깅뒫**: 怨좎꽦??諛??뺤옣??怨좊젮
+- **?좎?蹂댁닔??*: ?κ린???좎?蹂댁닔 ?⑹씠??- **?앺깭怨?*: ?쒕컻??而ㅻ??덊떚 諛?臾몄꽌??- **?숈뒿 怨≪꽑**: ? ?숈뒿 鍮꾩슜 理쒖냼??
+**?좏깮??湲곗닠 ?ㅽ깮:**
 - **Frontend**: ${selectedStack.frontend.join(', ')}
 - **Backend**: ${selectedStack.backend.join(', ')}
 - **Database**: ${selectedStack.database.join(', ')}
 - **Infrastructure**: ${selectedStack.infrastructure.join(', ')}
 
-**기술 선택 이유:**
-- **Frontend**: 컴포넌트 기반 재사용성, 타입 안정성
-- **Backend**: ${input.insight ? `"${input.insight}"` : '핵심 문제'} 해결에 최적화된 프레임워크
-- **Database**: ACID 특성과 NoSQL 장점 결합
-- **Infrastructure**: 클라우드 네이티브 설계 원칙
+**湲곗닠 ?좏깮 ?댁쑀:**
+- **Frontend**: 而댄룷?뚰듃 湲곕컲 ?ъ궗?⑹꽦, ????덉젙??- **Backend**: ${input.insight ? `"${input.insight}"` : '?듭떖 臾몄젣'} ?닿껐??理쒖쟻?붾맂 ?꾨젅?꾩썙??- **Database**: ACID ?뱀꽦怨?NoSQL ?μ젏 寃고빀
+- **Infrastructure**: ?대씪?곕뱶 ?ㅼ씠?곕툕 ?ㅺ퀎 ?먯튃
 
-**대안 기술:**
-- **Frontend 대안**: Svelte, Solid.js (성능 우선)
-- **Backend 대안**: Go, Rust (고성능 요구사항)
-- **Database 대안**: ClickHouse (분석 특화), TimescaleDB (시계열)
-- **Infrastructure 대안**: Serverless (Lambda, Cloud Functions)`;
+**???湲곗닠:**
+- **Frontend ???*: Svelte, Solid.js (?깅뒫 ?곗꽑)
+- **Backend ???*: Go, Rust (怨좎꽦???붽뎄?ы빆)
+- **Database ???*: ClickHouse (遺꾩꽍 ?뱁솕), TimescaleDB (?쒓퀎??
+- **Infrastructure ???*: Serverless (Lambda, Cloud Functions)`;
         }
 
         function generateDataArchitecture(input) {
             const dataVolume = Math.floor(Math.random() * 1000) + 100; // 100-1100TB
-            const userCount = Math.floor(Math.random() * 100000) + 10000; // 1만-11만명
+            const userCount = Math.floor(Math.random() * 100000) + 10000; // 1留?11留뚮챸
             
-            return `**데이터베이스 설계:**
-- **주 데이터베이스**: PostgreSQL (ACID 트랜잭션)
-- **캐시**: Redis (세션, 임시 데이터)
-- **분석 DB**: ClickHouse (대용량 분석)
-- **검색**: Elasticsearch (전문 검색)
+            return `**?곗씠?곕쿋?댁뒪 ?ㅺ퀎:**
+- **二??곗씠?곕쿋?댁뒪**: PostgreSQL (ACID ?몃옖??뀡)
+- **罹먯떆**: Redis (?몄뀡, ?꾩떆 ?곗씠??
+- **遺꾩꽍 DB**: ClickHouse (??⑸웾 遺꾩꽍)
+- **寃??*: Elasticsearch (?꾨Ц 寃??
 
-**데이터 모델링:**
-- **사용자 데이터**: 프로필, 권한, 설정 (정규화)
-- **비즈니스 데이터**: ${input.core_features ? `"${input.core_features}"` : '핵심 기능'} 관련 (정규화)
-- **분석 데이터**: 이벤트, 로그, 메트릭 (비정규화)
-- **시스템 데이터**: 감사, 백업, 메타데이터
+**?곗씠??紐⑤뜽留?**
+- **?ъ슜???곗씠??*: ?꾨줈?? 沅뚰븳, ?ㅼ젙 (?뺢퇋??
+- **鍮꾩쫰?덉뒪 ?곗씠??*: ${input.core_features ? `"${input.core_features}"` : '?듭떖 湲곕뒫'} 愿??(?뺢퇋??
+- **遺꾩꽍 ?곗씠??*: ?대깽?? 濡쒓렇, 硫뷀듃由?(鍮꾩젙洹쒗솕)
+- **?쒖뒪???곗씠??*: 媛먯궗, 諛깆뾽, 硫뷀??곗씠??
+**?곗씠???뚮줈??**
+1. **?섏쭛**: API ??寃利????뺢퇋???????2. **泥섎━**: ETL ?뚯씠?꾨씪????蹂????吏묎퀎
+3. **遺꾩꽍**: ML ?뚯씠?꾨씪????紐⑤뜽 ?숈뒿 ???덉륫
+4. **?쒓컖??*: ??쒕낫?????ㅼ떆媛?李⑦듃 ???뚮┝
 
-**데이터 플로우:**
-1. **수집**: API → 검증 → 정규화 → 저장
-2. **처리**: ETL 파이프라인 → 변환 → 집계
-3. **분석**: ML 파이프라인 → 모델 학습 → 예측
-4. **시각화**: 대시보드 → 실시간 차트 → 알림
+**?깅뒫 理쒖쟻??**
+- **?몃뜳??*: 蹂듯빀 ?몃뜳?? 遺遺??몃뜳???쒖슜
+- **?뚰떚?붾떇**: ?좎쭨蹂? 吏??퀎 ?섑룊 遺꾪븷
+- **?ㅻ뵫**: ?ъ슜??ID 湲곕컲 ?섑룊 遺꾪븷
+- **罹먯떛**: Redis ?대윭?ㅽ꽣 湲곕컲 ?ㅼ링 罹먯떛
 
-**성능 최적화:**
-- **인덱싱**: 복합 인덱스, 부분 인덱스 활용
-- **파티셔닝**: 날짜별, 지역별 수평 분할
-- **샤딩**: 사용자 ID 기반 수평 분할
-- **캐싱**: Redis 클러스터 기반 다층 캐싱
+**?곗씠??蹂댁븞:**
+- **?뷀샇??*: AES-256 而щ읆 ?덈꺼 ?뷀샇??- **?묎렐 ?쒖뼱**: RBAC 湲곕컲 ?몃???沅뚰븳 愿由?- **媛먯궗**: 紐⑤뱺 ?곗씠??蹂寃??대젰 異붿쟻
+- **諛깆뾽**: ?쇱씪 ?꾩껜 + ?ㅼ떆媛?利앸텇 諛깆뾽
 
-**데이터 보안:**
-- **암호화**: AES-256 컬럼 레벨 암호화
-- **접근 제어**: RBAC 기반 세밀한 권한 관리
-- **감사**: 모든 데이터 변경 이력 추적
-- **백업**: 일일 전체 + 실시간 증분 백업
-
-**예상 데이터 규모:**
-- **총 데이터량**: ${dataVolume}TB (3년 예상)
-- **사용자 수**: ${userCount}명
-- **일일 트랜잭션**: ${Math.floor(Math.random() * 1000000) + 100000}건
-- **데이터 증가율**: 월 ${Math.floor(Math.random() * 20) + 10}%`;
+**?덉긽 ?곗씠??洹쒕え:**
+- **珥??곗씠?곕웾**: ${dataVolume}TB (3???덉긽)
+- **?ъ슜????*: ${userCount}紐?- **?쇱씪 ?몃옖??뀡**: ${Math.floor(Math.random() * 1000000) + 100000}嫄?- **?곗씠??利앷???*: ??${Math.floor(Math.random() * 20) + 10}%`;
         }
 
         function generateSecurityFramework(input) {
             const securityLevel = ['High', 'Medium', 'Low'][Math.floor(Math.random() * 3)];
             
-            return `**보안 요구사항:**
-${input.principle ? `- ${input.principle} 준수` : '- 사용자 정의 보안 원칙'}
-- **보안 등급**: ${securityLevel} (업계 표준)
-- **규정 준수**: GDPR, 개인정보보호법, ISO 27001
-- **데이터 분류**: 공개, 내부, 기밀, 극비
+            return `**蹂댁븞 ?붽뎄?ы빆:**
+${input.principle ? `- ${input.principle} 以?? : '- ?ъ슜???뺤쓽 蹂댁븞 ?먯튃'}
+- **蹂댁븞 ?깃툒**: ${securityLevel} (?낃퀎 ?쒖?)
+- **洹쒖젙 以??*: GDPR, 媛쒖씤?뺣낫蹂댄샇踰? ISO 27001
+- **?곗씠??遺꾨쪟**: 怨듦컻, ?대?, 湲곕?, 洹밸퉬
 
-**인증 및 권한:**
-- **다중 인증**: MFA (SMS, TOTP, 생체인증)
-- **OAuth 2.0**: 소셜 로그인 (Google, GitHub, Microsoft)
-- **JWT 토큰**: 액세스 토큰 (15분) + 리프레시 토큰 (7일)
-- **RBAC**: 역할 기반 접근 제어 (Admin, User, Guest)
+**?몄쬆 諛?沅뚰븳:**
+- **?ㅼ쨷 ?몄쬆**: MFA (SMS, TOTP, ?앹껜?몄쬆)
+- **OAuth 2.0**: ?뚯뀥 濡쒓렇??(Google, GitHub, Microsoft)
+- **JWT ?좏겙**: ?≪꽭???좏겙 (15遺? + 由ы봽?덉떆 ?좏겙 (7??
+- **RBAC**: ??븷 湲곕컲 ?묎렐 ?쒖뼱 (Admin, User, Guest)
 
-**암호화 전략:**
-- **전송 암호화**: TLS 1.3, HSTS 강제
-- **저장 암호화**: AES-256-GCM 컬럼 레벨 암호화
-- **키 관리**: AWS KMS, HashiCorp Vault
-- **해싱**: bcrypt (비밀번호), SHA-256 (파일)
+**?뷀샇???꾨왂:**
+- **?꾩넚 ?뷀샇??*: TLS 1.3, HSTS 媛뺤젣
+- **????뷀샇??*: AES-256-GCM 而щ읆 ?덈꺼 ?뷀샇??- **??愿由?*: AWS KMS, HashiCorp Vault
+- **?댁떛**: bcrypt (鍮꾨?踰덊샇), SHA-256 (?뚯씪)
 
-**보안 모니터링:**
-- **침입 탐지**: WAF, DDoS 방어, 봇 탐지
-- **로그 분석**: SIEM 기반 실시간 위협 탐지
-- **취약점 스캔**: 정기적 보안 점검 (월 1회)
-- **침투 테스트**: 외부 전문업체 연 2회
+**蹂댁븞 紐⑤땲?곕쭅:**
+- **移⑥엯 ?먯?**: WAF, DDoS 諛⑹뼱, 遊??먯?
+- **濡쒓렇 遺꾩꽍**: SIEM 湲곕컲 ?ㅼ떆媛??꾪삊 ?먯?
+- **痍⑥빟???ㅼ틪**: ?뺢린??蹂댁븞 ?먭? (??1??
+- **移⑦닾 ?뚯뒪??*: ?몃? ?꾨Ц?낆껜 ??2??
+**?곗씠??蹂댄샇:**
+- **媛쒖씤?뺣낫**: 留덉뒪?? ?듬챸?? 媛紐낇솕
+- **?곗씠??蹂댁〈**: 3???먮룞 ??젣 ?뺤콉
+- **援?쇅 ?댁쟾**: 媛쒖씤?뺣낫蹂댄샇踰?以??- **?곗씠??二쇨텒**: ?ъ슜???곗씠????젣 沅뚮━
 
-**데이터 보호:**
-- **개인정보**: 마스킹, 익명화, 가명화
-- **데이터 보존**: 3년 자동 삭제 정책
-- **국외 이전**: 개인정보보호법 준수
-- **데이터 주권**: 사용자 데이터 삭제 권리
-
-**보안 사고 대응:**
-- **사고 대응팀**: 24/7 보안 운영센터
-- **통신 계획**: 고객, 규제기관 신고 절차
-- **복구 계획**: RTO 4시간, RPO 1시간
-- **사후 분석**: 루트 원인 분석 및 개선`;
+**蹂댁븞 ?ш퀬 ???**
+- **?ш퀬 ??묓?**: 24/7 蹂댁븞 ?댁쁺?쇳꽣
+- **?듭떊 怨꾪쉷**: 怨좉컼, 洹쒖젣湲곌? ?좉퀬 ?덉감
+- **蹂듦뎄 怨꾪쉷**: RTO 4?쒓컙, RPO 1?쒓컙
+- **?ы썑 遺꾩꽍**: 猷⑦듃 ?먯씤 遺꾩꽍 諛?媛쒖꽑`;
         }
 
         function generatePerformanceSpecs(input) {
-            const responseTime = Math.floor(Math.random() * 2) + 1; // 1-3초
-            const throughput = Math.floor(Math.random() * 2000) + 1000; // 1000-3000 req/sec
-            const concurrentUsers = Math.floor(Math.random() * 50000) + 10000; // 1만-6만명
+            const responseTime = Math.floor(Math.random() * 2) + 1; // 1-3珥?            const throughput = Math.floor(Math.random() * 2000) + 1000; // 1000-3000 req/sec
+            const concurrentUsers = Math.floor(Math.random() * 50000) + 10000; // 1留?6留뚮챸
             
-            return `**성능 목표:**
-${input.success_metric ? `- ${input.success_metric} 달성을 위한 성능 최적화` : '- 사용자 정의 성공 지표 달성'}
+            return `**?깅뒫 紐⑺몴:**
+${input.success_metric ? `- ${input.success_metric} ?ъ꽦???꾪븳 ?깅뒫 理쒖쟻?? : '- ?ъ슜???뺤쓽 ?깃났 吏???ъ꽦'}
 
-**핵심 성능 지표:**
-- **응답 시간**: API ${responseTime}초, UI 1초 이내
-- **처리량**: ${throughput} req/sec (피크 시간)
-- **동시 사용자**: ${concurrentUsers}명 지원
-- **가용성**: 99.9% (월 43분 다운타임)
+**?듭떖 ?깅뒫 吏??**
+- **?묐떟 ?쒓컙**: API ${responseTime}珥? UI 1珥??대궡
+- **泥섎━??*: ${throughput} req/sec (?쇳겕 ?쒓컙)
+- **?숈떆 ?ъ슜??*: ${concurrentUsers}紐?吏??- **媛?⑹꽦**: 99.9% (??43遺??ㅼ슫???
 
-**성능 최적화 전략:**
-- **데이터베이스**: 인덱스 최적화, 쿼리 튜닝
-- **캐싱**: Redis 클러스터, CDN 활용
-- **로드 밸런싱**: Nginx + HAProxy
-- **압축**: Gzip, Brotli 압축
+**?깅뒫 理쒖쟻???꾨왂:**
+- **?곗씠?곕쿋?댁뒪**: ?몃뜳??理쒖쟻?? 荑쇰━ ?쒕떇
+- **罹먯떛**: Redis ?대윭?ㅽ꽣, CDN ?쒖슜
+- **濡쒕뱶 諛몃윴??*: Nginx + HAProxy
+- **?뺤텞**: Gzip, Brotli ?뺤텞
 
-**모니터링 지표:**
-- **시스템**: CPU, 메모리, 디스크, 네트워크
-- **애플리케이션**: 응답시간, 에러율, 처리량
-- **비즈니스**: 사용자 활동, 전환율, 수익
-- **보안**: 로그인 실패, 의심 활동, 공격 시도
+**紐⑤땲?곕쭅 吏??**
+- **?쒖뒪??*: CPU, 硫붾え由? ?붿뒪?? ?ㅽ듃?뚰겕
+- **?좏뵆由ъ??댁뀡**: ?묐떟?쒓컙, ?먮윭?? 泥섎━??- **鍮꾩쫰?덉뒪**: ?ъ슜???쒕룞, ?꾪솚?? ?섏씡
+- **蹂댁븞**: 濡쒓렇???ㅽ뙣, ?섏떖 ?쒕룞, 怨듦꺽 ?쒕룄
 
-**성능 테스트:**
-- **부하 테스트**: JMeter 기반 10,000 동시 사용자
-- **스트레스 테스트**: 시스템 한계점 측정
-- **스파이크 테스트**: 급격한 트래픽 증가 대응
-- **지속성 테스트**: 24시간 연속 부하 테스트
-
-**확장성 계획:**
-- **수평 확장**: 마이크로서비스 독립적 스케일링
-- **자동 스케일링**: CPU 70% 기준 자동 확장
-- **데이터베이스**: 읽기 전용 복제본 추가
-- **CDN**: 글로벌 엣지 서버 배포`;
+**?깅뒫 ?뚯뒪??**
+- **遺???뚯뒪??*: JMeter 湲곕컲 10,000 ?숈떆 ?ъ슜??- **?ㅽ듃?덉뒪 ?뚯뒪??*: ?쒖뒪???쒓퀎??痢≪젙
+- **?ㅽ뙆?댄겕 ?뚯뒪??*: 湲됯꺽???몃옒??利앷? ???- **吏?띿꽦 ?뚯뒪??*: 24?쒓컙 ?곗냽 遺???뚯뒪??
+**?뺤옣??怨꾪쉷:**
+- **?섑룊 ?뺤옣**: 留덉씠?щ줈?쒕퉬???낅┰???ㅼ??쇰쭅
+- **?먮룞 ?ㅼ??쇰쭅**: CPU 70% 湲곗? ?먮룞 ?뺤옣
+- **?곗씠?곕쿋?댁뒪**: ?쎄린 ?꾩슜 蹂듭젣蹂?異붽?
+- **CDN**: 湲濡쒕쾶 ?ｌ? ?쒕쾭 諛고룷`;
         }
 
         function generateDeploymentStrategy(input) {
             const phases = [
-                { name: 'Phase 1', duration: '1-2개월', focus: '기본 인프라 구축' },
-                { name: 'Phase 2', duration: '2-3개월', focus: '핵심 기능 개발' },
-                { name: 'Phase 3', duration: '1개월', focus: '통합 및 테스트' },
-                { name: 'Phase 4', duration: '지속적', focus: '출시 및 운영' }
+                { name: 'Phase 1', duration: '1-2媛쒖썡', focus: '湲곕낯 ?명봽??援ъ텞' },
+                { name: 'Phase 2', duration: '2-3媛쒖썡', focus: '?듭떖 湲곕뒫 媛쒕컻' },
+                { name: 'Phase 3', duration: '1媛쒖썡', focus: '?듯빀 諛??뚯뒪?? },
+                { name: 'Phase 4', duration: '吏?띿쟻', focus: '異쒖떆 諛??댁쁺' }
             ];
             
-            return `**구현 로드맵:**
+            return `**援ы쁽 濡쒕뱶留?**
 ${phases.map(phase => `
 **${phase.name} (${phase.duration}):**
-- **목표**: ${phase.focus}
-- **주요 작업**: ${phase.name === 'Phase 1' ? 'AWS 인프라, CI/CD 파이프라인 구축' : 
-                   phase.name === 'Phase 2' ? `${input.core_features ? `"${input.core_features}"` : '핵심 기능'} 개발` :
-                   phase.name === 'Phase 3' ? '시스템 통합, 성능 테스트, 보안 검증' :
-                   '운영 모니터링, 사용자 피드백 수집'}
-- **산출물**: ${phase.name === 'Phase 1' ? '인프라 코드, 배포 파이프라인' :
-               phase.name === 'Phase 2' ? '핵심 기능, API 문서' :
-               phase.name === 'Phase 3' ? '통합 시스템, 테스트 리포트' :
-               '운영 대시보드, 사용자 가이드'}
-- **성공 기준**: ${phase.name === 'Phase 1' ? '인프라 자동 배포 성공' :
-                 phase.name === 'Phase 2' ? '핵심 기능 동작 확인' :
-                 phase.name === 'Phase 3' ? '성능 목표 달성' :
-                 '사용자 만족도 4.5/5.0'}
+- **紐⑺몴**: ${phase.focus}
+- **二쇱슂 ?묒뾽**: ${phase.name === 'Phase 1' ? 'AWS ?명봽?? CI/CD ?뚯씠?꾨씪??援ъ텞' : 
+                   phase.name === 'Phase 2' ? `${input.core_features ? `"${input.core_features}"` : '?듭떖 湲곕뒫'} 媛쒕컻` :
+                   phase.name === 'Phase 3' ? '?쒖뒪???듯빀, ?깅뒫 ?뚯뒪?? 蹂댁븞 寃利? :
+                   '?댁쁺 紐⑤땲?곕쭅, ?ъ슜???쇰뱶諛??섏쭛'}
+- **?곗텧臾?*: ${phase.name === 'Phase 1' ? '?명봽??肄붾뱶, 諛고룷 ?뚯씠?꾨씪?? :
+               phase.name === 'Phase 2' ? '?듭떖 湲곕뒫, API 臾몄꽌' :
+               phase.name === 'Phase 3' ? '?듯빀 ?쒖뒪?? ?뚯뒪??由ы룷?? :
+               '?댁쁺 ??쒕낫?? ?ъ슜??媛?대뱶'}
+- **?깃났 湲곗?**: ${phase.name === 'Phase 1' ? '?명봽???먮룞 諛고룷 ?깃났' :
+                 phase.name === 'Phase 2' ? '?듭떖 湲곕뒫 ?숈옉 ?뺤씤' :
+                 phase.name === 'Phase 3' ? '?깅뒫 紐⑺몴 ?ъ꽦' :
+                 '?ъ슜??留뚯”??4.5/5.0'}
 `).join('')}
 
-**배포 전략:**
-- **Blue-Green**: 무중단 배포
-- **카나리**: 점진적 트래픽 전환
-- **롤백**: 자동 롤백 메커니즘
-- **모니터링**: 실시간 배포 상태 추적
+**諛고룷 ?꾨왂:**
+- **Blue-Green**: 臾댁쨷??諛고룷
+- **移대굹由?*: ?먯쭊???몃옒???꾪솚
+- **濡ㅻ갚**: ?먮룞 濡ㅻ갚 硫붿빱?덉쬁
+- **紐⑤땲?곕쭅**: ?ㅼ떆媛?諛고룷 ?곹깭 異붿쟻
 
-**운영 계획:**
-- **24/7 모니터링**: Prometheus + Grafana
-- **알림 시스템**: PagerDuty 기반 에스컬레이션
-- **백업 전략**: 일일 전체 + 실시간 증분
-- **재해 복구**: RTO 4시간, RPO 1시간
+**?댁쁺 怨꾪쉷:**
+- **24/7 紐⑤땲?곕쭅**: Prometheus + Grafana
+- **?뚮┝ ?쒖뒪??*: PagerDuty 湲곕컲 ?먯뒪而щ젅?댁뀡
+- **諛깆뾽 ?꾨왂**: ?쇱씪 ?꾩껜 + ?ㅼ떆媛?利앸텇
+- **?ы빐 蹂듦뎄**: RTO 4?쒓컙, RPO 1?쒓컙
 
-**팀 구성:**
-- **개발팀**: ${Math.floor(Math.random() * 5) + 3}명 (풀스택 개발자)
-- **DevOps**: ${Math.floor(Math.random() * 3) + 2}명 (인프라 전문가)
-- **QA**: ${Math.floor(Math.random() * 3) + 1}명 (테스트 엔지니어)
-- **PM**: 1명 (프로젝트 관리)
+**? 援ъ꽦:**
+- **媛쒕컻?**: ${Math.floor(Math.random() * 5) + 3}紐?(??ㅽ깮 媛쒕컻??
+- **DevOps**: ${Math.floor(Math.random() * 3) + 2}紐?(?명봽???꾨Ц媛)
+- **QA**: ${Math.floor(Math.random() * 3) + 1}紐?(?뚯뒪???붿??덉뼱)
+- **PM**: 1紐?(?꾨줈?앺듃 愿由?
 
-**예산 계획:**
-- **인프라 비용**: 월 ${Math.floor(Math.random() * 50) + 20}만원
-- **개발 도구**: ${Math.floor(Math.random() * 10) + 5}만원
-- **보안 솔루션**: ${Math.floor(Math.random() * 20) + 10}만원
-- **모니터링**: ${Math.floor(Math.random() * 15) + 5}만원`;
+**?덉궛 怨꾪쉷:**
+- **?명봽??鍮꾩슜**: ??${Math.floor(Math.random() * 50) + 20}留뚯썝
+- **媛쒕컻 ?꾧뎄**: ${Math.floor(Math.random() * 10) + 5}留뚯썝
+- **蹂댁븞 ?붾（??*: ${Math.floor(Math.random() * 20) + 10}留뚯썝
+- **紐⑤땲?곕쭅**: ${Math.floor(Math.random() * 15) + 5}留뚯썝`;
         }
 
         function generateMarketAnalysis(input) {
-            const marketSize = Math.floor(Math.random() * 5000) + 1000; // 1000-6000억원
+            const marketSize = Math.floor(Math.random() * 5000) + 1000; // 1000-6000?듭썝
             const growthRate = Math.floor(Math.random() * 20) + 10; // 10-30%
-            const competitors = Math.floor(Math.random() * 5) + 3; // 3-8개
-            
-            return `**시장 규모 및 성장성:**
-- 전체 시장 규모: ${marketSize}억원 (2024년 기준)
-- 연평균 성장률: ${growthRate}% (CAGR)
-- 예상 시장 규모: ${Math.floor(marketSize * 1.3)}억원 (2025년)
+            const competitors = Math.floor(Math.random() * 5) + 3; // 3-8媛?            
+            return `**?쒖옣 洹쒕え 諛??깆옣??**
+- ?꾩껜 ?쒖옣 洹쒕え: ${marketSize}?듭썝 (2024??湲곗?)
+- ?고룊洹??깆옣瑜? ${growthRate}% (CAGR)
+- ?덉긽 ?쒖옣 洹쒕え: ${Math.floor(marketSize * 1.3)}?듭썝 (2025??
 
-**타겟 고객 세분화:**
-- **1차 타겟**: ${input.insight ? `"${input.insight}"` : '핵심 문제'}를 겪는 B2B 고객
-- **2차 타겟**: 중소기업 및 스타트업
-- **3차 타겟**: 개인 사용자
+**?寃?怨좉컼 ?몃텇??**
+- **1李??寃?*: ${input.insight ? `"${input.insight}"` : '?듭떖 臾몄젣'}瑜?寃る뒗 B2B 怨좉컼
+- **2李??寃?*: 以묒냼湲곗뾽 諛??ㅽ??몄뾽
+- **3李??寃?*: 媛쒖씤 ?ъ슜??
+**寃쎌웳 ?섍꼍:**
+- 二쇱슂 寃쎌웳?? ${competitors}媛쒖궗
+- ?쒖옣 ?먯쑀?? 1??湲곗뾽 25%, 2??15%, 3??10%
+- 吏꾩엯 ?λ꼍: 以묎컙 ?섏? (湲곗닠??諛??먮낯 ?꾩슂)
 
-**경쟁 환경:**
-- 주요 경쟁사: ${competitors}개사
-- 시장 점유율: 1위 기업 25%, 2위 15%, 3위 10%
-- 진입 장벽: 중간 수준 (기술력 및 자본 필요)
-
-**시장 기회:**
-- 미충족 니즈: 전체 시장의 30% 미해결
-- 기술 혁신 기회: AI/ML 활용한 차별화 가능
-- 신규 시장 창출: B2B2C 모델 확장`;
+**?쒖옣 湲고쉶:**
+- 誘몄땐議??덉쫰: ?꾩껜 ?쒖옣??30% 誘명빐寃?- 湲곗닠 ?곸떊 湲고쉶: AI/ML ?쒖슜??李⑤퀎??媛??- ?좉퇋 ?쒖옣 李쎌텧: B2B2C 紐⑤뜽 ?뺤옣`;
         }
 
         function generateCompetitiveAnalysis(input) {
-            const competitors = ['기업A', '기업B', '기업C', '기업D'];
+            const competitors = ['湲곗뾽A', '湲곗뾽B', '湲곗뾽C', '湲곗뾽D'];
             const selectedCompetitors = competitors.slice(0, Math.floor(Math.random() * 3) + 2);
             
-            return `**주요 경쟁사 분석:**
+            return `**二쇱슂 寃쎌웳??遺꾩꽍:**
 ${selectedCompetitors.map((comp, index) => `
 **${comp}:**
-- 강점: ${['기술력', '브랜드', '가격', '서비스'][index]} 우위
-- 약점: ${['확장성', '사용자 경험', '마케팅', '기술'][index]} 부족
-- 시장 점유율: ${Math.floor(Math.random() * 20) + 5}%
-- 가격 정책: ${['프리미엄', '경쟁력', '저가', '차별화'][index]}
+- 媛뺤젏: ${['湲곗닠??, '釉뚮옖??, '媛寃?, '?쒕퉬??][index]} ?곗쐞
+- ?쎌젏: ${['?뺤옣??, '?ъ슜??寃쏀뿕', '留덉???, '湲곗닠'][index]} 遺議?- ?쒖옣 ?먯쑀?? ${Math.floor(Math.random() * 20) + 5}%
+- 媛寃??뺤콉: ${['?꾨━誘몄뾼', '寃쎌웳??, '?媛', '李⑤퀎??][index]}
 `).join('')}
 
-**경쟁 우위 요소:**
-- 기술적 차별화: ${input.core_features ? `"${input.core_features}"` : '핵심 기능'} 기반
-- 사용자 경험: 직관적 인터페이스 및 빠른 응답
-- 가격 경쟁력: 합리적 가격 정책
-- 서비스 품질: 24/7 고객 지원
-
-**시장 포지셔닝:**
-- 차별화 포인트: ${input.principle ? `"${input.principle}"` : '사용자 원칙'} 기반 서비스
-- 타겟 고객: ${input.insight ? `"${input.insight}"` : '핵심 문제'} 해결이 필요한 기업
-- 가치 제안: 비용 효율성 및 생산성 향상`;
+**寃쎌웳 ?곗쐞 ?붿냼:**
+- 湲곗닠??李⑤퀎?? ${input.core_features ? `"${input.core_features}"` : '?듭떖 湲곕뒫'} 湲곕컲
+- ?ъ슜??寃쏀뿕: 吏곴????명꽣?섏씠??諛?鍮좊Ⅸ ?묐떟
+- 媛寃?寃쎌웳?? ?⑸━??媛寃??뺤콉
+- ?쒕퉬???덉쭏: 24/7 怨좉컼 吏??
+**?쒖옣 ?ъ??붾떇:**
+- 李⑤퀎???ъ씤?? ${input.principle ? `"${input.principle}"` : '?ъ슜???먯튃'} 湲곕컲 ?쒕퉬??- ?寃?怨좉컼: ${input.insight ? `"${input.insight}"` : '?듭떖 臾몄젣'} ?닿껐???꾩슂??湲곗뾽
+- 媛移??쒖븞: 鍮꾩슜 ?⑥쑉??諛??앹궛???μ긽`;
         }
 
         function generateFinancialProjections(input) {
-            const year1 = Math.floor(Math.random() * 50) + 20; // 20-70억원
-            const year2 = Math.floor(year1 * (1.5 + Math.random() * 0.5)); // 1.5-2배
-            const year3 = Math.floor(year2 * (1.3 + Math.random() * 0.3)); // 1.3-1.6배
-            
-            return `**예산 배분 (총 ${Math.floor(Math.random() * 5) + 3}억원):**
-- **개발비 (40%)**: ${Math.floor((Math.floor(Math.random() * 5) + 3) * 0.4)}억원
-  - 인력비: 60%
-  - 인프라: 25%
-  - 도구 및 라이선스: 15%
+            const year1 = Math.floor(Math.random() * 50) + 20; // 20-70?듭썝
+            const year2 = Math.floor(year1 * (1.5 + Math.random() * 0.5)); // 1.5-2諛?            const year3 = Math.floor(year2 * (1.3 + Math.random() * 0.3)); // 1.3-1.6諛?            
+            return `**?덉궛 諛곕텇 (珥?${Math.floor(Math.random() * 5) + 3}?듭썝):**
+- **媛쒕컻鍮?(40%)**: ${Math.floor((Math.floor(Math.random() * 5) + 3) * 0.4)}?듭썝
+  - ?몃젰鍮? 60%
+  - ?명봽?? 25%
+  - ?꾧뎄 諛??쇱씠?좎뒪: 15%
   
-- **마케팅비 (30%)**: ${Math.floor((Math.floor(Math.random() * 5) + 3) * 0.3)}억원
-  - 디지털 마케팅: 50%
-  - 이벤트 및 컨퍼런스: 30%
-  - PR 및 콘텐츠: 20%
+- **留덉??낅퉬 (30%)**: ${Math.floor((Math.floor(Math.random() * 5) + 3) * 0.3)}?듭썝
+  - ?붿???留덉??? 50%
+  - ?대깽??諛?而⑦띁?곗뒪: 30%
+  - PR 諛?肄섑뀗痢? 20%
   
-- **운영비 (30%)**: ${Math.floor((Math.floor(Math.random() * 5) + 3) * 0.3)}억원
-  - 인프라 운영: 40%
-  - 고객 지원: 35%
-  - 관리 및 일반: 25%
+- **?댁쁺鍮?(30%)**: ${Math.floor((Math.floor(Math.random() * 5) + 3) * 0.3)}?듭썝
+  - ?명봽???댁쁺: 40%
+  - 怨좉컼 吏?? 35%
+  - 愿由?諛??쇰컲: 25%
 
-**수익 예측:**
-- **1년차**: ${year1}억원 (월 ${Math.floor(year1/12)}억원)
-- **2년차**: ${year2}억원 (월 ${Math.floor(year2/12)}억원)
-- **3년차**: ${year3}억원 (월 ${Math.floor(year3/12)}억원)
+**?섏씡 ?덉륫:**
+- **1?꾩감**: ${year1}?듭썝 (??${Math.floor(year1/12)}?듭썝)
+- **2?꾩감**: ${year2}?듭썝 (??${Math.floor(year2/12)}?듭썝)
+- **3?꾩감**: ${year3}?듭썝 (??${Math.floor(year3/12)}?듭썝)
 
-**수익성 분석:**
-- 손익분기점: 18개월
-- 순이익률: 3년차 25% 목표
-- ROI: 3년 내 300% 달성 예상`;
+**?섏씡??遺꾩꽍:**
+- ?먯씡遺꾧린?? 18媛쒖썡
+- ?쒖씠?듬쪧: 3?꾩감 25% 紐⑺몴
+- ROI: 3????300% ?ъ꽦 ?덉긽`;
         }
 
         function generateRiskAssessment(input) {
             const risks = [
-                '기술적 복잡성으로 인한 개발 지연',
-                '시장 경쟁 심화로 인한 가격 압박',
-                '핵심 인력 이탈로 인한 프로젝트 지연',
-                '규제 변화로 인한 비즈니스 모델 수정 필요',
-                '경제 불황으로 인한 고객 구매력 감소'
+                '湲곗닠??蹂듭옟?깆쑝濡??명븳 媛쒕컻 吏??,
+                '?쒖옣 寃쎌웳 ?ы솕濡??명븳 媛寃??뺣컯',
+                '?듭떖 ?몃젰 ?댄깉濡??명븳 ?꾨줈?앺듃 吏??,
+                '洹쒖젣 蹂?붾줈 ?명븳 鍮꾩쫰?덉뒪 紐⑤뜽 ?섏젙 ?꾩슂',
+                '寃쎌젣 遺덊솴?쇰줈 ?명븳 怨좉컼 援щℓ??媛먯냼'
             ];
             
             const selectedRisks = risks.slice(0, Math.floor(Math.random() * 3) + 2);
             
-            return `**주요 리스크 및 완화 방안:**
+            return `**二쇱슂 由ъ뒪??諛??꾪솕 諛⑹븞:**
 ${selectedRisks.map((risk, index) => `
 **${index + 1}. ${risk}**
-- 발생 확률: ${Math.floor(Math.random() * 30) + 20}%
-- 영향도: ${['높음', '중간', '낮음'][index % 3]}
-- 완화 방안: ${['기술 검증', '시장 조사', '인력 확보', '규제 모니터링', '다각화'][index]}
+- 諛쒖깮 ?뺣쪧: ${Math.floor(Math.random() * 30) + 20}%
+- ?곹뼢?? ${['?믪쓬', '以묎컙', '??쓬'][index % 3]}
+- ?꾪솕 諛⑹븞: ${['湲곗닠 寃利?, '?쒖옣 議곗궗', '?몃젰 ?뺣낫', '洹쒖젣 紐⑤땲?곕쭅', '?ㅺ컖??][index]}
 `).join('')}
 
-**리스크 관리 전략:**
-- 정기적 리스크 평가 (분기별)
-- 대안 계획 수립 및 준비
-- 핵심 인력 유지 방안 마련
-- 시장 변화 모니터링 체계 구축`;
+**由ъ뒪??愿由??꾨왂:**
+- ?뺢린??由ъ뒪???됯? (遺꾧린蹂?
+- ???怨꾪쉷 ?섎┰ 諛?以鍮?- ?듭떖 ?몃젰 ?좎? 諛⑹븞 留덈젴
+- ?쒖옣 蹂??紐⑤땲?곕쭅 泥닿퀎 援ъ텞`;
         }
 
-        // 데모 응답 생성 (AI 분석 시뮬레이션)
+        // ?곕え ?묐떟 ?앹꽦 (AI 遺꾩꽍 ?쒕??덉씠??
         function generateDemoResponse(docType, prompt) {
             const input = projectData.user_input;
             
             if (docType === 'BRD') {
-                // AI 분석 시뮬레이션을 위한 추가 데이터 생성
+                // AI 遺꾩꽍 ?쒕??덉씠?섏쓣 ?꾪븳 異붽? ?곗씠???앹꽦
                 const marketAnalysis = generateMarketAnalysis(input);
                 const competitiveAnalysis = generateCompetitiveAnalysis(input);
                 const financialProjections = generateFinancialProjections(input);
@@ -1921,147 +1863,139 @@ ${selectedRisks.map((risk, index) => `
                 return `# Business Requirements Document
 
 ## 1. Executive Summary
-이 프로젝트는 "${input.insight || '사용자 정의 핵심 인사이트'}"를 해결하기 위한 혁신적인 비즈니스 솔루션입니다. ${input.evidence ? `검증된 데이터에 따르면 ${input.evidence}이며,` : ''} 이를 통해 시장에서의 경쟁 우위를 확보하고 지속 가능한 비즈니스 가치를 창출하는 것을 목표로 합니다.
+???꾨줈?앺듃??"${input.insight || '?ъ슜???뺤쓽 ?듭떖 ?몄궗?댄듃'}"瑜??닿껐?섍린 ?꾪븳 ?곸떊?곸씤 鍮꾩쫰?덉뒪 ?붾（?섏엯?덈떎. ${input.evidence ? `寃利앸맂 ?곗씠?곗뿉 ?곕Ⅴ硫?${input.evidence}?대ŉ,` : ''} ?대? ?듯빐 ?쒖옣?먯꽌??寃쎌웳 ?곗쐞瑜??뺣낫?섍퀬 吏??媛?ν븳 鍮꾩쫰?덉뒪 媛移섎? 李쎌텧?섎뒗 寃껋쓣 紐⑺몴濡??⑸땲??
 
-**핵심 가치 제안:**
-- 사용자 중심의 솔루션 설계
-- 데이터 기반 의사결정 지원
-- 확장 가능한 비즈니스 모델
+**?듭떖 媛移??쒖븞:**
+- ?ъ슜??以묒떖???붾（???ㅺ퀎
+- ?곗씠??湲곕컲 ?섏궗寃곗젙 吏??- ?뺤옣 媛?ν븳 鍮꾩쫰?덉뒪 紐⑤뜽
 
 ## 2. Business Objectives
-${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성공 지표 달성'}
+${input.success_metric ? `- ${input.success_metric}` : '- ?ъ슜???뺤쓽 ?깃났 吏???ъ꽦'}
 
-**전략적 목표:**
-- 시장 점유율 15% 확보 (첫 2년 내)
-- 고객 만족도 4.5/5.0 달성
-- 연간 매출 50% 성장
-- 브랜드 인지도 향상
+**?꾨왂??紐⑺몴:**
+- ?쒖옣 ?먯쑀??15% ?뺣낫 (泥?2????
+- 怨좉컼 留뚯”??4.5/5.0 ?ъ꽦
+- ?곌컙 留ㅼ텧 50% ?깆옣
+- 釉뚮옖???몄????μ긽
 
-**측정 지표:**
-- 월간 활성 사용자 수 (MAU)
-- 고객 획득 비용 (CAC)
-- 고객 생애 가치 (LTV)
-- 순추천지수 (NPS)
+**痢≪젙 吏??**
+- ?붽컙 ?쒖꽦 ?ъ슜????(MAU)
+- 怨좉컼 ?띾뱷 鍮꾩슜 (CAC)
+- 怨좉컼 ?앹븷 媛移?(LTV)
+- ?쒖텛泥쒖???(NPS)
 
 ## 3. Market Analysis
 ${marketAnalysis}
 
 ## 4. Problem Statement
-**핵심 문제:**
-${input.insight ? `"${input.insight}"` : '사용자가 식별한 핵심 문제'}
+**?듭떖 臾몄젣:**
+${input.insight ? `"${input.insight}"` : '?ъ슜?먭? ?앸퀎???듭떖 臾몄젣'}
 
-**문제의 심각성:**
-- 현재 시장에서 연간 ${Math.floor(Math.random() * 1000) + 500}억원의 손실 발생
-- 사용자 경험 저하로 인한 고객 이탈률 증가
-- 비효율적인 프로세스로 인한 운영비 증가
+**臾몄젣???ш컖??**
+- ?꾩옱 ?쒖옣?먯꽌 ?곌컙 ${Math.floor(Math.random() * 1000) + 500}?듭썝???먯떎 諛쒖깮
+- ?ъ슜??寃쏀뿕 ??섎줈 ?명븳 怨좉컼 ?댄깉瑜?利앷?
+- 鍮꾪슚?⑥쟻???꾨줈?몄뒪濡??명븳 ?댁쁺鍮?利앷?
 
-**비즈니스 영향:**
-- 매출 감소: 연간 20-30% 성장 저해
-- 고객 만족도 하락: NPS 점수 30% 감소
-- 경쟁력 약화: 시장 점유율 감소
+**鍮꾩쫰?덉뒪 ?곹뼢:**
+- 留ㅼ텧 媛먯냼: ?곌컙 20-30% ?깆옣 ???- 怨좉컼 留뚯”???섎씫: NPS ?먯닔 30% 媛먯냼
+- 寃쎌웳???쏀솕: ?쒖옣 ?먯쑀??媛먯냼
 
 ## 5. Proposed Solution
-**솔루션 개요:**
-${input.core_features ? `핵심 기능: ${input.core_features}` : '사용자 정의 핵심 기능을 기반으로 한 솔루션'}
+**?붾（??媛쒖슂:**
+${input.core_features ? `?듭떖 湲곕뒫: ${input.core_features}` : '?ъ슜???뺤쓽 ?듭떖 湲곕뒫??湲곕컲?쇰줈 ???붾（??}
 
-**기술적 혁신:**
-- AI/ML 기반 자동화 시스템
-- 실시간 데이터 분석 및 인사이트 제공
-- 사용자 친화적 인터페이스 설계
-- 클라우드 기반 확장 가능한 아키텍처
+**湲곗닠???곸떊:**
+- AI/ML 湲곕컲 ?먮룞???쒖뒪??- ?ㅼ떆媛??곗씠??遺꾩꽍 諛??몄궗?댄듃 ?쒓났
+- ?ъ슜??移쒗솕???명꽣?섏씠???ㅺ퀎
+- ?대씪?곕뱶 湲곕컲 ?뺤옣 媛?ν븳 ?꾪궎?띿쿂
 
-**비즈니스 모델:**
-- SaaS 기반 구독 모델
-- 프리미엄 기능 차별화
-- 파트너십을 통한 시장 확장
+**鍮꾩쫰?덉뒪 紐⑤뜽:**
+- SaaS 湲곕컲 援щ룆 紐⑤뜽
+- ?꾨━誘몄뾼 湲곕뒫 李⑤퀎??- ?뚰듃?덉떗???듯븳 ?쒖옣 ?뺤옣
 
 ## 6. Success Criteria
-**정량적 KPI:**
-${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성공 지표'}
+**?뺣웾??KPI:**
+${input.success_metric ? `- ${input.success_metric}` : '- ?ъ슜???뺤쓽 ?깃났 吏??}
 
-**추가 성과 지표:**
-- 사용자 증가율: 월 20% 성장
-- 수익성: 6개월 내 흑자 전환
-- 시장 점유율: 2년 내 10% 달성
-- 고객 유지율: 90% 이상
+**異붽? ?깃낵 吏??**
+- ?ъ슜??利앷??? ??20% ?깆옣
+- ?섏씡?? 6媛쒖썡 ???묒옄 ?꾪솚
+- ?쒖옣 ?먯쑀?? 2????10% ?ъ꽦
+- 怨좉컼 ?좎??? 90% ?댁긽
 
-**정성적 지표:**
-- 사용자 만족도 향상
-- 시장 인지도 증대
-- 브랜드 가치 상승
-- 업계 리더십 확보
+**?뺤꽦??吏??**
+- ?ъ슜??留뚯”???μ긽
+- ?쒖옣 ?몄???利앸?
+- 釉뚮옖??媛移??곸듅
+- ?낃퀎 由щ뜑???뺣낫
 
 ## 7. Stakeholders
-**주요 이해관계자:**
-- **프로젝트 스폰서**: 전략적 방향 설정 및 자원 배분
-- **개발팀**: 기술적 구현 및 품질 보증
-- **사용자/고객**: 솔루션 검증 및 피드백 제공
-- **비즈니스 파트너**: 시장 확장 및 협력
-- **투자자**: 자금 지원 및 성장 가속화
+**二쇱슂 ?댄빐愿怨꾩옄:**
+- **?꾨줈?앺듃 ?ㅽ룿??*: ?꾨왂??諛⑺뼢 ?ㅼ젙 諛??먯썝 諛곕텇
+- **媛쒕컻?**: 湲곗닠??援ы쁽 諛??덉쭏 蹂댁쬆
+- **?ъ슜??怨좉컼**: ?붾（??寃利?諛??쇰뱶諛??쒓났
+- **鍮꾩쫰?덉뒪 ?뚰듃??*: ?쒖옣 ?뺤옣 諛??묐젰
+- **?ъ옄??*: ?먭툑 吏??諛??깆옣 媛?랁솕
 
-**의사결정 프로세스:**
-- 전략적 결정: C-레벨 승인 필요
-- 제품 결정: 제품 관리자 주도
-- 기술 결정: CTO 및 기술팀 검토
-
+**?섏궗寃곗젙 ?꾨줈?몄뒪:**
+- ?꾨왂??寃곗젙: C-?덈꺼 ?뱀씤 ?꾩슂
+- ?쒗뭹 寃곗젙: ?쒗뭹 愿由ъ옄 二쇰룄
+- 湲곗닠 寃곗젙: CTO 諛?湲곗닠? 寃??
 ## 8. Constraints & Risks
-**제약 사항:**
-${input.principle ? `절대 원칙: ${input.principle}` : '사용자 정의 제약 사항'}
+**?쒖빟 ?ы빆:**
+${input.principle ? `?덈? ?먯튃: ${input.principle}` : '?ъ슜???뺤쓽 ?쒖빟 ?ы빆'}
 
-**기술적 제약:**
-- 개발 기간: 6개월 내 MVP 출시
-- 예산 제한: 총 개발비 5억원 이내
-- 인력 제약: 현재 팀 규모 유지
-- 규제 준수: 개인정보보호법 등
-
-**주요 리스크:**
+**湲곗닠???쒖빟:**
+- 媛쒕컻 湲곌컙: 6媛쒖썡 ??MVP 異쒖떆
+- ?덉궛 ?쒗븳: 珥?媛쒕컻鍮?5?듭썝 ?대궡
+- ?몃젰 ?쒖빟: ?꾩옱 ? 洹쒕え ?좎?
+- 洹쒖젣 以?? 媛쒖씤?뺣낫蹂댄샇踰???
+**二쇱슂 由ъ뒪??**
 ${riskAssessment}
 
 ## 9. Timeline & Milestones
-**개발 로드맵:**
-- **Phase 1 (1-2개월)**: 기획 및 설계
-  - 요구사항 정의 완료
-  - 기술 스택 선정
-  - 팀 구성 및 역할 분담
+**媛쒕컻 濡쒕뱶留?**
+- **Phase 1 (1-2媛쒖썡)**: 湲고쉷 諛??ㅺ퀎
+  - ?붽뎄?ы빆 ?뺤쓽 ?꾨즺
+  - 湲곗닠 ?ㅽ깮 ?좎젙
+  - ? 援ъ꽦 諛???븷 遺꾨떞
   
-- **Phase 2 (2-3개월)**: 개발 및 테스트
-  - 핵심 기능 개발
-  - 사용자 테스트 진행
-  - 피드백 반영 및 개선
+- **Phase 2 (2-3媛쒖썡)**: 媛쒕컻 諛??뚯뒪??  - ?듭떖 湲곕뒫 媛쒕컻
+  - ?ъ슜???뚯뒪??吏꾪뻾
+  - ?쇰뱶諛?諛섏쁺 諛?媛쒖꽑
   
-- **Phase 3 (1개월)**: 출시 및 운영
-  - 베타 테스트 완료
-  - 정식 출시
-  - 초기 사용자 지원
-
-**주요 마일스톤:**
-- MVP 개발 완료 (3개월)
-- 베타 테스트 시작 (4개월)
-- 정식 출시 (6개월)
-- 시장 확장 (12개월)
+- **Phase 3 (1媛쒖썡)**: 異쒖떆 諛??댁쁺
+  - 踰좏? ?뚯뒪???꾨즺
+  - ?뺤떇 異쒖떆
+  - 珥덇린 ?ъ슜??吏??
+**二쇱슂 留덉씪?ㅽ넠:**
+- MVP 媛쒕컻 ?꾨즺 (3媛쒖썡)
+- 踰좏? ?뚯뒪???쒖옉 (4媛쒖썡)
+- ?뺤떇 異쒖떆 (6媛쒖썡)
+- ?쒖옣 ?뺤옣 (12媛쒖썡)
 
 ## 10. Budget & Resources
-**필요 리소스:**
-${input.capability ? `팀 역량: ${input.capability}` : '사용자 팀의 역량을 기반으로 한 리소스 계획'}
+**?꾩슂 由ъ냼??**
+${input.capability ? `? ??웾: ${input.capability}` : '?ъ슜???????웾??湲곕컲?쇰줈 ??由ъ냼??怨꾪쉷'}
 
-**예산 배분:**
+**?덉궛 諛곕텇:**
 ${financialProjections}
 
-**투자 대비 효과:**
-- ROI: 3년 내 300% 달성 예상
-- 비용 절감: 연간 운영비 30% 절감
-- 수익 창출: 2년 내 연매출 100억원 목표
+**?ъ옄 ?鍮??④낵:**
+- ROI: 3????300% ?ъ꽦 ?덉긽
+- 鍮꾩슜 ?덇컧: ?곌컙 ?댁쁺鍮?30% ?덇컧
+- ?섏씡 李쎌텧: 2?????곕ℓ異?100?듭썝 紐⑺몴
 
 ---
 
-*이 문서는 Claude Sonnet 4.5 AI가 사용자 입력 데이터를 분석하여 생성했습니다.*
-*생성일: ${new Date().toLocaleDateString('ko-KR')}*
-*프로젝트 ID: ${projectData.id}*
-*AI 모델: Claude-3-5-Sonnet-20241022*`;
+*??臾몄꽌??Claude Sonnet 4.5 AI媛 ?ъ슜???낅젰 ?곗씠?곕? 遺꾩꽍?섏뿬 ?앹꽦?덉뒿?덈떎.*
+*?앹꽦?? ${new Date().toLocaleDateString('ko-KR')}*
+*?꾨줈?앺듃 ID: ${projectData.id}*
+*AI 紐⑤뜽: Claude-3-5-Sonnet-20241022*`;
             }
             
             if (docType === 'PRD') {
-                // AI 분석 시뮬레이션을 위한 추가 데이터 생성
+                // AI 遺꾩꽍 ?쒕??덉씠?섏쓣 ?꾪븳 異붽? ?곗씠???앹꽦
                 const userPersonas = generateUserPersonas(input);
                 const featureAnalysis = generateFeatureAnalysis(input);
                 const userStories = generateUserStories(input);
@@ -2070,12 +2004,11 @@ ${financialProjections}
                 return `# Product Requirements Document
 
 ## 1. Product Overview
-${input.insight ? `"${input.insight}"` : '사용자 정의 핵심 인사이트'}를 해결하기 위한 혁신적인 제품입니다. ${input.core_features ? `핵심 기능으로는 ${input.core_features}가 있으며,` : '사용자가 정의한 핵심 기능을 포함하며,'} 이를 통해 사용자 경험을 혁신하고 비즈니스 가치를 창출하는 것을 목표로 합니다.
+${input.insight ? `"${input.insight}"` : '?ъ슜???뺤쓽 ?듭떖 ?몄궗?댄듃'}瑜??닿껐?섍린 ?꾪븳 ?곸떊?곸씤 ?쒗뭹?낅땲?? ${input.core_features ? `?듭떖 湲곕뒫?쇰줈??${input.core_features}媛 ?덉쑝硫?` : '?ъ슜?먭? ?뺤쓽???듭떖 湲곕뒫???ы븿?섎ŉ,'} ?대? ?듯빐 ?ъ슜??寃쏀뿕???곸떊?섍퀬 鍮꾩쫰?덉뒪 媛移섎? 李쎌텧?섎뒗 寃껋쓣 紐⑺몴濡??⑸땲??
 
-**제품 비전:**
-- 사용자 중심의 직관적 인터페이스
-- 데이터 기반 인사이트 제공
-- 확장 가능한 플랫폼 아키텍처
+**?쒗뭹 鍮꾩쟾:**
+- ?ъ슜??以묒떖??吏곴????명꽣?섏씠??- ?곗씠??湲곕컲 ?몄궗?댄듃 ?쒓났
+- ?뺤옣 媛?ν븳 ?뚮옯???꾪궎?띿쿂
 
 ## 2. User Personas
 ${userPersonas}
@@ -2087,97 +2020,84 @@ ${featureAnalysis}
 ${userStories}
 
 ## 5. User Experience
-**사용자 경험 설계:**
-- 직관적인 인터페이스: 3클릭 이내 핵심 기능 접근
-- ${input.principle ? `"${input.principle}"` : '사용자 원칙'} 준수
-- 효율적인 워크플로우: 작업 시간 50% 단축
+**?ъ슜??寃쏀뿕 ?ㅺ퀎:**
+- 吏곴??곸씤 ?명꽣?섏씠?? 3?대┃ ?대궡 ?듭떖 湲곕뒫 ?묎렐
+- ${input.principle ? `"${input.principle}"` : '?ъ슜???먯튃'} 以??- ?⑥쑉?곸씤 ?뚰겕?뚮줈?? ?묒뾽 ?쒓컙 50% ?⑥텞
 
-**UI/UX 가이드라인:**
-- **디자인 시스템**: 일관된 색상, 타이포그래피, 간격
-- **접근성**: WCAG 2.1 AA 수준 준수
-- **반응형**: 모바일, 태블릿, 데스크톱 최적화
-- **성능**: 초기 로딩 3초 이내
+**UI/UX 媛?대뱶?쇱씤:**
+- **?붿옄???쒖뒪??*: ?쇨????됱긽, ??댄룷洹몃옒?? 媛꾧꺽
+- **?묎렐??*: WCAG 2.1 AA ?섏? 以??- **諛섏쓳??*: 紐⑤컮?? ?쒕툝由? ?곗뒪?ы넲 理쒖쟻??- **?깅뒫**: 珥덇린 濡쒕뵫 3珥??대궡
 
 ## 6. Functional Requirements
-**핵심 기능 명세:**
-${input.core_features ? `- ${input.core_features}` : '- 사용자 정의 핵심 기능'}
+**?듭떖 湲곕뒫 紐낆꽭:**
+${input.core_features ? `- ${input.core_features}` : '- ?ъ슜???뺤쓽 ?듭떖 湲곕뒫'}
 
-**상세 기능 요구사항:**
-- **사용자 인증**: 소셜 로그인, 이메일 인증
-- **데이터 처리**: 실시간 분석 및 시각화
-- **알림 시스템**: 이메일, 푸시, SMS 알림
-- **보고서 생성**: 자동화된 리포트 및 대시보드
-
-**비즈니스 규칙:**
-- 사용자 권한 기반 데이터 접근 제어
-- 데이터 보존 정책: 3년간 보관
-- 개인정보 처리: GDPR, 개인정보보호법 준수
-
+**?곸꽭 湲곕뒫 ?붽뎄?ы빆:**
+- **?ъ슜???몄쬆**: ?뚯뀥 濡쒓렇?? ?대찓???몄쬆
+- **?곗씠??泥섎━**: ?ㅼ떆媛?遺꾩꽍 諛??쒓컖??- **?뚮┝ ?쒖뒪??*: ?대찓?? ?몄떆, SMS ?뚮┝
+- **蹂닿퀬???앹꽦**: ?먮룞?붾맂 由ы룷??諛???쒕낫??
+**鍮꾩쫰?덉뒪 洹쒖튃:**
+- ?ъ슜??沅뚰븳 湲곕컲 ?곗씠???묎렐 ?쒖뼱
+- ?곗씠??蹂댁〈 ?뺤콉: 3?꾧컙 蹂닿?
+- 媛쒖씤?뺣낫 泥섎━: GDPR, 媛쒖씤?뺣낫蹂댄샇踰?以??
 ## 7. Non-Functional Requirements
-**성능 요구사항:**
-- **응답 시간**: API 응답 2초 이내, UI 반응 1초 이내
-- **처리량**: 동시 사용자 1,000명 지원
-- **가용성**: 99.9% 업타임 보장
-- **확장성**: 사용자 증가에 따른 자동 스케일링
+**?깅뒫 ?붽뎄?ы빆:**
+- **?묐떟 ?쒓컙**: API ?묐떟 2珥??대궡, UI 諛섏쓳 1珥??대궡
+- **泥섎━??*: ?숈떆 ?ъ슜??1,000紐?吏??- **媛?⑹꽦**: 99.9% ?낇???蹂댁옣
+- **?뺤옣??*: ?ъ슜??利앷????곕Ⅸ ?먮룞 ?ㅼ??쇰쭅
 
-**보안 요구사항:**
-- **인증**: JWT 기반 토큰 인증
-- **암호화**: AES-256 데이터 암호화
-- **네트워크**: HTTPS/TLS 1.3 통신
-- **감사**: 모든 사용자 활동 로깅
+**蹂댁븞 ?붽뎄?ы빆:**
+- **?몄쬆**: JWT 湲곕컲 ?좏겙 ?몄쬆
+- **?뷀샇??*: AES-256 ?곗씠???뷀샇??- **?ㅽ듃?뚰겕**: HTTPS/TLS 1.3 ?듭떊
+- **媛먯궗**: 紐⑤뱺 ?ъ슜???쒕룞 濡쒓퉭
 
 ## 8. Data Requirements
-**데이터 모델:**
-- **사용자 데이터**: 프로필, 설정, 권한
-- **비즈니스 데이터**: 핵심 비즈니스 로직
-- **분석 데이터**: 사용자 행동, 성과 지표
-- **시스템 데이터**: 로그, 감사, 백업
+**?곗씠??紐⑤뜽:**
+- **?ъ슜???곗씠??*: ?꾨줈?? ?ㅼ젙, 沅뚰븳
+- **鍮꾩쫰?덉뒪 ?곗씠??*: ?듭떖 鍮꾩쫰?덉뒪 濡쒖쭅
+- **遺꾩꽍 ?곗씠??*: ?ъ슜???됰룞, ?깃낵 吏??- **?쒖뒪???곗씠??*: 濡쒓렇, 媛먯궗, 諛깆뾽
 
-**데이터 플로우:**
-- **수집**: 실시간 데이터 수집 및 검증
-- **처리**: ETL 파이프라인을 통한 데이터 변환
-- **저장**: 관계형/NoSQL 하이브리드 저장
-- **분석**: ML 기반 인사이트 생성
+**?곗씠???뚮줈??**
+- **?섏쭛**: ?ㅼ떆媛??곗씠???섏쭛 諛?寃利?- **泥섎━**: ETL ?뚯씠?꾨씪?몄쓣 ?듯븳 ?곗씠??蹂??- **???*: 愿怨꾪삎/NoSQL ?섏씠釉뚮━?????- **遺꾩꽍**: ML 湲곕컲 ?몄궗?댄듃 ?앹꽦
 
 ## 9. Integration Requirements
-**외부 시스템 연동:**
-- **CRM 시스템**: Salesforce, HubSpot 연동
-- **결제 시스템**: Stripe, PayPal 연동
-- **이메일 서비스**: SendGrid, Mailchimp 연동
-- **분석 도구**: Google Analytics, Mixpanel 연동
+**?몃? ?쒖뒪???곕룞:**
+- **CRM ?쒖뒪??*: Salesforce, HubSpot ?곕룞
+- **寃곗젣 ?쒖뒪??*: Stripe, PayPal ?곕룞
+- **?대찓???쒕퉬??*: SendGrid, Mailchimp ?곕룞
+- **遺꾩꽍 ?꾧뎄**: Google Analytics, Mixpanel ?곕룞
 
-**API 명세:**
-- **RESTful API**: 표준 HTTP 메서드
-- **GraphQL**: 효율적인 데이터 쿼리
-- **Webhook**: 실시간 이벤트 알림
-- **SDK**: JavaScript, Python, Java SDK 제공
+**API 紐낆꽭:**
+- **RESTful API**: ?쒖? HTTP 硫붿꽌??- **GraphQL**: ?⑥쑉?곸씤 ?곗씠??荑쇰━
+- **Webhook**: ?ㅼ떆媛??대깽???뚮┝
+- **SDK**: JavaScript, Python, Java SDK ?쒓났
 
 ## 10. Success Metrics
-**핵심 성공 지표:**
-${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성공 지표'}
+**?듭떖 ?깃났 吏??**
+${input.success_metric ? `- ${input.success_metric}` : '- ?ъ슜???뺤쓽 ?깃났 吏??}
 
-**추가 측정 지표:**
-- **사용자 참여도**: DAU/MAU 비율 30% 이상
-- **기능 활용도**: 핵심 기능 사용률 80% 이상
-- **사용자 만족도**: NPS 점수 50 이상
-- **기술적 성과**: 시스템 안정성 99.9% 유지
+**異붽? 痢≪젙 吏??**
+- **?ъ슜??李몄뿬??*: DAU/MAU 鍮꾩쑉 30% ?댁긽
+- **湲곕뒫 ?쒖슜??*: ?듭떖 湲곕뒫 ?ъ슜瑜?80% ?댁긽
+- **?ъ슜??留뚯”??*: NPS ?먯닔 50 ?댁긽
+- **湲곗닠???깃낵**: ?쒖뒪???덉젙??99.9% ?좎?
 
-**측정 방법:**
-- **A/B 테스트**: 기능별 성과 비교
-- **사용자 피드백**: 정기적 설문조사
-- **데이터 분석**: 사용자 행동 패턴 분석
-- **성과 리뷰**: 분기별 KPI 평가
+**痢≪젙 諛⑸쾿:**
+- **A/B ?뚯뒪??*: 湲곕뒫蹂??깃낵 鍮꾧탳
+- **?ъ슜???쇰뱶諛?*: ?뺢린???ㅻЦ議곗궗
+- **?곗씠??遺꾩꽍**: ?ъ슜???됰룞 ?⑦꽩 遺꾩꽍
+- **?깃낵 由щ럭**: 遺꾧린蹂?KPI ?됯?
 
 ---
 
-*이 문서는 Claude Sonnet 4.5 AI가 사용자 입력 데이터를 분석하여 생성했습니다.*
-*생성일: ${new Date().toLocaleDateString('ko-KR')}*
-*프로젝트 ID: ${projectData.id}*
-*AI 모델: Claude-3-5-Sonnet-20241022*`;
+*??臾몄꽌??Claude Sonnet 4.5 AI媛 ?ъ슜???낅젰 ?곗씠?곕? 遺꾩꽍?섏뿬 ?앹꽦?덉뒿?덈떎.*
+*?앹꽦?? ${new Date().toLocaleDateString('ko-KR')}*
+*?꾨줈?앺듃 ID: ${projectData.id}*
+*AI 紐⑤뜽: Claude-3-5-Sonnet-20241022*`;
             }
             
             if (docType === 'TRD') {
-                // AI 분석 시뮬레이션을 위한 추가 데이터 생성
+                // AI 遺꾩꽍 ?쒕??덉씠?섏쓣 ?꾪븳 異붽? ?곗씠???앹꽦
                 const systemArchitecture = generateSystemArchitecture(input);
                 const technologyStack = generateTechnologyStack(input);
                 const dataArchitecture = generateDataArchitecture(input);
@@ -2188,12 +2108,11 @@ ${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성�
                 return `# Technical Requirements Document
 
 ## 1. Technical Overview
-${input.insight ? `"${input.insight}"` : '사용자 정의 핵심 인사이트'}를 해결하기 위한 혁신적인 기술적 솔루션입니다. ${input.capability ? `팀의 역량인 ${input.capability}을 활용하여 구현하며,` : '사용자 팀의 역량을 기반으로 구현하며,'} 최신 기술 트렌드와 확장 가능한 아키텍처를 통해 지속 가능한 기술적 가치를 창출하는 것을 목표로 합니다.
+${input.insight ? `"${input.insight}"` : '?ъ슜???뺤쓽 ?듭떖 ?몄궗?댄듃'}瑜??닿껐?섍린 ?꾪븳 ?곸떊?곸씤 湲곗닠???붾（?섏엯?덈떎. ${input.capability ? `?????웾??${input.capability}???쒖슜?섏뿬 援ы쁽?섎ŉ,` : '?ъ슜???????웾??湲곕컲?쇰줈 援ы쁽?섎ŉ,'} 理쒖떊 湲곗닠 ?몃젋?쒖? ?뺤옣 媛?ν븳 ?꾪궎?띿쿂瑜??듯빐 吏??媛?ν븳 湲곗닠??媛移섎? 李쎌텧?섎뒗 寃껋쓣 紐⑺몴濡??⑸땲??
 
-**기술 비전:**
-- 마이크로서비스 기반 확장 가능한 아키텍처
-- AI/ML 기반 지능형 시스템
-- 클라우드 네이티브 설계 원칙
+**湲곗닠 鍮꾩쟾:**
+- 留덉씠?щ줈?쒕퉬??湲곕컲 ?뺤옣 媛?ν븳 ?꾪궎?띿쿂
+- AI/ML 湲곕컲 吏?ν삎 ?쒖뒪??- ?대씪?곕뱶 ?ㅼ씠?곕툕 ?ㅺ퀎 ?먯튃
 
 ## 2. System Architecture
 ${systemArchitecture}
@@ -2205,23 +2124,21 @@ ${technologyStack}
 ${dataArchitecture}
 
 ## 5. API Design
-**API 설계 원칙:**
-- **RESTful API**: 표준 HTTP 메서드 (GET, POST, PUT, DELETE)
-- **GraphQL**: 효율적인 데이터 쿼리 및 실시간 구독
-- **인증**: JWT + OAuth 2.0 기반 토큰 인증
-- **Rate Limiting**: 사용자별 1000 req/min, API별 10000 req/min
-- **버전 관리**: API v1, v2 호환성 유지
+**API ?ㅺ퀎 ?먯튃:**
+- **RESTful API**: ?쒖? HTTP 硫붿꽌??(GET, POST, PUT, DELETE)
+- **GraphQL**: ?⑥쑉?곸씤 ?곗씠??荑쇰━ 諛??ㅼ떆媛?援щ룆
+- **?몄쬆**: JWT + OAuth 2.0 湲곕컲 ?좏겙 ?몄쬆
+- **Rate Limiting**: ?ъ슜?먮퀎 1000 req/min, API蹂?10000 req/min
+- **踰꾩쟾 愿由?*: API v1, v2 ?명솚???좎?
 
-**API 엔드포인트 설계:**
-- **인증 API**: `/api/v1/auth/*` - 로그인, 회원가입, 토큰 갱신
-- **사용자 API**: `/api/v1/users/*` - 프로필 관리, 설정
-- **비즈니스 API**: `/api/v1/business/*` - 핵심 비즈니스 로직
-- **분석 API**: `/api/v1/analytics/*` - 데이터 분석 및 리포트
-
-**API 문서화:**
-- **Swagger/OpenAPI**: 자동 생성 API 문서
-- **Postman Collection**: 개발팀용 API 테스트
-- **SDK 제공**: JavaScript, Python, Java SDK
+**API ?붾뱶?ъ씤???ㅺ퀎:**
+- **?몄쬆 API**: `/api/v1/auth/*` - 濡쒓렇?? ?뚯썝媛?? ?좏겙 媛깆떊
+- **?ъ슜??API**: `/api/v1/users/*` - ?꾨줈??愿由? ?ㅼ젙
+- **鍮꾩쫰?덉뒪 API**: `/api/v1/business/*` - ?듭떖 鍮꾩쫰?덉뒪 濡쒖쭅
+- **遺꾩꽍 API**: `/api/v1/analytics/*` - ?곗씠??遺꾩꽍 諛?由ы룷??
+**API 臾몄꽌??**
+- **Swagger/OpenAPI**: ?먮룞 ?앹꽦 API 臾몄꽌
+- **Postman Collection**: 媛쒕컻???API ?뚯뒪??- **SDK ?쒓났**: JavaScript, Python, Java SDK
 
 ## 6. Security Requirements
 ${securityFramework}
@@ -2230,435 +2147,390 @@ ${securityFramework}
 ${performanceSpecs}
 
 ## 8. Scalability & Availability
-**확장성 설계:**
-- **수평적 확장**: 마이크로서비스 기반 독립적 스케일링
-- **로드 밸런싱**: Nginx + HAProxy 기반 트래픽 분산
-- **자동 스케일링**: Kubernetes HPA 기반 동적 리소스 조정
-- **캐싱 전략**: Redis 클러스터 + CDN 기반 다층 캐싱
+**?뺤옣???ㅺ퀎:**
+- **?섑룊???뺤옣**: 留덉씠?щ줈?쒕퉬??湲곕컲 ?낅┰???ㅼ??쇰쭅
+- **濡쒕뱶 諛몃윴??*: Nginx + HAProxy 湲곕컲 ?몃옒??遺꾩궛
+- **?먮룞 ?ㅼ??쇰쭅**: Kubernetes HPA 湲곕컲 ?숈쟻 由ъ냼??議곗젙
+- **罹먯떛 ?꾨왂**: Redis ?대윭?ㅽ꽣 + CDN 湲곕컲 ?ㅼ링 罹먯떛
 
-**고가용성 설계:**
-- **Multi-AZ 배포**: 3개 가용영역 분산 배포
-- **장애 복구**: RTO 15분, RPO 5분 목표
-- **백업 전략**: 일일 전체 백업 + 실시간 증분 백업
-- **모니터링**: Prometheus + Grafana 기반 실시간 모니터링
+**怨좉??⑹꽦 ?ㅺ퀎:**
+- **Multi-AZ 諛고룷**: 3媛?媛?⑹쁺??遺꾩궛 諛고룷
+- **?μ븷 蹂듦뎄**: RTO 15遺? RPO 5遺?紐⑺몴
+- **諛깆뾽 ?꾨왂**: ?쇱씪 ?꾩껜 諛깆뾽 + ?ㅼ떆媛?利앸텇 諛깆뾽
+- **紐⑤땲?곕쭅**: Prometheus + Grafana 湲곕컲 ?ㅼ떆媛?紐⑤땲?곕쭅
 
-**부하 분산:**
-- **API Gateway**: Kong 기반 API 라우팅 및 제한
-- **데이터베이스**: 읽기 전용 복제본 3개 구성
-- **파일 저장**: S3 기반 분산 파일 시스템
-- **CDN**: CloudFront 기반 글로벌 콘텐츠 배포
+**遺??遺꾩궛:**
+- **API Gateway**: Kong 湲곕컲 API ?쇱슦??諛??쒗븳
+- **?곗씠?곕쿋?댁뒪**: ?쎄린 ?꾩슜 蹂듭젣蹂?3媛?援ъ꽦
+- **?뚯씪 ???*: S3 湲곕컲 遺꾩궛 ?뚯씪 ?쒖뒪??- **CDN**: CloudFront 湲곕컲 湲濡쒕쾶 肄섑뀗痢?諛고룷
 
 ## 9. Development Guidelines
-**개발 환경:**
-- **IDE**: VS Code, IntelliJ IDEA 권장
-- **코딩 컨벤션**: ESLint, Prettier 기반 자동 포맷팅
-- **Git 워크플로우**: GitFlow 브랜치 전략
-- **코드 리뷰**: Pull Request 필수, 2명 이상 승인
+**媛쒕컻 ?섍꼍:**
+- **IDE**: VS Code, IntelliJ IDEA 沅뚯옣
+- **肄붾뵫 而⑤깽??*: ESLint, Prettier 湲곕컲 ?먮룞 ?щ㎎??- **Git ?뚰겕?뚮줈??*: GitFlow 釉뚮옖移??꾨왂
+- **肄붾뱶 由щ럭**: Pull Request ?꾩닔, 2紐??댁긽 ?뱀씤
 
-**테스팅 전략:**
-- **단위 테스트**: Jest, JUnit 기반 90% 커버리지 목표
-- **통합 테스트**: API 테스트 자동화
-- **E2E 테스트**: Cypress 기반 사용자 시나리오 테스트
-- **성능 테스트**: JMeter 기반 부하 테스트
-
-**CI/CD 파이프라인:**
-- **빌드**: Docker 기반 멀티 스테이지 빌드
-- **테스트**: 자동화된 테스트 실행 및 품질 게이트
-- **배포**: Blue-Green 배포 전략
-- **롤백**: 자동 롤백 메커니즘
+**?뚯뒪???꾨왂:**
+- **?⑥쐞 ?뚯뒪??*: Jest, JUnit 湲곕컲 90% 而ㅻ쾭由ъ? 紐⑺몴
+- **?듯빀 ?뚯뒪??*: API ?뚯뒪???먮룞??- **E2E ?뚯뒪??*: Cypress 湲곕컲 ?ъ슜???쒕굹由ъ삤 ?뚯뒪??- **?깅뒫 ?뚯뒪??*: JMeter 湲곕컲 遺???뚯뒪??
+**CI/CD ?뚯씠?꾨씪??**
+- **鍮뚮뱶**: Docker 湲곕컲 硫???ㅽ뀒?댁? 鍮뚮뱶
+- **?뚯뒪??*: ?먮룞?붾맂 ?뚯뒪???ㅽ뻾 諛??덉쭏 寃뚯씠??- **諛고룷**: Blue-Green 諛고룷 ?꾨왂
+- **濡ㅻ갚**: ?먮룞 濡ㅻ갚 硫붿빱?덉쬁
 
 ## 10. Implementation Roadmap
 ${deploymentStrategy}
 
 ---
 
-*이 문서는 Claude Sonnet 4.5 AI가 사용자 입력 데이터를 분석하여 생성했습니다.*
-*생성일: ${new Date().toLocaleDateString('ko-KR')}*
-*프로젝트 ID: ${projectData.id}*
-*AI 모델: Claude-3-5-Sonnet-20241022*`;
+*??臾몄꽌??Claude Sonnet 4.5 AI媛 ?ъ슜???낅젰 ?곗씠?곕? 遺꾩꽍?섏뿬 ?앹꽦?덉뒿?덈떎.*
+*?앹꽦?? ${new Date().toLocaleDateString('ko-KR')}*
+*?꾨줈?앺듃 ID: ${projectData.id}*
+*AI 紐⑤뜽: Claude-3-5-Sonnet-20241022*`;
             }
         }
 
-        // 사용자 입력 기반 BRD 내용 생성
+        // ?ъ슜???낅젰 湲곕컲 BRD ?댁슜 ?앹꽦
         function createBRDContent(input) {
             return `# Business Requirements Document
 
 ## 1. Executive Summary
-${input.insight ? `이 프로젝트는 "${input.insight}"라는 핵심 인사이트를 바탕으로 시작되었습니다.` : '이 프로젝트는 사용자의 핵심 인사이트를 바탕으로 시작되었습니다.'} ${input.evidence ? `검증된 근거에 따르면 ${input.evidence}입니다.` : '사용자가 제공한 검증 근거를 바탕으로 합니다.'} 이를 통해 비즈니스 가치를 창출하고 시장에서의 경쟁 우위를 확보하는 것을 목표로 합니다.
+${input.insight ? `???꾨줈?앺듃??"${input.insight}"?쇰뒗 ?듭떖 ?몄궗?댄듃瑜?諛뷀깢?쇰줈 ?쒖옉?섏뿀?듬땲??` : '???꾨줈?앺듃???ъ슜?먯쓽 ?듭떖 ?몄궗?댄듃瑜?諛뷀깢?쇰줈 ?쒖옉?섏뿀?듬땲??'} ${input.evidence ? `寃利앸맂 洹쇨굅???곕Ⅴ硫?${input.evidence}?낅땲??` : '?ъ슜?먭? ?쒓났??寃利?洹쇨굅瑜?諛뷀깢?쇰줈 ?⑸땲??'} ?대? ?듯빐 鍮꾩쫰?덉뒪 媛移섎? 李쎌텧?섍퀬 ?쒖옣?먯꽌??寃쎌웳 ?곗쐞瑜??뺣낫?섎뒗 寃껋쓣 紐⑺몴濡??⑸땲??
 
 ## 2. Business Objectives
-${input.success_metric ? `- ${input.success_metric}` : '- 구체적인 성공 지표를 달성'}
+${input.success_metric ? `- ${input.success_metric}` : '- 援ъ껜?곸씤 ?깃났 吏?쒕? ?ъ꽦'}
 
-**핵심 목표:**
-- 사용자 입력 기반 비즈니스 목표 달성
-- 시장에서의 경쟁 우위 확보
-- 지속 가능한 성장 모델 구축
+**?듭떖 紐⑺몴:**
+- ?ъ슜???낅젰 湲곕컲 鍮꾩쫰?덉뒪 紐⑺몴 ?ъ꽦
+- ?쒖옣?먯꽌??寃쎌웳 ?곗쐞 ?뺣낫
+- 吏??媛?ν븳 ?깆옣 紐⑤뜽 援ъ텞
 
 ## 3. Market Analysis
-**시장 기회:**
-${input.insight ? `현재 시장에서 "${input.insight}"라는 문제가 존재하며, 이를 해결할 수 있는 기회가 있습니다.` : '사용자가 식별한 시장 기회를 분석합니다.'}
+**?쒖옣 湲고쉶:**
+${input.insight ? `?꾩옱 ?쒖옣?먯꽌 "${input.insight}"?쇰뒗 臾몄젣媛 議댁옱?섎ŉ, ?대? ?닿껐?????덈뒗 湲고쉶媛 ?덉뒿?덈떎.` : '?ъ슜?먭? ?앸퀎???쒖옣 湲고쉶瑜?遺꾩꽍?⑸땲??'}
 
-**타겟 고객:**
-- 주요 고객층: 사용자 입력 기반 정의
-- 고객 니즈: 핵심 문제 해결
-- 시장 규모: 성장 잠재력 분석
+**?寃?怨좉컼:**
+- 二쇱슂 怨좉컼痢? ?ъ슜???낅젰 湲곕컲 ?뺤쓽
+- 怨좉컼 ?덉쫰: ?듭떖 臾몄젣 ?닿껐
+- ?쒖옣 洹쒕え: ?깆옣 ?좎옱??遺꾩꽍
 
 ## 4. Problem Statement
-**핵심 문제:**
-${input.insight ? `"${input.insight}"` : '사용자가 식별한 핵심 문제'}
+**?듭떖 臾몄젣:**
+${input.insight ? `"${input.insight}"` : '?ъ슜?먭? ?앸퀎???듭떖 臾몄젣'}
 
-**비즈니스 영향:**
-- 현재 상황에서의 손실 및 기회비용
-- 문제 지속 시 예상되는 부정적 영향
-- 시급성 및 중요성
-
+**鍮꾩쫰?덉뒪 ?곹뼢:**
+- ?꾩옱 ?곹솴?먯꽌???먯떎 諛?湲고쉶鍮꾩슜
+- 臾몄젣 吏?????덉긽?섎뒗 遺?뺤쟻 ?곹뼢
+- ?쒓툒??諛?以묒슂??
 ## 5. Proposed Solution
-**솔루션 개요:**
-${input.core_features ? `핵심 기능: ${input.core_features}` : '사용자가 제안한 핵심 기능을 기반으로 한 솔루션'}
+**?붾（??媛쒖슂:**
+${input.core_features ? `?듭떖 湲곕뒫: ${input.core_features}` : '?ъ슜?먭? ?쒖븞???듭떖 湲곕뒫??湲곕컲?쇰줈 ???붾（??}
 
-**가치 제안:**
-- 사용자 문제 해결
-- 비즈니스 가치 창출
-- 경쟁 우위 확보
+**媛移??쒖븞:**
+- ?ъ슜??臾몄젣 ?닿껐
+- 鍮꾩쫰?덉뒪 媛移?李쎌텧
+- 寃쎌웳 ?곗쐞 ?뺣낫
 
 ## 6. Success Criteria
-**정량적 KPI:**
-${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성공 지표'}
+**?뺣웾??KPI:**
+${input.success_metric ? `- ${input.success_metric}` : '- ?ъ슜???뺤쓽 ?깃났 吏??}
 
-**정성적 지표:**
-- 사용자 만족도 향상
-- 시장 인지도 증대
-- 브랜드 가치 상승
+**?뺤꽦??吏??**
+- ?ъ슜??留뚯”???μ긽
+- ?쒖옣 ?몄???利앸?
+- 釉뚮옖??媛移??곸듅
 
 ## 7. Stakeholders
-**주요 이해관계자:**
-- 프로젝트 스폰서
-- 개발팀
-- 사용자/고객
-- 비즈니스 파트너
-
-**역할 및 책임:**
-- 의사결정권자: 전략적 방향 설정
-- 실행팀: 구체적 구현
-- 사용자: 피드백 및 검증
-
+**二쇱슂 ?댄빐愿怨꾩옄:**
+- ?꾨줈?앺듃 ?ㅽ룿??- 媛쒕컻?
+- ?ъ슜??怨좉컼
+- 鍮꾩쫰?덉뒪 ?뚰듃??
+**??븷 諛?梨낆엫:**
+- ?섏궗寃곗젙沅뚯옄: ?꾨왂??諛⑺뼢 ?ㅼ젙
+- ?ㅽ뻾?: 援ъ껜??援ы쁽
+- ?ъ슜?? ?쇰뱶諛?諛?寃利?
 ## 8. Constraints & Risks
-**제약 사항:**
-${input.principle ? `절대 원칙: ${input.principle}` : '사용자 정의 제약 사항'}
+**?쒖빟 ?ы빆:**
+${input.principle ? `?덈? ?먯튃: ${input.principle}` : '?ъ슜???뺤쓽 ?쒖빟 ?ы빆'}
 
-**주요 리스크:**
-- 기술적 복잡성
-- 시장 변화
-- 자원 제약
+**二쇱슂 由ъ뒪??**
+- 湲곗닠??蹂듭옟??- ?쒖옣 蹂??- ?먯썝 ?쒖빟
 
-**완화 방안:**
-- 단계적 접근
-- 지속적 모니터링
-- 유연한 대응
-
+**?꾪솕 諛⑹븞:**
+- ?④퀎???묎렐
+- 吏?띿쟻 紐⑤땲?곕쭅
+- ?좎뿰?????
 ## 9. Timeline & Milestones
-**개발 단계:**
-- Phase 1: 기획 및 설계 (1-2개월)
-- Phase 2: 개발 및 테스트 (2-3개월)
-- Phase 3: 출시 및 운영 (1개월)
+**媛쒕컻 ?④퀎:**
+- Phase 1: 湲고쉷 諛??ㅺ퀎 (1-2媛쒖썡)
+- Phase 2: 媛쒕컻 諛??뚯뒪??(2-3媛쒖썡)
+- Phase 3: 異쒖떆 諛??댁쁺 (1媛쒖썡)
 
-**주요 마일스톤:**
-- MVP 출시
-- 베타 테스트 완료
-- 정식 출시
+**二쇱슂 留덉씪?ㅽ넠:**
+- MVP 異쒖떆
+- 踰좏? ?뚯뒪???꾨즺
+- ?뺤떇 異쒖떆
 
 ## 10. Budget & Resources
-**필요 리소스:**
-${input.capability ? `팀 역량: ${input.capability}` : '사용자 팀의 역량을 기반으로 한 리소스 계획'}
+**?꾩슂 由ъ냼??**
+${input.capability ? `? ??웾: ${input.capability}` : '?ъ슜???????웾??湲곕컲?쇰줈 ??由ъ냼??怨꾪쉷'}
 
-**예산 추정:**
-- 개발비: 팀 규모 및 기간에 따라 산정
-- 마케팅비: 시장 진입 전략
-- 운영비: 지속적 서비스 운영
+**?덉궛 異붿젙:**
+- 媛쒕컻鍮? ? 洹쒕え 諛?湲곌컙???곕씪 ?곗젙
+- 留덉??낅퉬: ?쒖옣 吏꾩엯 ?꾨왂
+- ?댁쁺鍮? 吏?띿쟻 ?쒕퉬???댁쁺
 
-**투자 대비 효과:**
-- ROI 예상치
-- 비용 절감 효과
-- 수익 창출 잠재력
-
+**?ъ옄 ?鍮??④낵:**
+- ROI ?덉긽移?- 鍮꾩슜 ?덇컧 ?④낵
+- ?섏씡 李쎌텧 ?좎옱??
 ---
 
-*이 문서는 사용자 입력 데이터를 바탕으로 생성되었습니다.*
-*생성일: ${new Date().toLocaleDateString('ko-KR')}*
-*프로젝트 ID: ${projectData.id}*`;
+*??臾몄꽌???ъ슜???낅젰 ?곗씠?곕? 諛뷀깢?쇰줈 ?앹꽦?섏뿀?듬땲??*
+*?앹꽦?? ${new Date().toLocaleDateString('ko-KR')}*
+*?꾨줈?앺듃 ID: ${projectData.id}*`;
         }
 
-        // BRD 표시
+        // BRD ?쒖떆
         function displayBRD(content) {
             document.getElementById('brdGenerating').style.display = 'none';
             document.getElementById('brdContentWrapper').style.display = 'block';
             document.getElementById('brdContent').innerHTML = convertMarkdownToHTML(content);
-            document.getElementById('brdBadge').textContent = '생성 완료';
+            document.getElementById('brdBadge').textContent = '?앹꽦 ?꾨즺';
             document.getElementById('brdBadge').className = 'document-badge badge-generated';
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // BRD 오류 표시
+        // BRD ?ㅻ쪟 ?쒖떆
         function showBRDError(errorMessage) {
             document.getElementById('brdGenerating').style.display = 'none';
             document.getElementById('brdError').style.display = 'block';
             document.getElementById('brdErrorText').textContent = errorMessage;
         }
 
-        // BRD 재생성
-        async function regenerateBRD() {
+        // BRD ?ъ깮??        async function regenerateBRD() {
             document.getElementById('brdContentWrapper').style.display = 'none';
             document.getElementById('brdGenerating').style.display = 'block';
-            document.getElementById('brdBadge').textContent = '생성 중';
+            document.getElementById('brdBadge').textContent = '?앹꽦 以?;
             document.getElementById('brdBadge').className = 'document-badge badge-generating';
             
             await generateBRD();
         }
 
-        // BRD 재시도
-        async function retryBRDGeneration() {
+        // BRD ?ъ떆??        async function retryBRDGeneration() {
             document.getElementById('brdError').style.display = 'none';
             document.getElementById('brdGenerating').style.display = 'block';
             
             await generateBRD();
         }
 
-        // BRD 승인 및 PRD 생성
+        // BRD ?뱀씤 諛?PRD ?앹꽦
         async function approveBRD() {
             projectData.approveDocument('brd');
             projectData.updateStatus('prd_generating');
             updateWorkflowStatus('prd');
             
-            // PRD 화면으로 전환
+            // PRD ?붾㈃?쇰줈 ?꾪솚
             document.getElementById('brdScreen').classList.remove('active');
             document.getElementById('prdScreen').classList.add('active');
             
-            document.getElementById('brdBadge').textContent = '승인됨';
+            document.getElementById('brdBadge').textContent = '?뱀씤??;
             document.getElementById('brdBadge').className = 'document-badge badge-approved';
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
-            // PRD 생성 시작
+            // PRD ?앹꽦 ?쒖옉
             await generatePRD();
         }
 
-        // PRD 생성
+        // PRD ?앹꽦
         async function generatePRD() {
             try {
-                // AI 프롬프트 생성
+                // AI ?꾨＼?꾪듃 ?앹꽦
                 const prompt = createPRDPrompt();
                 
-                // 실제 AI API 호출 (현재는 데모 모드)
+                // ?ㅼ젣 AI API ?몄텧 (?꾩옱???곕え 紐⑤뱶)
                 const prdContent = await callAIAPI(prompt, 'PRD');
 
                 projectData.completeDocumentGeneration('prd', prdContent);
                 displayPRD(prdContent);
 
             } catch (error) {
-                console.error('PRD 생성 오류:', error);
+                console.error('PRD ?앹꽦 ?ㅻ쪟:', error);
                 showPRDError(error.message);
             }
         }
 
-        // PRD 프롬프트 생성
+        // PRD ?꾨＼?꾪듃 ?앹꽦
         function createPRDPrompt() {
             const input = projectData.user_input;
             const brd = projectData.documents.brd.content;
-            return `당신은 제품 관리 및 요구사항 분석 전문가입니다. 아래의 BRD와 사용자 입력을 바탕으로 상세한 Product Requirements Document(PRD)를 작성해주세요.
+            return `?뱀떊? ?쒗뭹 愿由?諛??붽뎄?ы빆 遺꾩꽍 ?꾨Ц媛?낅땲?? ?꾨옒??BRD? ?ъ슜???낅젰??諛뷀깢?쇰줈 ?곸꽭??Product Requirements Document(PRD)瑜??묒꽦?댁＜?몄슂.
 
 **BRD:**
 ${brd}
 
-**원본 사용자 입력:**
-- 핵심 인사이트: ${input.insight}
-- 검증 근거: ${input.evidence}
-- 팀 역량: ${input.capability}
-- 절대 원칙: ${input.principle}
-- 성공 정의: ${input.success_metric}
-- 핵심 기능: ${input.core_features}
+**?먮낯 ?ъ슜???낅젰:**
+- ?듭떖 ?몄궗?댄듃: ${input.insight}
+- 寃利?洹쇨굅: ${input.evidence}
+- ? ??웾: ${input.capability}
+- ?덈? ?먯튃: ${input.principle}
+- ?깃났 ?뺤쓽: ${input.success_metric}
+- ?듭떖 湲곕뒫: ${input.core_features}
 
 ---
 
-**PRD 작성 가이드라인:**
+**PRD ?묒꽦 媛?대뱶?쇱씤:**
 
 ## 1. Product Overview
-- 제품 비전
-- 제품 목표
-- 타겟 사용자
-
+- ?쒗뭹 鍮꾩쟾
+- ?쒗뭹 紐⑺몴
+- ?寃??ъ슜??
 ## 2. User Personas
-- 주요 페르소나 (3-4개)
-- 각 페르소나의 니즈와 페인 포인트
-- 사용 시나리오
+- 二쇱슂 ?섎Ⅴ?뚮굹 (3-4媛?
+- 媛??섎Ⅴ?뚮굹???덉쫰? ?섏씤 ?ъ씤??- ?ъ슜 ?쒕굹由ъ삤
 
 ## 3. Feature Requirements
-각 기능마다 다음을 포함:
-- 기능 이름 및 설명
-- 우선순위 (P0/P1/P2)
-- 사용자 스토리
-- 인수 기준
-- 의존성
-
+媛?湲곕뒫留덈떎 ?ㅼ쓬???ы븿:
+- 湲곕뒫 ?대쫫 諛??ㅻ챸
+- ?곗꽑?쒖쐞 (P0/P1/P2)
+- ?ъ슜???ㅽ넗由?- ?몄닔 湲곗?
+- ?섏〈??
 ## 4. User Stories
-- Epic별 사용자 스토리
-- 스토리 포인트
-- Definition of Done
+- Epic蹂??ъ슜???ㅽ넗由?- ?ㅽ넗由??ъ씤??- Definition of Done
 
 ## 5. User Experience
-- 주요 사용자 플로우
-- 화면 구성 및 레이아웃
-- 인터랙션 설계
+- 二쇱슂 ?ъ슜???뚮줈??- ?붾㈃ 援ъ꽦 諛??덉씠?꾩썐
+- ?명꽣?숈뀡 ?ㅺ퀎
 
 ## 6. Functional Requirements
-- 상세 기능 명세
-- 입력/출력 정의
-- 비즈니스 규칙
+- ?곸꽭 湲곕뒫 紐낆꽭
+- ?낅젰/異쒕젰 ?뺤쓽
+- 鍮꾩쫰?덉뒪 洹쒖튃
 
 ## 7. Non-Functional Requirements
-- 성능 요구사항
-- 보안 요구사항
-- 확장성 및 가용성
-- 접근성
-
+- ?깅뒫 ?붽뎄?ы빆
+- 蹂댁븞 ?붽뎄?ы빆
+- ?뺤옣??諛?媛?⑹꽦
+- ?묎렐??
 ## 8. Data Requirements
-- 데이터 모델
-- 데이터 플로우
-- 저장소 요구사항
+- ?곗씠??紐⑤뜽
+- ?곗씠???뚮줈??- ??μ냼 ?붽뎄?ы빆
 
 ## 9. Integration Requirements
-- 외부 시스템 연동
-- API 명세
-- 데이터 동기화
-
+- ?몃? ?쒖뒪???곕룞
+- API 紐낆꽭
+- ?곗씠???숆린??
 ## 10. Success Metrics
-- 기능별 성공 지표
-- 측정 방법
-- 목표값
-
-**중요:**
-- 개발팀이 바로 구현할 수 있을 만큼 구체적으로 작성하세요
-- 각 요구사항은 명확하고 검증 가능해야 합니다
-- 우선순위를 명확히 하세요
-- 마크다운 형식으로 작성하세요`;
+- 湲곕뒫蹂??깃났 吏??- 痢≪젙 諛⑸쾿
+- 紐⑺몴媛?
+**以묒슂:**
+- 媛쒕컻???諛붾줈 援ы쁽?????덉쓣 留뚰겮 援ъ껜?곸쑝濡??묒꽦?섏꽭??- 媛??붽뎄?ы빆? 紐낇솗?섍퀬 寃利?媛?ν빐???⑸땲??- ?곗꽑?쒖쐞瑜?紐낇솗???섏꽭??- 留덊겕?ㅼ슫 ?뺤떇?쇰줈 ?묒꽦?섏꽭??;
         }
 
-        // 사용자 입력 기반 PRD 내용 생성
+        // ?ъ슜???낅젰 湲곕컲 PRD ?댁슜 ?앹꽦
         function createPRDContent(input) {
             return `# Product Requirements Document
 
 ## 1. Product Overview
-${input.insight ? `"${input.insight}"` : '사용자 정의 핵심 인사이트'}를 해결하기 위한 제품입니다. ${input.core_features ? `핵심 기능으로는 ${input.core_features}가 있습니다.` : '사용자가 정의한 핵심 기능을 포함합니다.'}
+${input.insight ? `"${input.insight}"` : '?ъ슜???뺤쓽 ?듭떖 ?몄궗?댄듃'}瑜??닿껐?섍린 ?꾪븳 ?쒗뭹?낅땲?? ${input.core_features ? `?듭떖 湲곕뒫?쇰줈??${input.core_features}媛 ?덉뒿?덈떎.` : '?ъ슜?먭? ?뺤쓽???듭떖 湲곕뒫???ы븿?⑸땲??'}
 
 ## 2. User Personas
-**주요 사용자:**
-- 타겟 고객: 사용자 입력 기반 정의
-- 사용자 니즈: ${input.insight ? `"${input.insight}"` : '핵심 문제 해결'}
-- 사용 패턴: 예상 사용 시나리오
+**二쇱슂 ?ъ슜??**
+- ?寃?怨좉컼: ?ъ슜???낅젰 湲곕컲 ?뺤쓽
+- ?ъ슜???덉쫰: ${input.insight ? `"${input.insight}"` : '?듭떖 臾몄젣 ?닿껐'}
+- ?ъ슜 ?⑦꽩: ?덉긽 ?ъ슜 ?쒕굹由ъ삤
 
 ## 3. Feature Requirements
-**핵심 기능:**
-${input.core_features ? `- ${input.core_features}` : '- 사용자 정의 핵심 기능'}
+**?듭떖 湲곕뒫:**
+${input.core_features ? `- ${input.core_features}` : '- ?ъ슜???뺤쓽 ?듭떖 湲곕뒫'}
 
-**우선순위:**
-- P0: 핵심 문제 해결 기능
-- P1: 사용자 경험 향상 기능
-- P2: 부가 가치 기능
+**?곗꽑?쒖쐞:**
+- P0: ?듭떖 臾몄젣 ?닿껐 湲곕뒫
+- P1: ?ъ슜??寃쏀뿕 ?μ긽 湲곕뒫
+- P2: 遺媛 媛移?湲곕뒫
 
 ## 4. User Stories
-**사용자 시나리오:**
-- 사용자는 ${input.insight ? `"${input.insight}"` : '핵심 문제'}를 해결할 수 있다
-- 사용자는 ${input.core_features ? `"${input.core_features}"` : '핵심 기능'}을 활용할 수 있다
-- 사용자는 ${input.success_metric ? `"${input.success_metric}"` : '성공 지표'}를 달성할 수 있다
+**?ъ슜???쒕굹由ъ삤:**
+- ?ъ슜?먮뒗 ${input.insight ? `"${input.insight}"` : '?듭떖 臾몄젣'}瑜??닿껐?????덈떎
+- ?ъ슜?먮뒗 ${input.core_features ? `"${input.core_features}"` : '?듭떖 湲곕뒫'}???쒖슜?????덈떎
+- ?ъ슜?먮뒗 ${input.success_metric ? `"${input.success_metric}"` : '?깃났 吏??}瑜??ъ꽦?????덈떎
 
 ## 5. User Experience
-**사용자 경험 설계:**
-- 직관적인 인터페이스
-- ${input.principle ? `"${input.principle}"` : '사용자 원칙'} 준수
-- 효율적인 워크플로우
-
+**?ъ슜??寃쏀뿕 ?ㅺ퀎:**
+- 吏곴??곸씤 ?명꽣?섏씠??- ${input.principle ? `"${input.principle}"` : '?ъ슜???먯튃'} 以??- ?⑥쑉?곸씤 ?뚰겕?뚮줈??
 ## 6. Functional Requirements
-**기능적 요구사항:**
-- 핵심 기능 구현
-- 데이터 처리 및 분석
-- 사용자 인터랙션
-- 결과 제공 및 피드백
-
+**湲곕뒫???붽뎄?ы빆:**
+- ?듭떖 湲곕뒫 援ы쁽
+- ?곗씠??泥섎━ 諛?遺꾩꽍
+- ?ъ슜???명꽣?숈뀡
+- 寃곌낵 ?쒓났 諛??쇰뱶諛?
 ## 7. Non-Functional Requirements
-**성능 요구사항:**
-- 응답 시간: 3초 이내
-- 가용성: 99% 이상
-- 확장성: 사용자 증가 대응
-- 보안: 데이터 보호
+**?깅뒫 ?붽뎄?ы빆:**
+- ?묐떟 ?쒓컙: 3珥??대궡
+- 媛?⑹꽦: 99% ?댁긽
+- ?뺤옣?? ?ъ슜??利앷? ???- 蹂댁븞: ?곗씠??蹂댄샇
 
 ## 8. Data Requirements
-**데이터 요구사항:**
-- 사용자 입력 데이터
-- 처리 결과 데이터
-- 분석 데이터
-- 히스토리 데이터
-
+**?곗씠???붽뎄?ы빆:**
+- ?ъ슜???낅젰 ?곗씠??- 泥섎━ 寃곌낵 ?곗씠??- 遺꾩꽍 ?곗씠??- ?덉뒪?좊━ ?곗씠??
 ## 9. Integration Requirements
-**연동 요구사항:**
-- 외부 시스템 연동
-- API 연동
-- 데이터 동기화
-- 실시간 처리
+**?곕룞 ?붽뎄?ы빆:**
+- ?몃? ?쒖뒪???곕룞
+- API ?곕룞
+- ?곗씠???숆린??- ?ㅼ떆媛?泥섎━
 
 ## 10. Success Metrics
-**성공 지표:**
-${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성공 지표'}
+**?깃났 吏??**
+${input.success_metric ? `- ${input.success_metric}` : '- ?ъ슜???뺤쓽 ?깃났 吏??}
 
-**측정 방법:**
-- 사용자 피드백
-- 사용량 분석
-- 성과 측정
-- 지속적 개선
+**痢≪젙 諛⑸쾿:**
+- ?ъ슜???쇰뱶諛?- ?ъ슜??遺꾩꽍
+- ?깃낵 痢≪젙
+- 吏?띿쟻 媛쒖꽑
 
 ---
 
-*이 문서는 사용자 입력 데이터를 바탕으로 생성되었습니다.*
-*생성일: ${new Date().toLocaleDateString('ko-KR')}*
-*프로젝트 ID: ${projectData.id}*`;
+*??臾몄꽌???ъ슜???낅젰 ?곗씠?곕? 諛뷀깢?쇰줈 ?앹꽦?섏뿀?듬땲??*
+*?앹꽦?? ${new Date().toLocaleDateString('ko-KR')}*
+*?꾨줈?앺듃 ID: ${projectData.id}*`;
         }
 
-        // PRD 표시
+        // PRD ?쒖떆
         function displayPRD(content) {
             document.getElementById('prdGenerating').style.display = 'none';
             document.getElementById('prdContentWrapper').style.display = 'block';
             document.getElementById('prdContent').innerHTML = convertMarkdownToHTML(content);
-            document.getElementById('prdBadge').textContent = '생성 완료';
+            document.getElementById('prdBadge').textContent = '?앹꽦 ?꾨즺';
             document.getElementById('prdBadge').className = 'document-badge badge-generated';
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // PRD 오류 표시
+        // PRD ?ㅻ쪟 ?쒖떆
         function showPRDError(errorMessage) {
             document.getElementById('prdGenerating').style.display = 'none';
             document.getElementById('prdError').style.display = 'block';
             document.getElementById('prdErrorText').textContent = errorMessage;
         }
 
-        // PRD 재생성
-        async function regeneratePRD() {
+        // PRD ?ъ깮??        async function regeneratePRD() {
             document.getElementById('prdContentWrapper').style.display = 'none';
             document.getElementById('prdGenerating').style.display = 'block';
-            document.getElementById('prdBadge').textContent = '생성 중';
+            document.getElementById('prdBadge').textContent = '?앹꽦 以?;
             document.getElementById('prdBadge').className = 'document-badge badge-generating';
             
             await generatePRD();
         }
 
-        // PRD 재시도
-        async function retryPRDGeneration() {
+        // PRD ?ъ떆??        async function retryPRDGeneration() {
             document.getElementById('prdError').style.display = 'none';
             document.getElementById('prdGenerating').style.display = 'block';
             
             await generatePRD();
         }
 
-        // PRD 승인 및 TRD 생성
+        // PRD ?뱀씤 諛?TRD ?앹꽦
         async function approvePRD() {
             projectData.approveDocument('prd');
             projectData.updateStatus('trd_generating');
@@ -2667,7 +2539,7 @@ ${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성�
             document.getElementById('prdScreen').classList.remove('active');
             document.getElementById('trdScreen').classList.add('active');
             
-            document.getElementById('prdBadge').textContent = '승인됨';
+            document.getElementById('prdBadge').textContent = '?뱀씤??;
             document.getElementById('prdBadge').className = 'document-badge badge-approved';
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2675,264 +2547,232 @@ ${input.success_metric ? `- ${input.success_metric}` : '- 사용자 정의 성�
             await generateTRD();
         }
 
-        // TRD 생성
+        // TRD ?앹꽦
         async function generateTRD() {
             try {
-                // AI 프롬프트 생성
+                // AI ?꾨＼?꾪듃 ?앹꽦
                 const prompt = createTRDPrompt();
                 
-                // 실제 AI API 호출 (현재는 데모 모드)
+                // ?ㅼ젣 AI API ?몄텧 (?꾩옱???곕え 紐⑤뱶)
                 const trdContent = await callAIAPI(prompt, 'TRD');
 
                 projectData.completeDocumentGeneration('trd', trdContent);
                 displayTRD(trdContent);
 
             } catch (error) {
-                console.error('TRD 생성 오류:', error);
+                console.error('TRD ?앹꽦 ?ㅻ쪟:', error);
                 showTRDError(error.message);
             }
         }
 
-        // TRD 프롬프트 생성
+        // TRD ?꾨＼?꾪듃 ?앹꽦
         function createTRDPrompt() {
             const input = projectData.user_input;
             const brd = projectData.documents.brd.content;
             const prd = projectData.documents.prd.content;
-            return `당신은 소프트웨어 아키텍트 및 기술 설계 전문가입니다. BRD와 PRD를 바탕으로 Technical Requirements Document(TRD)를 작성해주세요.
+            return `?뱀떊? ?뚰봽?몄썾???꾪궎?랁듃 諛?湲곗닠 ?ㅺ퀎 ?꾨Ц媛?낅땲?? BRD? PRD瑜?諛뷀깢?쇰줈 Technical Requirements Document(TRD)瑜??묒꽦?댁＜?몄슂.
 
-**BRD 요약:**
+**BRD ?붿빟:**
 ${brd.substring(0, 1000)}...
 
-**PRD 요약:**
+**PRD ?붿빟:**
 ${prd.substring(0, 1000)}...
 
-**팀 역량:**
+**? ??웾:**
 ${input.capability}
 
 ---
 
-**TRD 작성 가이드라인:**
+**TRD ?묒꽦 媛?대뱶?쇱씤:**
 
 ## 1. Technical Overview
-- 기술 비전
-- 아키텍처 원칙
-- 기술 스택 선정 이유
+- 湲곗닠 鍮꾩쟾
+- ?꾪궎?띿쿂 ?먯튃
+- 湲곗닠 ?ㅽ깮 ?좎젙 ?댁쑀
 
 ## 2. System Architecture
-- 전체 시스템 아키텍처
-- 주요 컴포넌트
-- 데이터 플로우
-
+- ?꾩껜 ?쒖뒪???꾪궎?띿쿂
+- 二쇱슂 而댄룷?뚰듃
+- ?곗씠???뚮줈??
 ## 3. Technology Stack
-- Frontend 기술
-- Backend 기술
-- 데이터베이스
-- 인프라 및 DevOps
-- 외부 서비스
-
+- Frontend 湲곗닠
+- Backend 湲곗닠
+- ?곗씠?곕쿋?댁뒪
+- ?명봽??諛?DevOps
+- ?몃? ?쒕퉬??
 ## 4. Data Architecture
-- 데이터베이스 스키마
-- 데이터 모델링
-- 캐싱 전략
-- 백업 및 복구
+- ?곗씠?곕쿋?댁뒪 ?ㅽ궎留?- ?곗씠??紐⑤뜽留?- 罹먯떛 ?꾨왂
+- 諛깆뾽 諛?蹂듦뎄
 
 ## 5. API Design
-- RESTful API 설계
-- 인증/인가
+- RESTful API ?ㅺ퀎
+- ?몄쬆/?멸?
 - Rate limiting
-- API 버전 관리
-
+- API 踰꾩쟾 愿由?
 ## 6. Security Requirements
-- 인증 및 권한
-- 데이터 암호화
-- 보안 취약점 대응
-- 컴플라이언스
+- ?몄쬆 諛?沅뚰븳
+- ?곗씠???뷀샇??- 蹂댁븞 痍⑥빟?????- 而댄뵆?쇱씠?몄뒪
 
 ## 7. Performance Requirements
-- 응답 시간 목표
-- 처리량 목표
-- 동시 사용자 수
-- 최적화 전략
+- ?묐떟 ?쒓컙 紐⑺몴
+- 泥섎━??紐⑺몴
+- ?숈떆 ?ъ슜????- 理쒖쟻???꾨왂
 
 ## 8. Scalability & Availability
-- 확장성 설계
-- 로드 밸런싱
-- 장애 복구
-- 모니터링
+- ?뺤옣???ㅺ퀎
+- 濡쒕뱶 諛몃윴??- ?μ븷 蹂듦뎄
+- 紐⑤땲?곕쭅
 
 ## 9. Development Guidelines
-- 코딩 컨벤션
-- Git 워크플로우
-- 테스팅 전략
-- CI/CD 파이프라인
-
+- 肄붾뵫 而⑤깽??- Git ?뚰겕?뚮줈??- ?뚯뒪???꾨왂
+- CI/CD ?뚯씠?꾨씪??
 ## 10. Implementation Roadmap
-- Phase별 기술 구현 계획
-- 마일스톤
-- 기술 부채 관리
-
-**중요:**
-- 실제 구현 가능한 구체적인 기술 스펙을 제시하세요
-- 팀의 역량을 고려한 현실적인 기술 선택을 하세요
-- 확장성과 유지보수성을 고려하세요
-- 마크다운 형식으로 작성하세요`;
+- Phase蹂?湲곗닠 援ы쁽 怨꾪쉷
+- 留덉씪?ㅽ넠
+- 湲곗닠 遺梨?愿由?
+**以묒슂:**
+- ?ㅼ젣 援ы쁽 媛?ν븳 援ъ껜?곸씤 湲곗닠 ?ㅽ럺???쒖떆?섏꽭??- ?????웾??怨좊젮???꾩떎?곸씤 湲곗닠 ?좏깮???섏꽭??- ?뺤옣?깃낵 ?좎?蹂댁닔?깆쓣 怨좊젮?섏꽭??- 留덊겕?ㅼ슫 ?뺤떇?쇰줈 ?묒꽦?섏꽭??;
         }
 
-        // 사용자 입력 기반 TRD 내용 생성
+        // ?ъ슜???낅젰 湲곕컲 TRD ?댁슜 ?앹꽦
         function createTRDContent(input) {
             return `# Technical Requirements Document
 
 ## 1. Technical Overview
-${input.insight ? `"${input.insight}"` : '사용자 정의 핵심 인사이트'}를 해결하기 위한 기술적 솔루션입니다. ${input.capability ? `팀의 역량인 ${input.capability}을 활용하여 구현합니다.` : '사용자 팀의 역량을 기반으로 구현합니다.'}
+${input.insight ? `"${input.insight}"` : '?ъ슜???뺤쓽 ?듭떖 ?몄궗?댄듃'}瑜??닿껐?섍린 ?꾪븳 湲곗닠???붾（?섏엯?덈떎. ${input.capability ? `?????웾??${input.capability}???쒖슜?섏뿬 援ы쁽?⑸땲??` : '?ъ슜???????웾??湲곕컲?쇰줈 援ы쁽?⑸땲??'}
 
 ## 2. System Architecture
-**전체 아키텍처:**
-- **Frontend**: 사용자 인터페이스
-- **Backend**: 비즈니스 로직 처리
-- **Database**: 데이터 저장 및 관리
-- **Integration**: 외부 시스템 연동
+**?꾩껜 ?꾪궎?띿쿂:**
+- **Frontend**: ?ъ슜???명꽣?섏씠??- **Backend**: 鍮꾩쫰?덉뒪 濡쒖쭅 泥섎━
+- **Database**: ?곗씠?????諛?愿由?- **Integration**: ?몃? ?쒖뒪???곕룞
 
 ## 3. Technology Stack
-**기술 스택 선택 기준:**
-${input.capability ? `- 팀 역량: ${input.capability}` : '- 팀 역량 기반 기술 선택'}
+**湲곗닠 ?ㅽ깮 ?좏깮 湲곗?:**
+${input.capability ? `- ? ??웾: ${input.capability}` : '- ? ??웾 湲곕컲 湲곗닠 ?좏깮'}
 
-**권장 기술:**
+**沅뚯옣 湲곗닠:**
 - **Frontend**: React.js, Vue.js, Angular
 - **Backend**: Node.js, Python, Java
 - **Database**: PostgreSQL, MySQL, MongoDB
 - **Infrastructure**: Docker, Kubernetes
 
 ## 4. Data Architecture
-**데이터 설계:**
-- **사용자 데이터**: 프로필 및 설정
-- **비즈니스 데이터**: 핵심 비즈니스 로직
-- **분석 데이터**: 성과 및 지표
-- **로그 데이터**: 시스템 모니터링
+**?곗씠???ㅺ퀎:**
+- **?ъ슜???곗씠??*: ?꾨줈??諛??ㅼ젙
+- **鍮꾩쫰?덉뒪 ?곗씠??*: ?듭떖 鍮꾩쫰?덉뒪 濡쒖쭅
+- **遺꾩꽍 ?곗씠??*: ?깃낵 諛?吏??- **濡쒓렇 ?곗씠??*: ?쒖뒪??紐⑤땲?곕쭅
 
 ## 5. API Design
-**API 설계 원칙:**
-- **RESTful API**: 표준 HTTP 메서드
-- **인증**: JWT 또는 OAuth 2.0
-- **Rate Limiting**: 서비스 보호
-- **버전 관리**: API 호환성
-
+**API ?ㅺ퀎 ?먯튃:**
+- **RESTful API**: ?쒖? HTTP 硫붿꽌??- **?몄쬆**: JWT ?먮뒗 OAuth 2.0
+- **Rate Limiting**: ?쒕퉬??蹂댄샇
+- **踰꾩쟾 愿由?*: API ?명솚??
 ## 6. Security Requirements
-**보안 요구사항:**
-${input.principle ? `- ${input.principle} 준수` : '- 사용자 정의 보안 원칙'}
+**蹂댁븞 ?붽뎄?ы빆:**
+${input.principle ? `- ${input.principle} 以?? : '- ?ъ슜???뺤쓽 蹂댁븞 ?먯튃'}
 
-**보안 구현:**
-- **인증**: 사용자 인증 시스템
-- **암호화**: 데이터 암호화
-- **HTTPS**: 통신 보안
-- **데이터 보호**: 개인정보 보호
+**蹂댁븞 援ы쁽:**
+- **?몄쬆**: ?ъ슜???몄쬆 ?쒖뒪??- **?뷀샇??*: ?곗씠???뷀샇??- **HTTPS**: ?듭떊 蹂댁븞
+- **?곗씠??蹂댄샇**: 媛쒖씤?뺣낫 蹂댄샇
 
 ## 7. Performance Requirements
-**성능 목표:**
-${input.success_metric ? `- ${input.success_metric} 달성을 위한 성능 최적화` : '- 사용자 정의 성공 지표 달성'}
+**?깅뒫 紐⑺몴:**
+${input.success_metric ? `- ${input.success_metric} ?ъ꽦???꾪븳 ?깅뒫 理쒖쟻?? : '- ?ъ슜???뺤쓽 ?깃났 吏???ъ꽦'}
 
-**성능 지표:**
-- **응답 시간**: 3초 이내
-- **처리량**: 예상 사용자 수 대응
-- **가용성**: 99% 이상
-- **확장성**: 사용자 증가 대응
-
+**?깅뒫 吏??**
+- **?묐떟 ?쒓컙**: 3珥??대궡
+- **泥섎━??*: ?덉긽 ?ъ슜???????- **媛?⑹꽦**: 99% ?댁긽
+- **?뺤옣??*: ?ъ슜??利앷? ???
 ## 8. Scalability & Availability
-**확장성 설계:**
-- **로드 밸런싱**: 트래픽 분산
-- **자동 스케일링**: 리소스 자동 조정
-- **장애 복구**: 고가용성 보장
-- **모니터링**: 실시간 상태 확인
+**?뺤옣???ㅺ퀎:**
+- **濡쒕뱶 諛몃윴??*: ?몃옒??遺꾩궛
+- **?먮룞 ?ㅼ??쇰쭅**: 由ъ냼???먮룞 議곗젙
+- **?μ븷 蹂듦뎄**: 怨좉??⑹꽦 蹂댁옣
+- **紐⑤땲?곕쭅**: ?ㅼ떆媛??곹깭 ?뺤씤
 
 ## 9. Development Guidelines
-**개발 가이드라인:**
-- **코딩 컨벤션**: 팀 표준 준수
-- **Git 워크플로우**: 협업 프로세스
-- **테스팅**: 품질 보증
-- **CI/CD**: 자동화된 배포
+**媛쒕컻 媛?대뱶?쇱씤:**
+- **肄붾뵫 而⑤깽??*: ? ?쒖? 以??- **Git ?뚰겕?뚮줈??*: ?묒뾽 ?꾨줈?몄뒪
+- **?뚯뒪??*: ?덉쭏 蹂댁쬆
+- **CI/CD**: ?먮룞?붾맂 諛고룷
 
 ## 10. Implementation Roadmap
-**구현 계획:**
-- **Phase 1**: 기본 인프라 구축 (1-2개월)
-- **Phase 2**: 핵심 기능 개발 (2-3개월)
-- **Phase 3**: 통합 및 테스트 (1개월)
-- **Phase 4**: 출시 및 운영 (지속적)
+**援ы쁽 怨꾪쉷:**
+- **Phase 1**: 湲곕낯 ?명봽??援ъ텞 (1-2媛쒖썡)
+- **Phase 2**: ?듭떖 湲곕뒫 媛쒕컻 (2-3媛쒖썡)
+- **Phase 3**: ?듯빀 諛??뚯뒪??(1媛쒖썡)
+- **Phase 4**: 異쒖떆 諛??댁쁺 (吏?띿쟻)
 
-**마일스톤:**
-- MVP 개발 완료
-- 베타 테스트 완료
-- 정식 출시
-- 운영 안정화
-
+**留덉씪?ㅽ넠:**
+- MVP 媛쒕컻 ?꾨즺
+- 踰좏? ?뚯뒪???꾨즺
+- ?뺤떇 異쒖떆
+- ?댁쁺 ?덉젙??
 ---
 
-*이 문서는 사용자 입력 데이터를 바탕으로 생성되었습니다.*
-*생성일: ${new Date().toLocaleDateString('ko-KR')}*
-*프로젝트 ID: ${projectData.id}*`;
+*??臾몄꽌???ъ슜???낅젰 ?곗씠?곕? 諛뷀깢?쇰줈 ?앹꽦?섏뿀?듬땲??*
+*?앹꽦?? ${new Date().toLocaleDateString('ko-KR')}*
+*?꾨줈?앺듃 ID: ${projectData.id}*`;
         }
 
-        // TRD 표시
+        // TRD ?쒖떆
         function displayTRD(content) {
             document.getElementById('trdGenerating').style.display = 'none';
             document.getElementById('trdContentWrapper').style.display = 'block';
             document.getElementById('trdContent').innerHTML = convertMarkdownToHTML(content);
-            document.getElementById('trdBadge').textContent = '생성 완료';
+            document.getElementById('trdBadge').textContent = '?앹꽦 ?꾨즺';
             document.getElementById('trdBadge').className = 'document-badge badge-generated';
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // TRD 오류 표시
+        // TRD ?ㅻ쪟 ?쒖떆
         function showTRDError(errorMessage) {
             document.getElementById('trdGenerating').style.display = 'none';
             document.getElementById('trdError').style.display = 'block';
             document.getElementById('trdErrorText').textContent = errorMessage;
         }
 
-        // TRD 재생성
-        async function regenerateTRD() {
+        // TRD ?ъ깮??        async function regenerateTRD() {
             document.getElementById('trdContentWrapper').style.display = 'none';
             document.getElementById('trdGenerating').style.display = 'block';
-            document.getElementById('trdBadge').textContent = '생성 중';
+            document.getElementById('trdBadge').textContent = '?앹꽦 以?;
             document.getElementById('trdBadge').className = 'document-badge badge-generating';
             
             await generateTRD();
         }
 
-        // TRD 재시도
-        async function retryTRDGeneration() {
+        // TRD ?ъ떆??        async function retryTRDGeneration() {
             document.getElementById('trdError').style.display = 'none';
             document.getElementById('trdGenerating').style.display = 'block';
             
             await generateTRD();
         }
 
-        // 마크다운을 HTML로 변환 (간단한 구현)
+        // 留덊겕?ㅼ슫??HTML濡?蹂??(媛꾨떒??援ы쁽)
         function convertMarkdownToHTML(markdown) {
             let html = markdown;
             
-            // 헤딩
+            // ?ㅻ뵫
             html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
             html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
             html = html.replace(/^# (.*$)/gim, '<h2>$1</h2>');
             
-            // 볼드
+            // 蹂쇰뱶
             html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
             
-            // 이탤릭
-            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            // ?댄깶由?            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
             
-            // 리스트
-            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
+            // 由ъ뒪??            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
             html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
             
-            // 줄바꿈
-            html = html.replace(/\n\n/g, '</p><p>');
+            // 以꾨컮轅?            html = html.replace(/\n\n/g, '</p><p>');
             html = '<p>' + html + '</p>';
             
             return html;
         }
 
-        // TRD 건너뛰기
+        // TRD 嫄대꼫?곌린
         function skipToComplete() {
             projectData.updateStatus('completed');
             document.getElementById('prdScreen').classList.remove('active');
@@ -2941,7 +2781,7 @@ ${input.success_metric ? `- ${input.success_metric} 달성을 위한 성능 최�
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 프로젝트 완료
+        // ?꾨줈?앺듃 ?꾨즺
         function completeProject() {
             projectData.approveDocument('trd');
             projectData.updateStatus('completed');
@@ -2949,119 +2789,110 @@ ${input.success_metric ? `- ${input.success_metric} 달성을 위한 성능 최�
             document.getElementById('trdScreen').classList.remove('active');
             document.getElementById('finalCompletionScreen').classList.add('active');
             
-            document.getElementById('trdBadge').textContent = '승인됨';
+            document.getElementById('trdBadge').textContent = '?뱀씤??;
             document.getElementById('trdBadge').className = 'document-badge badge-approved';
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
-            console.log('🎉 프로젝트 완료!', projectData.getSummary());
+            console.log('?럦 ?꾨줈?앺듃 ?꾨즺!', projectData.getSummary());
         }
 
-        // 데모 데이터 생성 (테스트용)
+        // ?곕え ?곗씠???앹꽦 (?뚯뒪?몄슜)
         function generateDemoData() {
             const demoBRD = `# Business Requirements Document
 
 ## 1. Executive Summary
-이 프로젝트는 AI 기반 리뷰 검증 시스템을 통해 온라인 쇼핑의 신뢰성을 높이는 것을 목표로 합니다.
+???꾨줈?앺듃??AI 湲곕컲 由щ럭 寃利??쒖뒪?쒖쓣 ?듯빐 ?⑤씪???쇳븨???좊ː?깆쓣 ?믪씠??寃껋쓣 紐⑺몴濡??⑸땲??
 
 ## 2. Business Objectives
-- 가짜 리뷰 탐지율 95% 이상 달성
-- 사용자 구매 전환율 30% 향상
-- 플랫폼 신뢰도 지수 4.5/5 이상
+- 媛吏?由щ럭 ?먯???95% ?댁긽 ?ъ꽦
+- ?ъ슜??援щℓ ?꾪솚??30% ?μ긽
+- ?뚮옯???좊ː??吏??4.5/5 ?댁긽
 
 ## 3. Market Analysis
-- 온라인 쇼핑 시장 규모: 연 500조원
-- 가짜 리뷰로 인한 손실: 연 50조원
-- 타겟 고객: 20-40대 온라인 쇼핑 이용자
-
+- ?⑤씪???쇳븨 ?쒖옣 洹쒕え: ??500議곗썝
+- 媛吏?由щ럭濡??명븳 ?먯떎: ??50議곗썝
+- ?寃?怨좉컼: 20-40? ?⑤씪???쇳븨 ?댁슜??
 ## 4. Problem Statement
-현재 온라인 쇼핑에서 가짜 리뷰로 인한 신뢰성 문제가 심각합니다.
+?꾩옱 ?⑤씪???쇳븨?먯꽌 媛吏?由щ럭濡??명븳 ?좊ː??臾몄젣媛 ?ш컖?⑸땲??
 
 ## 5. Proposed Solution
-AI 기반 리뷰 검증 시스템을 통해 실제 구매자만의 검증된 리뷰를 제공합니다.
+AI 湲곕컲 由щ럭 寃利??쒖뒪?쒖쓣 ?듯빐 ?ㅼ젣 援щℓ?먮쭔??寃利앸맂 由щ럭瑜??쒓났?⑸땲??
 
 ## 6. Success Criteria
-- 월간 활성 사용자 5만명
-- 리뷰 신뢰도 평가 4.5/5 이상
-- 구매 전환율 30% 향상
+- ?붽컙 ?쒖꽦 ?ъ슜??5留뚮챸
+- 由щ럭 ?좊ː???됯? 4.5/5 ?댁긽
+- 援щℓ ?꾪솚??30% ?μ긽
 
 ## 7. Stakeholders
-- 제품 관리자
-- 개발팀
-- 마케팅팀
-- 고객 서비스팀
+- ?쒗뭹 愿由ъ옄
+- 媛쒕컻?
+- 留덉??낇?
+- 怨좉컼 ?쒕퉬?ㅽ?
 
 ## 8. Constraints & Risks
-- 개발 기간: 6개월
-- 예산: 5억원
-- 기술적 복잡성
-
+- 媛쒕컻 湲곌컙: 6媛쒖썡
+- ?덉궛: 5?듭썝
+- 湲곗닠??蹂듭옟??
 ## 9. Timeline & Milestones
-- 1단계: 프로토타입 개발 (2개월)
-- 2단계: 베타 테스트 (1개월)
-- 3단계: 정식 출시 (3개월)
+- 1?④퀎: ?꾨줈?좏???媛쒕컻 (2媛쒖썡)
+- 2?④퀎: 踰좏? ?뚯뒪??(1媛쒖썡)
+- 3?④퀎: ?뺤떇 異쒖떆 (3媛쒖썡)
 
 ## 10. Budget & Resources
-- 개발비: 3억원
-- 마케팅비: 1억원
-- 운영비: 1억원`;
+- 媛쒕컻鍮? 3?듭썝
+- 留덉??낅퉬: 1?듭썝
+- ?댁쁺鍮? 1?듭썝`;
 
             const demoPRD = `# Product Requirements Document
 
 ## 1. Product Overview
-AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이는 제품입니다.
+AI 湲곕컲 由щ럭 寃利??쒖뒪?쒖쑝濡??⑤씪???쇳븨???좊ː?깆쓣 ?믪씠???쒗뭹?낅땲??
 
 ## 2. User Personas
-- **주니어 쇼핑족**: 20-30대, 온라인 쇼핑 빈번
-- **가족 쇼핑족**: 30-40대, 가족용품 구매
-- **프리미엄 쇼핑족**: 30-50대, 고가 제품 구매
+- **二쇰땲???쇳븨議?*: 20-30?, ?⑤씪???쇳븨 鍮덈쾲
+- **媛議??쇳븨議?*: 30-40?, 媛議깆슜??援щℓ
+- **?꾨━誘몄뾼 ?쇳븨議?*: 30-50?, 怨좉? ?쒗뭹 援щℓ
 
 ## 3. Feature Requirements
-- **P0**: 리뷰 검증 알고리즘
-- **P0**: 구매 이력 확인
-- **P1**: 신뢰도 점수 표시
-- **P1**: 검증 배지 시스템
-
+- **P0**: 由щ럭 寃利??뚭퀬由ъ쬁
+- **P0**: 援щℓ ?대젰 ?뺤씤
+- **P1**: ?좊ː???먯닔 ?쒖떆
+- **P1**: 寃利?諛곗? ?쒖뒪??
 ## 4. User Stories
-- 사용자는 구매한 제품에 대한 리뷰를 작성할 수 있다
-- 사용자는 리뷰의 신뢰도를 확인할 수 있다
-- 사용자는 검증된 리뷰를 우선적으로 볼 수 있다
+- ?ъ슜?먮뒗 援щℓ???쒗뭹?????由щ럭瑜??묒꽦?????덈떎
+- ?ъ슜?먮뒗 由щ럭???좊ː?꾨? ?뺤씤?????덈떎
+- ?ъ슜?먮뒗 寃利앸맂 由щ럭瑜??곗꽑?곸쑝濡?蹂????덈떎
 
 ## 5. User Experience
-- 직관적인 리뷰 작성 인터페이스
-- 명확한 신뢰도 표시
-- 빠른 검증 프로세스
+- 吏곴??곸씤 由щ럭 ?묒꽦 ?명꽣?섏씠??- 紐낇솗???좊ː???쒖떆
+- 鍮좊Ⅸ 寃利??꾨줈?몄뒪
 
 ## 6. Functional Requirements
-- 리뷰 텍스트 분석
-- 구매 이력 매칭
-- 신뢰도 점수 계산
-- 검증 배지 부여
-
+- 由щ럭 ?띿뒪??遺꾩꽍
+- 援щℓ ?대젰 留ㅼ묶
+- ?좊ː???먯닔 怨꾩궛
+- 寃利?諛곗? 遺??
 ## 7. Non-Functional Requirements
-- 응답 시간: 2초 이내
-- 가용성: 99.9%
-- 보안: 개인정보 보호
+- ?묐떟 ?쒓컙: 2珥??대궡
+- 媛?⑹꽦: 99.9%
+- 蹂댁븞: 媛쒖씤?뺣낫 蹂댄샇
 
 ## 8. Data Requirements
-- 구매 이력 데이터
-- 리뷰 텍스트 데이터
-- 사용자 프로필 데이터
-
+- 援щℓ ?대젰 ?곗씠??- 由щ럭 ?띿뒪???곗씠??- ?ъ슜???꾨줈???곗씠??
 ## 9. Integration Requirements
-- 쇼핑몰 API 연동
-- 결제 시스템 연동
-- 사용자 인증 시스템
-
+- ?쇳븨紐?API ?곕룞
+- 寃곗젣 ?쒖뒪???곕룞
+- ?ъ슜???몄쬆 ?쒖뒪??
 ## 10. Success Metrics
-- 리뷰 검증 정확도: 95%
-- 사용자 만족도: 4.5/5
-- 시스템 가용성: 99.9%`;
+- 由щ럭 寃利??뺥솗?? 95%
+- ?ъ슜??留뚯”?? 4.5/5
+- ?쒖뒪??媛?⑹꽦: 99.9%`;
 
             const demoTRD = `# Technical Requirements Document
 
 ## 1. Technical Overview
-마이크로서비스 아키텍처 기반의 AI 리뷰 검증 시스템입니다.
+留덉씠?щ줈?쒕퉬???꾪궎?띿쿂 湲곕컲??AI 由щ럭 寃利??쒖뒪?쒖엯?덈떎.
 
 ## 2. System Architecture
 - **Frontend**: React.js + TypeScript
@@ -3077,125 +2908,119 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
 - **Infrastructure**: Docker, Kubernetes
 
 ## 4. Data Architecture
-- **PostgreSQL**: 사용자 데이터, 구매 이력
-- **Redis**: 세션, 캐시
-- **MongoDB**: 리뷰 텍스트 데이터
-- **S3**: 파일 저장소
+- **PostgreSQL**: ?ъ슜???곗씠?? 援щℓ ?대젰
+- **Redis**: ?몄뀡, 罹먯떆
+- **MongoDB**: 由щ럭 ?띿뒪???곗씠??- **S3**: ?뚯씪 ??μ냼
 
 ## 5. API Design
-- **RESTful API**: 표준 HTTP 메서드
-- **인증**: JWT 토큰 기반
+- **RESTful API**: ?쒖? HTTP 硫붿꽌??- **?몄쬆**: JWT ?좏겙 湲곕컲
 - **Rate Limiting**: 1000 req/min
-- **API 버전**: v1
+- **API 踰꾩쟾**: v1
 
 ## 6. Security Requirements
-- **인증**: JWT + OAuth 2.0
-- **암호화**: AES-256
+- **?몄쬆**: JWT + OAuth 2.0
+- **?뷀샇??*: AES-256
 - **HTTPS**: TLS 1.3
-- **데이터 보호**: GDPR 준수
-
+- **?곗씠??蹂댄샇**: GDPR 以??
 ## 7. Performance Requirements
-- **응답 시간**: 2초 이내
-- **처리량**: 1000 req/sec
-- **동시 사용자**: 10,000명
-- **최적화**: CDN, 캐싱
+- **?묐떟 ?쒓컙**: 2珥??대궡
+- **泥섎━??*: 1000 req/sec
+- **?숈떆 ?ъ슜??*: 10,000紐?- **理쒖쟻??*: CDN, 罹먯떛
 
 ## 8. Scalability & Availability
-- **로드 밸런싱**: Nginx
-- **자동 스케일링**: Kubernetes HPA
-- **장애 복구**: Multi-AZ 배포
-- **모니터링**: Prometheus + Grafana
+- **濡쒕뱶 諛몃윴??*: Nginx
+- **?먮룞 ?ㅼ??쇰쭅**: Kubernetes HPA
+- **?μ븷 蹂듦뎄**: Multi-AZ 諛고룷
+- **紐⑤땲?곕쭅**: Prometheus + Grafana
 
 ## 9. Development Guidelines
-- **코딩 컨벤션**: ESLint + Prettier
-- **Git 워크플로우**: GitFlow
-- **테스팅**: Jest + Cypress
+- **肄붾뵫 而⑤깽??*: ESLint + Prettier
+- **Git ?뚰겕?뚮줈??*: GitFlow
+- **?뚯뒪??*: Jest + Cypress
 - **CI/CD**: GitHub Actions
 
 ## 10. Implementation Roadmap
-- **Phase 1**: 기본 인프라 구축 (2개월)
-- **Phase 2**: AI 모델 개발 (2개월)
-- **Phase 3**: 통합 및 테스트 (2개월)`;
+- **Phase 1**: 湲곕낯 ?명봽??援ъ텞 (2媛쒖썡)
+- **Phase 2**: AI 紐⑤뜽 媛쒕컻 (2媛쒖썡)
+- **Phase 3**: ?듯빀 諛??뚯뒪??(2媛쒖썡)`;
 
-            // 데모 데이터를 프로젝트에 저장
-            projectData.completeDocumentGeneration('brd', demoBRD);
+            // ?곕え ?곗씠?곕? ?꾨줈?앺듃?????            projectData.completeDocumentGeneration('brd', demoBRD);
             projectData.completeDocumentGeneration('prd', demoPRD);
             projectData.completeDocumentGeneration('trd', demoTRD);
             
-            console.log('🎯 데모 데이터 생성 완료!');
-            alert('✅ 데모 데이터가 생성되었습니다!\n\n이제 PDF 저장 기능을 테스트할 수 있습니다.');
+            console.log('?렞 ?곕え ?곗씠???앹꽦 ?꾨즺!');
+            alert('???곕え ?곗씠?곌? ?앹꽦?섏뿀?듬땲??\n\n?댁젣 PDF ???湲곕뒫???뚯뒪?명븷 ???덉뒿?덈떎.');
         }
 
-        // 이벤트 리스너 설정
+        // ?대깽??由ъ뒪???ㅼ젙
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🚀 DOM 로드 완료, 초기화 시작');
+            console.log('?? DOM 濡쒕뱶 ?꾨즺, 珥덇린???쒖옉');
             
-            // 저장된 데이터 불러오기
+            // ??λ맂 ?곗씠??遺덈윭?ㅺ린
             loadSavedData();
             
-            // DOM 요소 존재 확인
+            // DOM ?붿냼 議댁옱 ?뺤씤
             const nextBtn = document.getElementById('nextBtn');
-            console.log('🔍 DOM 요소 확인:', {
+            console.log('?뵇 DOM ?붿냼 ?뺤씤:', {
                 nextBtn: !!nextBtn,
                 nextBtnId: nextBtn ? nextBtn.id : 'N/A',
                 nextBtnDisabled: nextBtn ? nextBtn.disabled : 'N/A'
             });
             
-            // 각 textarea에 이벤트 리스너 추가
+            // 媛?textarea???대깽??由ъ뒪??異붽?
             const fields = ['insight', 'validation', 'capability', 'principle', 'success', 'feature'];
             fields.forEach(fieldId => {
                 const textarea = document.getElementById(fieldId);
                 if (textarea) {
-                    console.log(`📝 ${fieldId} 필드에 이벤트 리스너 추가`);
+                    console.log(`?뱷 ${fieldId} ?꾨뱶???대깽??由ъ뒪??異붽?`);
                     textarea.addEventListener('input', function() {
-                        console.log(`🔄 ${fieldId} 입력 이벤트 발생`);
+                        console.log(`?봽 ${fieldId} ?낅젰 ?대깽??諛쒖깮`);
                         updateCharCount(fieldId);
                     });
                     textarea.addEventListener('blur', autoSave);
                 } else {
-                    console.error(`❌ ${fieldId} 필드를 찾을 수 없습니다`);
+                    console.error(`??${fieldId} ?꾨뱶瑜?李얠쓣 ???놁뒿?덈떎`);
                 }
             });
 
-            // 초기 진행률 업데이트
+            // 珥덇린 吏꾪뻾瑜??낅뜲?댄듃
             updateProgress();
             updateNextButton();
 
-            // 개발자 도구용 전역 함수 노출
+            // 媛쒕컻???꾧뎄???꾩뿭 ?⑥닔 ?몄텧
             window.projectData = projectData;
             window.resetProject = resetProject;
             window.downloadProjectData = downloadProjectData;
             window.generateDemoData = generateDemoData;
-            window.currentStep = currentStep; // 디버깅용 전역 노출
+            window.currentStep = currentStep; // ?붾쾭源낆슜 ?꾩뿭 ?몄텧
             window.forceEnableNext = function() {
                 const btn = document.getElementById('nextBtn');
                 if (btn) {
                     btn.disabled = false;
-                    console.log('🔧 수동으로 다음 버튼 활성화');
+                    console.log('?뵩 ?섎룞?쇰줈 ?ㅼ쓬 踰꾪듉 ?쒖꽦??);
                 }
             };
             window.testButton = function() {
-                console.log('🧪 버튼 테스트 시작');
+                console.log('?㎦ 踰꾪듉 ?뚯뒪???쒖옉');
                 const btn = document.getElementById('nextBtn');
                 const field = document.getElementById('insight');
-                console.log('버튼:', btn);
-                console.log('필드:', field);
-                console.log('현재 단계:', currentStep);
-                console.log('현재 필드 ID:', getCurrentFieldId());
+                console.log('踰꾪듉:', btn);
+                console.log('?꾨뱶:', field);
+                console.log('?꾩옱 ?④퀎:', currentStep);
+                console.log('?꾩옱 ?꾨뱶 ID:', getCurrentFieldId());
                 updateNextButton();
             };
             
-            console.log('🎯 제품 문서 생성 시스템 초기화 완료');
-            console.log('💡 개발자 도구 명령어:');
-            console.log('  - projectData: 현재 프로젝트 데이터 확인');
-            console.log('  - projectData.getSummary(): 프로젝트 요약');
-            console.log('  - downloadProjectData(): JSON 파일로 내보내기');
-            console.log('  - resetProject(): 데이터 초기화');
-            console.log('  - generateDemoData(): 데모 데이터 생성 (PDF 테스트용)');
+            console.log('?렞 ?쒗뭹 臾몄꽌 ?앹꽦 ?쒖뒪??珥덇린???꾨즺');
+            console.log('?뮕 媛쒕컻???꾧뎄 紐낅졊??');
+            console.log('  - projectData: ?꾩옱 ?꾨줈?앺듃 ?곗씠???뺤씤');
+            console.log('  - projectData.getSummary(): ?꾨줈?앺듃 ?붿빟');
+            console.log('  - downloadProjectData(): JSON ?뚯씪濡??대낫?닿린');
+            console.log('  - resetProject(): ?곗씠??珥덇린??);
+            console.log('  - generateDemoData(): ?곕え ?곗씠???앹꽦 (PDF ?뚯뒪?몄슜)');
         });
 
-        // PDF 내보내기 함수들
-        function exportBRDtoPDF() {
+        // PDF ?대낫?닿린 ?⑥닔??        function exportBRDtoPDF() {
             downloadAsFile(projectData.documents.brd.content, 'BRD', 'md');
         }
 
@@ -3209,7 +3034,7 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
 
         function downloadAsFile(content, docType, extension) {
             if (!content || content.trim() === '') {
-                alert(`⚠️ ${docType} 문서가 아직 생성되지 않았습니다.\n먼저 문서를 생성해주세요.`);
+                alert(`?좑툘 ${docType} 臾몄꽌媛 ?꾩쭅 ?앹꽦?섏? ?딆븯?듬땲??\n癒쇱? 臾몄꽌瑜??앹꽦?댁＜?몄슂.`);
                 return;
             }
 
@@ -3221,10 +3046,10 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             link.click();
             URL.revokeObjectURL(url);
             
-            console.log(`✅ ${docType} 다운로드 완료:`, link.download);
+            console.log(`??${docType} ?ㅼ슫濡쒕뱶 ?꾨즺:`, link.download);
         }
 
-        // 문서 복사 기능
+        // 臾몄꽌 蹂듭궗 湲곕뒫
         function copyBRD() {
             copyToClipboard(projectData.documents.brd.content, 'BRD');
         }
@@ -3239,20 +3064,20 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
 
         function copyToClipboard(text, docType) {
             if (!text || text.trim() === '') {
-                alert(`⚠️ ${docType} 문서가 아직 생성되지 않았습니다.\n먼저 문서를 생성해주세요.`);
+                alert(`?좑툘 ${docType} 臾몄꽌媛 ?꾩쭅 ?앹꽦?섏? ?딆븯?듬땲??\n癒쇱? 臾몄꽌瑜??앹꽦?댁＜?몄슂.`);
                 return;
             }
 
             navigator.clipboard.writeText(text).then(() => {
-                alert(`✓ ${docType}가 클립보드에 복사되었습니다!`);
-                console.log(`✅ ${docType} 복사 완료`);
+                alert(`??${docType}媛 ?대┰蹂대뱶??蹂듭궗?섏뿀?듬땲??`);
+                console.log(`??${docType} 蹂듭궗 ?꾨즺`);
             }).catch(err => {
-                console.error('복사 실패:', err);
-                alert('복사에 실패했습니다. 다시 시도해주세요.');
+                console.error('蹂듭궗 ?ㅽ뙣:', err);
+                alert('蹂듭궗???ㅽ뙣?덉뒿?덈떎. ?ㅼ떆 ?쒕룄?댁＜?몄슂.');
             });
         }
 
-        // 모든 문서 다운로드
+        // 紐⑤뱺 臾몄꽌 ?ㅼ슫濡쒕뱶
         function downloadAllDocuments() {
             let downloadCount = 0;
             
@@ -3278,7 +3103,7 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
                 downloadCount++;
             }
             
-            // 프로젝트 데이터 JSON
+            // ?꾨줈?앺듃 ?곗씠??JSON
             setTimeout(() => {
                 const dataStr = projectData.exportJSON();
                 const dataBlob = new Blob([dataStr], { type: 'application/json' });
@@ -3291,38 +3116,38 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             }, 900);
             
             if (downloadCount > 0) {
-                alert(`📦 ${downloadCount}개 문서를 다운로드합니다.\n\n다운로드 폴더를 확인해주세요.`);
+                alert(`?벀 ${downloadCount}媛?臾몄꽌瑜??ㅼ슫濡쒕뱶?⑸땲??\n\n?ㅼ슫濡쒕뱶 ?대뜑瑜??뺤씤?댁＜?몄슂.`);
             } else {
-                alert('⚠️ 다운로드할 문서가 없습니다.\n먼저 문서를 생성해주세요.');
+                alert('?좑툘 ?ㅼ슫濡쒕뱶??臾몄꽌媛 ?놁뒿?덈떎.\n癒쇱? 臾몄꽌瑜??앹꽦?댁＜?몄슂.');
             }
         }
 
-        // 새 프로젝트 시작
+        // ???꾨줈?앺듃 ?쒖옉
         function startNewProject() {
-            if (confirm('🔄 새 프로젝트를 시작하시겠습니까?\n\n현재 프로젝트는 로컬 저장소에 보관됩니다.')) {
-                // 현재 프로젝트를 백업
+            if (confirm('?봽 ???꾨줈?앺듃瑜??쒖옉?섏떆寃좎뒿?덇퉴?\n\n?꾩옱 ?꾨줈?앺듃??濡쒖뺄 ??μ냼??蹂닿??⑸땲??')) {
+                // ?꾩옱 ?꾨줈?앺듃瑜?諛깆뾽
                 const backup = projectData.exportJSON();
                 localStorage.setItem(`project_backup_${projectData.id}`, backup);
                 
-                // 새 프로젝트 생성
+                // ???꾨줈?앺듃 ?앹꽦
                 projectData = new ProjectData();
                 localStorage.setItem('projectData', JSON.stringify(projectData));
                 
-                // 페이지 새로고침
+                // ?섏씠吏 ?덈줈怨좎묠
                 location.reload();
             }
         }
 
-        // 데이터 초기화 함수 (개발/테스트용)
+        // ?곗씠??珥덇린???⑥닔 (媛쒕컻/?뚯뒪?몄슜)
         function resetProject() {
-            if (confirm('⚠️ 모든 데이터를 초기화하시겠습니까?')) {
+            if (confirm('?좑툘 紐⑤뱺 ?곗씠?곕? 珥덇린?뷀븯?쒓쿋?듬땲源?')) {
                 localStorage.clear();
                 projectData = new ProjectData();
                 location.reload();
             }
         }
 
-        // 데이터 내보내기 함수 (개발/테스트용)
+        // ?곗씠???대낫?닿린 ?⑥닔 (媛쒕컻/?뚯뒪?몄슜)
         function downloadProjectData() {
             const dataStr = projectData.exportJSON();
             const dataBlob = new Blob([dataStr], { type: 'application/json' });
@@ -3334,21 +3159,20 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             URL.revokeObjectURL(url);
         }
 
-        // 키보드 단축키
-        document.addEventListener('keydown', function(e) {
+        // ?ㅻ낫???⑥텞??        document.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && e.ctrlKey) {
                 if (!document.getElementById('nextBtn').disabled) {
                     nextStep();
                 }
             }
             
-            // 개발자 단축키: Ctrl+Shift+D로 데이터 다운로드
+            // 媛쒕컻???⑥텞?? Ctrl+Shift+D濡??곗씠???ㅼ슫濡쒕뱶
             if (e.ctrlKey && e.shiftKey && e.key === 'D') {
                 e.preventDefault();
                 downloadProjectData();
             }
             
-            // 개발자 단축키: Ctrl+Shift+R로 데이터 리셋
+            // 媛쒕컻???⑥텞?? Ctrl+Shift+R濡??곗씠??由ъ뀑
             if (e.ctrlKey && e.shiftKey && e.key === 'R') {
                 e.preventDefault();
                 resetProject();
