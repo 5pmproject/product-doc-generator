@@ -1036,9 +1036,17 @@
 
         // 글자수 카운터 업데이트
         function updateCharCount(fieldId) {
+            console.log('🚀 updateCharCount 시작:', fieldId);
+            
             const textarea = document.getElementById(fieldId);
             const counter = document.getElementById(fieldId + 'Count');
             const status = document.getElementById(fieldId + 'Status');
+            
+            if (!textarea) {
+                console.error('❌ textarea를 찾을 수 없습니다:', fieldId);
+                return;
+            }
+            
             const maxLength = textarea.maxLength;
             const currentLength = textarea.value.length;
             
@@ -1046,37 +1054,47 @@
                 fieldId,
                 currentLength,
                 maxLength,
-                currentStep
+                currentStep,
+                textareaValue: textarea.value
             });
             
-            counter.textContent = `${currentLength} / ${maxLength}자`;
-            
-            if (currentLength > maxLength * 0.9) {
-                counter.classList.add('warning');
-            } else {
-                counter.classList.remove('warning');
+            if (counter) {
+                counter.textContent = `${currentLength} / ${maxLength}자`;
+                
+                if (currentLength > maxLength * 0.9) {
+                    counter.classList.add('warning');
+                } else {
+                    counter.classList.remove('warning');
+                }
             }
 
             // 유효성 검사
-            if (currentLength > 0) {
-                status.textContent = '✓';
-                status.style.color = '#a89075';
-                textarea.classList.remove('error');
-            } else {
-                status.textContent = '';
-                textarea.classList.add('error');
+            if (status) {
+                if (currentLength > 0) {
+                    status.textContent = '✓';
+                    status.style.color = '#a89075';
+                    textarea.classList.remove('error');
+                } else {
+                    status.textContent = '';
+                    textarea.classList.add('error');
+                }
             }
 
             // 프로젝트 데이터에 저장
             const dataKey = fieldMapping[fieldId];
-            projectData.updateUserInput(dataKey, textarea.value);
+            if (dataKey) {
+                projectData.updateUserInput(dataKey, textarea.value);
+            }
 
             // 다음 버튼 활성화/비활성화
+            console.log('🔄 updateNextButton 호출');
             updateNextButton();
         }
 
         // 다음 버튼 상태 업데이트
         function updateNextButton() {
+            console.log('🚀 updateNextButton 시작');
+            
             const nextBtn = document.getElementById('nextBtn');
             const currentFieldId = getCurrentFieldId();
             const textarea = document.getElementById(currentFieldId);
@@ -1089,7 +1107,8 @@
                 currentValue: currentValue,
                 trimmedLength: currentValue.trim().length,
                 nextBtn: !!nextBtn,
-                nextBtnDisabled: nextBtn ? nextBtn.disabled : 'N/A'
+                nextBtnDisabled: nextBtn ? nextBtn.disabled : 'N/A',
+                nextBtnText: nextBtn ? nextBtn.textContent : 'N/A'
             });
             
             if (!nextBtn) {
@@ -1097,14 +1116,27 @@
                 return;
             }
             
-            if (currentValue && currentValue.trim().length > 0) {
+            if (!textarea) {
+                console.error('❌ textarea 요소를 찾을 수 없습니다:', currentFieldId);
+                return;
+            }
+            
+            const hasContent = currentValue && currentValue.trim().length > 0;
+            console.log('📝 내용 확인:', {
+                hasContent,
+                value: currentValue,
+                trimmed: currentValue.trim(),
+                length: currentValue.trim().length
+            });
+            
+            if (hasContent) {
                 nextBtn.disabled = false;
                 nextBtn.classList.remove('btn-primary:disabled');
-                console.log('✅ 다음 버튼 활성화');
+                console.log('✅ 다음 버튼 활성화 - disabled:', nextBtn.disabled);
             } else {
                 nextBtn.disabled = true;
                 nextBtn.classList.add('btn-primary:disabled');
-                console.log('❌ 다음 버튼 비활성화');
+                console.log('❌ 다음 버튼 비활성화 - disabled:', nextBtn.disabled);
             }
         }
 
