@@ -1273,6 +1273,23 @@
             await generateBRD();
         }
 
+        // BRD 표시 함수 (먼저 정의)
+        function displayBRD(content) {
+            document.getElementById('brdGenerating').style.display = 'none';
+            document.getElementById('brdContentWrapper').style.display = 'block';
+            document.getElementById('brdContent').innerHTML = convertMarkdownToHTML(content);
+            document.getElementById('brdBadge').textContent = '생성 완료';
+            document.getElementById('brdBadge').className = 'document-badge badge-generated';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // BRD 오류 표시 함수 (먼저 정의)
+        function showBRDError(errorMessage) {
+            document.getElementById('brdGenerating').style.display = 'none';
+            document.getElementById('brdError').style.display = 'block';
+            document.getElementById('brdErrorText').textContent = errorMessage;
+        }
+
         // BRD 생성 API 호출 (AI 프롬프트 기반)
         async function generateBRD() {
             try {
@@ -2388,23 +2405,6 @@ ${input.capability ? `팀 역량: ${input.capability}` : '사용자 팀의 역�
 *프로젝트 ID: ${projectData.id}*`;
         }
 
-        // BRD 표시
-        function displayBRD(content) {
-            document.getElementById('brdGenerating').style.display = 'none';
-            document.getElementById('brdContentWrapper').style.display = 'block';
-            document.getElementById('brdContent').innerHTML = convertMarkdownToHTML(content);
-            document.getElementById('brdBadge').textContent = '생성 완료';
-            document.getElementById('brdBadge').className = 'document-badge badge-generated';
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // BRD 오류 표시
-        function showBRDError(errorMessage) {
-            document.getElementById('brdGenerating').style.display = 'none';
-            document.getElementById('brdError').style.display = 'block';
-            document.getElementById('brdErrorText').textContent = errorMessage;
-        }
 
         // BRD 재생성
         async function regenerateBRD() {
