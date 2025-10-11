@@ -814,9 +814,10 @@
             console.log(`🔄 API 모드 변경: ${mode === 'demo' ? '데모' : '실제'} 모드`);
         }
 
-        // 프로젝트 데이터 구조
+        // 개선된 프로젝트 데이터 구조
         class ProjectData {
             constructor() {
+                this.maxBackups = 3; // 백업 개수 제한
                 this.id = generateUUID();
                 this.created_at = new Date().toISOString();
                 this.updated_at = new Date().toISOString();
@@ -927,15 +928,111 @@
                 });
             }
 
-            // 로컬 스토리지에 저장
+            // 개선된 저장 메서드
             save() {
                 try {
+                    // 기본 데이터 저장
                     localStorage.setItem('projectData', JSON.stringify(this));
-                    localStorage.setItem('projectData_backup_' + Date.now(), JSON.stringify(this));
-                    console.log('✅ 프로젝트 데이터 저장 완료:', this.id);
+                    
+                    // 백업 저장 (용량 제한)
+                    this.saveBackup();
+                    
+                    console.log('✅ 데이터 저장 성공');
                     return true;
-                } catch (e) {
-                    console.error('❌ 저장 실패:', e);
+                } catch (error) {
+                    console.error('❌ 저장 실패:', error);
+                    
+                    if (error.name === 'QuotaExceededError') {
+                        // 용량 초과 시 백업 정리 후 재시도
+                        this.cleanupBackups();
+                        try {
+                            localStorage.setItem('projectData', JSON.stringify(this));
+                            console.log('✅ 백업 정리 후 저장 성공');
+                            return true;
+                        } catch (retryError) {
+                            console.error('❌ 재시도 실패:', retryError);
+                            // 사용자에게 알림
+                            alert('저장 공간이 부족합니다. 브라우저 데이터를 정리해주세요.');
+                            return false;
+                        }
+                    }
+                    return false;
+                }
+            }
+
+            // 백업 저장
+            saveBackup() {
+                try {
+                    const timestamp = Date.now();
+                    const backupKey = `projectData_backup_${timestamp}`;
+                    
+                    // 데이터 크기 확인 (1MB 이상이면 백업 건너뛰기)
+                    const dataSize = JSON.stringify(this).length;
+                    if (dataSize > 1024 * 1024) {
+                        console.log('📦 데이터가 너무 커서 백업을 건너뜁니다');
+                        return;
+                    }
+                    
+                    localStorage.setItem(backupKey, JSON.stringify(this));
+                    
+                    // 오래된 백업 정리
+                    this.cleanupOldBackups();
+                    
+                } catch (error) {
+                    console.log('📦 백업 저장 실패 (무시됨):', error.message);
+                }
+            }
+
+            // 오래된 백업 정리
+            cleanupOldBackups() {
+                const keys = Object.keys(localStorage);
+                const backupKeys = keys.filter(key => key.startsWith('projectData_backup_'))
+                    .sort((a, b) => {
+                        const timeA = parseInt(a.split('_').pop());
+                        const timeB = parseInt(b.split('_').pop());
+                        return timeB - timeA; // 최신순 정렬
+                    });
+
+                // 최대 개수 초과 시 오래된 것 삭제
+                while (backupKeys.length > this.maxBackups) {
+                    const oldestKey = backupKeys.pop();
+                    localStorage.removeItem(oldestKey);
+                    console.log(`🗑️ 오래된 백업 삭제: ${oldestKey}`);
+                }
+            }
+
+            // 모든 백업 정리
+            cleanupBackups() {
+                const keys = Object.keys(localStorage);
+                const backupKeys = keys.filter(key => key.startsWith('projectData_backup_'));
+                
+                backupKeys.forEach(key => {
+                    localStorage.removeItem(key);
+                });
+                
+                console.log(`🧹 ${backupKeys.length}개 백업 정리 완료`);
+            }
+
+            // 압축된 저장 (큰 데이터용)
+            saveCompressed() {
+                try {
+                    // 불필요한 데이터 제거
+                    const compressedData = {
+                        questions: this.user_input,
+                        currentStep: this.status,
+                        documents: this.documents ? {
+                            brd: this.documents.brd ? this.documents.brd.content.substring(0, 10000) : null, // 10KB 제한
+                            prd: this.documents.prd ? this.documents.prd.content.substring(0, 10000) : null,
+                            trd: this.documents.trd ? this.documents.trd.content.substring(0, 10000) : null
+                        } : null,
+                        timestamp: Date.now()
+                    };
+                    
+                    localStorage.setItem('projectData', JSON.stringify(compressedData));
+                    console.log('✅ 압축 저장 성공');
+                    return true;
+                } catch (error) {
+                    console.error('❌ 압축 저장 실패:', error);
                     return false;
                 }
             }
@@ -943,18 +1040,38 @@
             // 로컬 스토리지에서 불러오기
             static load() {
                 try {
-                    const saved = localStorage.getItem('projectData');
-                    if (saved) {
-                        const data = JSON.parse(saved);
-                        const project = new ProjectData();
-                        Object.assign(project, data);
-                        console.log('✅ 프로젝트 데이터 로드 완료:', project.id);
-                        return project;
-                    }
-                } catch (e) {
-                    console.error('❌ 로드 실패:', e);
+                    const data = localStorage.getItem('projectData');
+                    return data ? JSON.parse(data) : this.getDefaultData();
+                } catch (error) {
+                    console.error('❌ 데이터 로드 실패:', error);
+                    return this.getDefaultData();
                 }
-                return new ProjectData();
+            }
+
+            // 기본 데이터 구조
+            getDefaultData() {
+                return {
+                    id: generateUUID(),
+                    created_at: new Date().toISOString(),
+                    updated_at: new Date().toISOString(),
+                    status: 'input',
+                    user_input: {
+                        insight: '',
+                        evidence: '',
+                        capability: '',
+                        principle: '',
+                        success_metric: '',
+                        core_features: ''
+                    },
+                    documents: {
+                        brd: { content: '', status: 'pending', generated_at: null, version: 0 },
+                        prd: { content: '', status: 'pending', generated_at: null, version: 0 },
+                        trd: { content: '', status: 'pending', generated_at: null, version: 0 }
+                    },
+                    structured_data: { personas: [], features: [], metrics: [], technical_specs: [] },
+                    history: [],
+                    timestamp: Date.now()
+                };
             }
 
             // 진행률 계산
