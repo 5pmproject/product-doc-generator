@@ -1143,7 +1143,14 @@
         // 현재 필드 ID 가져오기
         function getCurrentFieldId() {
             const fields = ['insight', 'validation', 'capability', 'principle', 'success', 'feature'];
-            return fields[currentStep - 1];
+            const fieldId = fields[currentStep - 1];
+            console.log('🔍 getCurrentFieldId:', {
+                currentStep,
+                fields,
+                fieldId,
+                arrayLength: fields.length
+            });
+            return fieldId;
         }
 
         // 진행률 업데이트
@@ -3121,8 +3128,18 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
 
         // 이벤트 리스너 설정
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 DOM 로드 완료, 초기화 시작');
+            
             // 저장된 데이터 불러오기
             loadSavedData();
+            
+            // DOM 요소 존재 확인
+            const nextBtn = document.getElementById('nextBtn');
+            console.log('🔍 DOM 요소 확인:', {
+                nextBtn: !!nextBtn,
+                nextBtnId: nextBtn ? nextBtn.id : 'N/A',
+                nextBtnDisabled: nextBtn ? nextBtn.disabled : 'N/A'
+            });
             
             // 각 textarea에 이벤트 리스너 추가
             const fields = ['insight', 'validation', 'capability', 'principle', 'success', 'feature'];
@@ -3150,6 +3167,23 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
             window.downloadProjectData = downloadProjectData;
             window.generateDemoData = generateDemoData;
             window.currentStep = currentStep; // 디버깅용 전역 노출
+            window.forceEnableNext = function() {
+                const btn = document.getElementById('nextBtn');
+                if (btn) {
+                    btn.disabled = false;
+                    console.log('🔧 수동으로 다음 버튼 활성화');
+                }
+            };
+            window.testButton = function() {
+                console.log('🧪 버튼 테스트 시작');
+                const btn = document.getElementById('nextBtn');
+                const field = document.getElementById('insight');
+                console.log('버튼:', btn);
+                console.log('필드:', field);
+                console.log('현재 단계:', currentStep);
+                console.log('현재 필드 ID:', getCurrentFieldId());
+                updateNextButton();
+            };
             
             console.log('🎯 제품 문서 생성 시스템 초기화 완료');
             console.log('💡 개발자 도구 명령어:');
