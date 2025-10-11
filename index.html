@@ -3216,6 +3216,88 @@ AI 기반 리뷰 검증 시스템으로 온라인 쇼핑의 신뢰성을 높이�
                     console.error('❌ API 테스트 실패:', error);
                 }
             };
+            window.testPRDHelpers = function() {
+                console.log('🧪 PRD 헬퍼 함수 테스트 시작');
+                const testInput = {
+                    insight: '테스트 인사이트',
+                    evidence: '테스트 근거',
+                    capability: '테스트 역량',
+                    principle: '테스트 원칙',
+                    success_metric: '테스트 성공지표',
+                    core_features: '테스트 기능'
+                };
+                
+                try {
+                    const personas = generateUserPersonas(testInput);
+                    const features = generateFeatureAnalysis(testInput);
+                    const stories = generateUserStories(testInput);
+                    const specs = generateTechnicalSpecs(testInput);
+                    
+                    console.log('✅ PRD 헬퍼 함수 테스트 성공');
+                    console.log('Personas:', personas.substring(0, 100) + '...');
+                    console.log('Features:', features.substring(0, 100) + '...');
+                    console.log('Stories:', stories.substring(0, 100) + '...');
+                    console.log('Specs:', specs.substring(0, 100) + '...');
+                } catch (error) {
+                    console.error('❌ PRD 헬퍼 함수 테스트 실패:', error);
+                }
+            };
+            window.testTRDHelpers = function() {
+                console.log('🧪 TRD 헬퍼 함수 테스트 시작');
+                const testInput = {
+                    insight: '테스트 인사이트',
+                    evidence: '테스트 근거',
+                    capability: '테스트 역량',
+                    principle: '테스트 원칙',
+                    success_metric: '테스트 성공지표',
+                    core_features: '테스트 기능'
+                };
+                
+                try {
+                    const architecture = generateSystemArchitecture(testInput);
+                    const techStack = generateTechnologyStack(testInput);
+                    const dataArch = generateDataArchitecture(testInput);
+                    const security = generateSecurityFramework(testInput);
+                    const performance = generatePerformanceSpecs(testInput);
+                    const deployment = generateDeploymentStrategy(testInput);
+                    
+                    console.log('✅ TRD 헬퍼 함수 테스트 성공');
+                    console.log('Architecture:', architecture.substring(0, 100) + '...');
+                    console.log('TechStack:', techStack.substring(0, 100) + '...');
+                    console.log('DataArch:', dataArch.substring(0, 100) + '...');
+                    console.log('Security:', security.substring(0, 100) + '...');
+                    console.log('Performance:', performance.substring(0, 100) + '...');
+                    console.log('Deployment:', deployment.substring(0, 100) + '...');
+                } catch (error) {
+                    console.error('❌ TRD 헬퍼 함수 테스트 실패:', error);
+                }
+            };
+            window.testFullWorkflow = async function() {
+                console.log('🧪 전체 워크플로우 테스트 시작');
+                try {
+                    // 1. BRD 생성 테스트
+                    console.log('1️⃣ BRD 생성 테스트');
+                    const brdPrompt = createBRDPrompt();
+                    const brdResult = await callAIAPI(brdPrompt, 'BRD');
+                    console.log('✅ BRD 생성 성공:', brdResult.substring(0, 100) + '...');
+                    
+                    // 2. PRD 생성 테스트
+                    console.log('2️⃣ PRD 생성 테스트');
+                    const prdPrompt = createPRDPrompt();
+                    const prdResult = await callAIAPI(prdPrompt, 'PRD');
+                    console.log('✅ PRD 생성 성공:', prdResult.substring(0, 100) + '...');
+                    
+                    // 3. TRD 생성 테스트
+                    console.log('3️⃣ TRD 생성 테스트');
+                    const trdPrompt = createTRDPrompt();
+                    const trdResult = await callAIAPI(trdPrompt, 'TRD');
+                    console.log('✅ TRD 생성 성공:', trdResult.substring(0, 100) + '...');
+                    
+                    console.log('🎉 전체 워크플로우 테스트 완료!');
+                } catch (error) {
+                    console.error('❌ 전체 워크플로우 테스트 실패:', error);
+                }
+            };
             
             console.log('🎯 제품 문서 생성 시스템 초기화 완료');
             console.log('💡 개발자 도구 명령어:');
