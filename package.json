@@ -1,7 +1,7 @@
 {
-    "engines":  {
-                    "node":  "22.x"
-                },
-    "name":  "product-doc-generator",
-    "version":  "1.0.0"
+  "name": "product-doc-generator",
+  "version": "1.0.0",
+  "engines": {
+    "node": "22.x"
+  }
 }
