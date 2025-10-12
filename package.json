@@ -1,13 +1,12 @@
 {
   "name": "product-doc-generator",
   "version": "1.0.0",
-  "description": "AI 기반 제품 문서 자동 생성 시스템",
-  "main": "index.html",
-  "engines": {
-    "node": "22.x"
-  },
+  "type": "module",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'No build process needed'"
+    "build": "echo 'No build needed'",
+    "start": "echo 'Static site'"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0"
   }
 }
